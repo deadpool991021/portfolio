@@ -1,0 +1,2318 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Mario De Michele, interior e product designer con base a Caserta. Portfolio di progetti di interior, prodotto e grafica.">
+<title>Mario De Michele Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* Layout: "la collezione" — ogni progetto è un pezzo da collezione con il suo colore e la sua capsula; griglia a 12 colonne, didascalie in mono come su una tavola */
+:root{
+  --bg:#EFEEF3;
+  --surface:#F8F7FA;
+  --paper:#FFFFFF;     /* fondo fisso per piante e schizzi */
+  --ink:#1B1A22;
+  --muted:#4F4C62;
+  --line:#D6D3E0;
+  --accent:#2B2935;
+  --p:var(--accent);   /* colore del progetto */
+  --obj-hi:#FAFBFC; --obj-mid:#C9CED6; --obj-lo:#8A919C; --obj-dark:#2A2F37;
+  --f-display:"Bricolage Grotesque","Arial Rounded MT Bold",Helvetica,sans-serif;
+  --f-body:"Instrument Sans",system-ui,-apple-system,sans-serif;
+  --f-mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#15141A;--surface:#1E1D25;--paper:#F1F0F4;--ink:#EEEDF3;--muted:#A3A0B4;--line:#2F2D3A;--accent:#C9C6DA;
+  --obj-hi:#5A616C;--obj-mid:#3A4049;--obj-lo:#252A31;--obj-dark:#0B0D10;color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#15141A;--surface:#1E1D25;--paper:#F1F0F4;--ink:#EEEDF3;--muted:#A3A0B4;--line:#2F2D3A;--accent:#C9C6DA;
+  --obj-hi:#5A616C;--obj-mid:#3A4049;--obj-lo:#252A31;--obj-dark:#0B0D10;color-scheme:dark}
+
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.55;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.wrap{max-width:1280px;margin:0 auto}
+a{color:inherit}
+img{display:block;max-width:100%;height:auto}
+:focus-visible{outline:2px solid var(--p,var(--accent));outline-offset:3px}
+.mono{font-family:var(--f-mono);font-size:12.5px;letter-spacing:.04em;text-transform:uppercase;color:var(--muted)}
+h1,h2,h3,h4{font-family:var(--f-display);text-wrap:balance;margin:0}
+
+nav{display:flex;justify-content:space-between;align-items:center;gap:16px;padding-block:22px;border-bottom:1px solid var(--line);flex-wrap:wrap}
+.logo{font-family:var(--f-display);font-weight:800;font-variation-settings:"wdth" 125;font-size:15px;letter-spacing:.02em;text-decoration:none}
+nav ul{display:flex;gap:24px;list-style:none;margin:0;padding:0;flex-wrap:wrap}
+nav ul a{text-decoration:none;font-size:14px;color:var(--muted)}
+nav ul a:hover{color:var(--ink)}
+
+/* home */
+.hero{padding-block:56px 64px}
+.hero h1{font-size:clamp(40px,9vw,136px);line-height:.86;font-weight:900;font-variation-settings:"wdth" 125;letter-spacing:-.01em;text-transform:uppercase;margin-top:14px}
+.hero h1 span{display:block;font-variation-settings:"wdth" 62;font-weight:500;letter-spacing:.01em}
+.hero p{max-width:46ch;color:var(--muted);margin:28px 0 0}
+.hero-meta{display:flex;gap:28px;margin-top:28px;flex-wrap:wrap}
+.hero-meta div{display:grid;gap:2px}
+.hero-meta b{font-weight:500;font-size:14px}
+
+section{padding-block:72px;border-top:1px solid var(--line)}
+.sec-head{display:flex;justify-content:space-between;align-items:baseline;gap:16px;margin-bottom:36px;flex-wrap:wrap}
+.sec-head h2{font-size:clamp(28px,3.4vw,44px);font-weight:800;font-variation-settings:"wdth" 112;text-transform:uppercase}
+
+.covers{display:grid;grid-template-columns:repeat(3,1fr);gap:40px 24px}
+.cover{display:grid;gap:14px;text-decoration:none;min-width:0;align-content:start}
+.cover .img{background:var(--surface);aspect-ratio:4/3;border-radius:4px;overflow:hidden;position:relative;max-width:100%}
+.cover .img img,.cover .img svg{width:100%;height:100%;display:block;object-fit:cover;transition:transform .6s cubic-bezier(.2,.7,.2,1)}
+.cover:hover .img img,.cover:hover .img svg{transform:scale(1.03)}
+.cover .code{position:absolute;left:14px;top:12px;z-index:1}
+.cover.feature{grid-column:1/-1;grid-template-columns:repeat(12,1fr);column-gap:24px;align-items:end}
+.cover.feature .img{grid-column:1/9;aspect-ratio:16/9}
+.cover.feature .info{grid-column:9/13}
+.cover.feature .code{color:#E9EBEE}
+.cover.feature h3{font-size:clamp(28px,3.2vw,44px);font-weight:900;font-variation-settings:"wdth" 120;text-transform:uppercase;line-height:.95}
+.info{display:grid;gap:10px;min-width:0}
+.row{display:flex;justify-content:space-between;align-items:baseline;gap:12px}
+.cover h3{font-size:22px;font-weight:700}
+.cover p{margin:0;color:var(--muted);font-size:15px}
+.more{font-size:14px;font-weight:600;color:var(--p)}
+.chips{display:flex;gap:6px;flex-wrap:wrap}
+.chip{font-family:var(--f-mono);font-size:12px;padding:3px 8px;border:1px solid var(--line);border-radius:99px;color:var(--muted)}
+
+.about{display:grid;grid-template-columns:repeat(12,1fr);gap:24px}
+.about-lead{grid-column:1/8;font-size:clamp(22px,2.4vw,32px);line-height:1.3;font-weight:500;margin:0;min-width:0}
+.about-lead em{font-style:normal;color:var(--p)}
+.about-side{grid-column:9/13;display:grid;gap:28px;min-width:0}
+.tools{list-style:none;padding:0;margin:8px 0 0}
+.tools li{display:flex;justify-content:space-between;gap:12px;padding:9px 0;border-bottom:1px solid var(--line);font-size:15px}
+.tools li span{font-family:var(--f-mono);font-size:12px;color:var(--muted);white-space:nowrap}
+
+.contact h2{font-size:clamp(40px,8vw,120px);font-weight:900;font-variation-settings:"wdth" 125;line-height:.9;text-transform:uppercase}
+.contact h2 span{color:var(--accent)}
+.mail{display:flex;gap:12px;align-items:center;margin-top:28px;flex-wrap:wrap}
+.mail code{font-family:var(--f-mono);font-size:clamp(16px,2vw,22px);user-select:all;overflow-wrap:anywhere}
+button{font:500 14px var(--f-body);background:var(--ink);color:var(--bg);border:0;border-radius:99px;padding:10px 18px;cursor:pointer}
+button:hover{background:var(--p,var(--accent));color:var(--on,#fff)}
+.links{display:flex;gap:24px;margin-top:36px;flex-wrap:wrap}
+.links a{font-size:15px;text-underline-offset:4px}
+
+/* pagine progetto */
+.project{padding-block:32px 0}
+.back{display:inline-flex;gap:8px;align-items:center;font-size:14px;text-decoration:none;color:var(--muted);margin-bottom:40px}
+.back:hover{color:var(--ink)}
+.cs-title{display:grid;grid-template-columns:repeat(12,1fr);gap:24px;margin-bottom:32px}
+.cs-title h1{grid-column:1/9;font-size:clamp(44px,8vw,128px);font-weight:900;font-variation-settings:"wdth" 125;line-height:.85;text-transform:uppercase}
+.cs-title h1 span{display:block;font-weight:500;font-variation-settings:"wdth" 62;font-size:.42em;letter-spacing:.02em;margin-top:.35em;color:var(--muted)}
+.cs-title .mono{grid-column:9/13;align-self:end;text-align:right}
+.wide{border-radius:4px;overflow:hidden}
+.wide img{width:100%;aspect-ratio:1365/768;object-fit:cover}
+.wide.obj{background:var(--surface);aspect-ratio:16/8;max-width:100%}
+.wide.obj svg{width:100%;height:100%;display:block}
+.cs-intro{display:grid;grid-template-columns:repeat(12,1fr);gap:24px;margin-top:48px}
+.cs-intro .lead{grid-column:1/8;min-width:0}
+.cs-intro .lead p{margin:0 0 16px;max-width:62ch}
+.cs-intro .lead p:first-child{font-size:clamp(20px,2vw,26px);line-height:1.35;font-weight:500}
+.cs-intro .lead p:first-child em{font-style:normal;color:var(--p)}
+.specs{grid-column:9/13;display:grid;grid-template-columns:auto 1fr;gap:10px 18px;align-content:start;margin:0;font-size:14px;border-top:1px solid var(--ink);padding-top:14px;min-width:0}
+.specs dt{font-family:var(--f-mono);font-size:12px;text-transform:uppercase;letter-spacing:.04em;color:var(--muted);padding-top:2px}
+.specs dd{margin:0}
+
+.block{margin-top:72px}
+.block-head{display:grid;grid-template-columns:repeat(12,1fr);gap:24px;margin-bottom:24px;align-items:first baseline}
+.block-head h2{grid-column:1/7;font-size:24px;line-height:1.1;font-weight:800;font-variation-settings:"wdth" 110;text-transform:uppercase}
+.block-head p{grid-column:7/13;margin:0;color:var(--muted);max-width:62ch;min-width:0}
+
+.concepts{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.concept{border-top:1px solid var(--line);padding-top:14px;display:grid;gap:8px;align-content:start;min-width:0}
+.concept h3{font-size:17px;font-weight:700}
+.concept p{margin:0;color:var(--muted);font-size:15px}
+.concept blockquote{margin:6px 0 0;font-family:var(--f-display);font-weight:600;font-variation-settings:"wdth" 90;font-size:20px;line-height:1.2;color:var(--ink)}
+
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.pair figure{margin:0;display:grid;gap:10px;min-width:0}
+.pair figure>div{border-radius:4px;overflow:hidden}
+.pair img{width:100%;aspect-ratio:4/3;object-fit:cover}
+figcaption{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+
+.sheets{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.sheet{margin:0;display:grid;gap:10px;min-width:0}
+.sheet>div{background:var(--paper);border-radius:4px;padding:18px;display:grid;place-items:center;aspect-ratio:1/1;max-width:100%}
+.sheet img{max-height:100%;width:auto;object-fit:contain}
+.sheet figcaption{display:block}
+.key{display:flex;gap:14px;flex-wrap:wrap;margin-top:2px;font-size:13px;color:var(--muted)}
+.key i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:6px;vertical-align:-1px}
+
+.materials{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.mat{display:grid;gap:10px;align-content:start;min-width:0}
+.swatch{aspect-ratio:5/2;border-radius:4px;max-width:100%}
+.sw-marmo{background:radial-gradient(circle at 20% 30%,#5f7a68 0 2px,transparent 3px) 0 0/14px 14px,radial-gradient(circle at 70% 60%,#2f4237 0 1.5px,transparent 2.5px) 0 0/11px 11px,linear-gradient(135deg,#3f5547,#25352c)}
+.sw-acciaio{background:linear-gradient(180deg,#d9dde2,#8d949d 55%,#b9bec5)}
+.sw-vetro{background:linear-gradient(120deg,rgba(150,190,210,.35),rgba(220,235,242,.7) 40%,rgba(150,190,210,.3)),var(--surface);border:1px solid var(--line)}
+.mat h3{font-size:17px;font-weight:700}
+.mat p{margin:0;color:var(--muted);font-size:15px}
+.board-link{margin-top:48px;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;padding:20px 22px;background:var(--surface);border-radius:4px}
+.board-link a{font-weight:600;text-underline-offset:4px}
+
+.next{display:flex;justify-content:space-between;align-items:end;gap:16px;flex-wrap:wrap;margin-top:72px;padding-block:40px;border-top:1px solid var(--line);text-decoration:none}
+.next b{display:block;font-family:var(--f-display);font-weight:900;font-variation-settings:"wdth" 120;font-size:clamp(32px,5vw,64px);text-transform:uppercase;line-height:.9;margin-top:8px}
+.next:hover b{color:var(--accent)}
+
+.cover.feature.flip .img{grid-column:5/13;grid-row:1}
+.cover.feature.flip .info{grid-column:1/5;grid-row:1}
+.sections{display:grid;grid-template-columns:1fr 1fr;gap:24px 16px}
+.sections figure,.gallery figure,.duo figure{margin:0;display:grid;gap:10px;min-width:0}
+.sections img,.gallery img{width:100%;border-radius:4px;aspect-ratio:16/9;object-fit:cover;background:var(--surface)}
+.duo{display:grid;grid-template-columns:3fr 2fr;gap:16px;align-items:start}
+.duo .paper{background:var(--paper);border-radius:4px;padding:16px;display:grid;place-items:center;max-width:100%}
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.gallery figure:first-child{grid-column:span 2;grid-row:span 2}
+.gallery figure:first-child img{aspect-ratio:auto;height:100%}
+.idk{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.keywords{display:flex;gap:10px 28px;flex-wrap:wrap;margin-top:28px;font-family:var(--f-display);font-weight:800;font-variation-settings:"wdth" 120;font-size:clamp(24px,3.4vw,44px);text-transform:uppercase;line-height:1}
+.keywords span:nth-child(1){color:#ac64a5}.keywords span:nth-child(2){color:#69b42f}.keywords span:nth-child(3){color:#2f9aa1}
+.refs{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:40px}
+.palette{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
+.chipc{display:grid;gap:8px;min-width:0}
+.chipc i{display:block;aspect-ratio:1/1.1;border-radius:4px;max-width:100%}
+.chipc code{font-family:var(--f-mono);font-size:12px;color:var(--muted)}
+.mlist{list-style:none;margin:0;padding:0}
+.mlist li{display:flex;justify-content:space-between;gap:12px;padding:10px 0;border-bottom:1px solid var(--line);font-size:15px}
+.mlist li span{font-family:var(--f-mono);font-size:12px;color:var(--muted)}
+.docs{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:48px}
+.docs .board-link{margin-top:0}
+@media (max-width:900px){
+  .cover.feature.flip .img,.cover.feature.flip .info{grid-column:1/-1;grid-row:auto}
+  .idk,.refs{grid-template-columns:1fr}
+  .duo{grid-template-columns:1fr}
+}
+@media (max-width:620px){
+  .sections,.docs{grid-template-columns:1fr}
+  .gallery{grid-template-columns:1fr 1fr}
+  .palette{grid-template-columns:repeat(3,1fr)}
+}
+
+.posters{columns:2 260px;column-gap:20px}
+.posters figure{break-inside:avoid;margin:0 0 28px;display:grid;gap:10px}
+.posters img{width:100%;border-radius:4px}
+.pcap{display:grid;gap:4px;font-size:14px;color:var(--muted);line-height:1.45}
+.pcap b{font-family:var(--f-display);font-size:16px;font-weight:700;color:var(--ink)}
+.rejects{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;align-items:end}
+.rejects figure,.exercises figure{margin:0;display:grid;gap:10px;min-width:0}
+.rejects img{width:100%;border-radius:4px}
+.exercises{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;align-items:start}
+.exercises .paper{background:var(--paper);border-radius:4px;padding:14px;aspect-ratio:1/1;display:grid;place-items:center;max-width:100%}
+.exercises .paper img{max-height:100%;width:auto;object-fit:contain}
+@media (max-width:900px){.rejects,.exercises{grid-template-columns:1fr 1fr}}
+
+.cover.feature.tall .img{grid-column:1/6}
+.cover.feature.tall .info{grid-column:7/13}
+@media (max-width:900px){.cover.feature.tall .img,.cover.feature.tall .info{grid-column:1/-1}}
+
+.split{display:grid;grid-template-columns:repeat(12,1fr);gap:24px;align-items:start}
+.split figure{grid-column:1/5;margin:0;display:grid;gap:10px;min-width:0}
+.split figure img{width:100%;border-radius:4px}
+.split .side{grid-column:6/13;display:grid;gap:32px;min-width:0}
+.split .lead p{margin:0 0 16px;max-width:62ch}
+.split .lead p:first-child{font-size:clamp(20px,2vw,26px);line-height:1.35;font-weight:500}
+.split .lead p:first-child em{font-style:normal;color:var(--p)}
+.split .specs{grid-column:auto}
+@media (max-width:900px){.split figure,.split .side{grid-column:1/-1}}
+
+html:root[data-view="oriente"]{--bg:#0e0e0f;--surface:#1a1a1c;--ink:#f4f4f2;--muted:#b9b9b6;--line:#2c2c2e;--accent:#e2231a;color-scheme:dark}
+
+.pair.solo{grid-template-columns:minmax(0,calc(50% - 12px));justify-content:end}
+@media (max-width:620px){.pair.solo{grid-template-columns:1fr}}
+
+.stack{display:grid;gap:32px}
+.stack figure{margin:0;display:grid;gap:10px;min-width:0}
+.stack .paper{border-radius:4px}
+
+.concept-text{margin:0;align-self:start;color:var(--muted);max-width:56ch;font-size:16px}
+
+.tray{display:grid;grid-template-columns:1fr 1fr minmax(200px,.8fr);gap:16px;align-items:start}
+.tray figure{margin:0;min-width:0}
+.tray img{width:100%;border-radius:4px}
+.tray .specs{grid-column:auto}
+@media (max-width:900px){.tray{grid-template-columns:1fr 1fr}.tray .specs{grid-column:1/-1}}
+
+.five{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
+.five figure{margin:0;display:grid;gap:8px;min-width:0}
+.five .paper{background:#fff;border-radius:4px;aspect-ratio:1/1;display:grid;place-items:center;max-width:100%}
+.five img{width:100%;height:auto}
+.traits{display:grid;grid-template-columns:repeat(2,1fr);column-gap:32px}
+@media (max-width:900px){.five{grid-template-columns:repeat(3,1fr)}}
+@media (max-width:620px){.five{grid-template-columns:1fr 1fr}.traits{grid-template-columns:1fr}}
+
+.concepts.c5{grid-template-columns:repeat(5,1fr)}
+.sheets.s4{grid-template-columns:repeat(4,1fr)}
+@media (max-width:900px){.concepts.c5{grid-template-columns:1fr 1fr}.sheets.s4{grid-template-columns:1fr 1fr}}
+@media (max-width:620px){.concepts.c5{grid-template-columns:1fr}}
+
+.sheets.s2{grid-template-columns:1fr 1fr;gap:24px}
+@media (max-width:620px){.sheets.s2{grid-template-columns:1fr}}
+
+
+/* ===== identità "la collezione" ===== */
+h1,h2,h3,h4{font-family:var(--f-display);font-variation-settings:normal;letter-spacing:-.015em}
+.logo{font-family:var(--f-display);font-variation-settings:normal;font-weight:800;font-size:17px;letter-spacing:-.01em;display:inline-flex;align-items:center;gap:10px}
+.logo::before{content:"";width:22px;height:14px;border-radius:99px;background:linear-gradient(90deg,var(--accent) 50%,#E9A81E 50%)}
+nav ul a{border-radius:99px;padding:6px 12px}
+nav ul a:hover{background:var(--surface)}
+.hero h1{font-variation-settings:normal;text-transform:none;font-weight:800;letter-spacing:-.035em;line-height:.88;font-size:clamp(48px,10vw,150px)}
+.hero h1 span{font-variation-settings:"wdth" 75;font-weight:400;letter-spacing:-.02em;color:var(--muted)}
+.shelf{display:flex;justify-content:flex-start;gap:10px;flex-wrap:wrap;margin-top:40px;padding:0;border:0}
+.shelf a{display:inline-flex;align-items:center;gap:10px;text-decoration:none;padding:8px 16px 8px 8px;border-radius:99px;background:var(--surface);border:1px solid var(--line);transition:transform .25s cubic-bezier(.3,1.6,.5,1),box-shadow .25s}
+.shelf a i{width:34px;height:22px;border-radius:99px;background:linear-gradient(90deg,var(--p) 50%,color-mix(in srgb,var(--p) 55%,#fff) 50%);box-shadow:inset 0 -3px 0 rgba(0,0,0,.12)}
+.shelf a span{font-family:var(--f-mono);font-size:12px;color:var(--muted)}
+.shelf a b{font-family:var(--f-display);font-weight:700;font-size:15px}
+.shelf a:hover{transform:translateY(-3px) rotate(-1.5deg);box-shadow:0 4px 0 var(--p)}
+section{border-top:0}
+.sec-head h2,.cover.feature h3,.next b{text-transform:none;font-variation-settings:normal}
+.sec-head h2{font-weight:800;font-size:clamp(32px,4vw,52px)}
+.cover .img{border-radius:22px;box-shadow:0 0 0 0 var(--p);transition:box-shadow .3s cubic-bezier(.3,1.4,.5,1),transform .3s cubic-bezier(.3,1.4,.5,1)}
+.cover:hover .img{transform:translate(-4px,-4px);box-shadow:8px 8px 0 0 var(--p)}
+.cover:hover .img img,.cover:hover .img svg{transform:none}
+.cover .code,.cover.feature .code{color:#fff;background:var(--p);font-weight:500;padding:5px 10px;border-radius:99px;left:14px;top:14px;letter-spacing:.06em}
+.cover.feature h3{font-weight:800;font-size:clamp(34px,3.8vw,56px);letter-spacing:-.03em}
+.cover h3{font-weight:800;font-size:24px}
+.cover .more{display:inline-flex;align-items:center;gap:8px;color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:99px;padding:8px 14px;justify-self:start;transition:background .2s,color .2s}
+.cover:hover .more{background:var(--p);border-color:var(--p);color:#fff}
+.cover .chip{border-color:color-mix(in srgb,var(--p) 40%,var(--line));color:var(--ink)}
+/* pagine progetto */
+.project .back{border-radius:99px;padding:8px 14px;background:var(--surface);border:1px solid var(--line);color:var(--ink)}
+.project .back:hover{background:var(--p);border-color:var(--p);color:#fff}
+.cs-title h1{text-transform:none;font-variation-settings:normal;font-weight:800;letter-spacing:-.04em;line-height:.88}
+.cs-title h1 span{font-variation-settings:"wdth" 75;font-weight:400;letter-spacing:-.01em;margin-top:.3em}
+.cs-title h1::before{content:"";display:block;width:64px;height:34px;border-radius:99px;margin-bottom:22px;background:linear-gradient(90deg,var(--p) 50%,color-mix(in srgb,var(--p) 55%,#fff) 50%);box-shadow:inset 0 -5px 0 rgba(0,0,0,.12)}
+.cs-title .mono{color:var(--ink)}
+.cs-intro .lead p:first-child em,.split .lead p:first-child em{color:color-mix(in srgb,var(--p) 72%,var(--ink))}
+.board-link a{color:color-mix(in srgb,var(--p) 72%,var(--ink))}
+.specs{border-top:3px solid var(--p);background:var(--surface);padding:18px 20px;border-radius:0 0 18px 18px}
+.block-head h2{text-transform:none;font-variation-settings:normal;font-weight:800;font-size:28px;letter-spacing:-.02em;display:flex;align-items:baseline;gap:12px}
+.block-head h2::before{content:"";flex:none;width:18px;height:12px;border-radius:99px;background:var(--p);transform:translateY(-2px)}
+.wide,.pair figure>div,.sheet>div,.stack .paper,.duo .paper,.trio .paper,.posters img,.sections img,.gallery img,.five .paper,.tray img,.rejects img,.exercises .paper,.split figure img{border-radius:18px}
+.concept{border-top:2px solid color-mix(in srgb,var(--p) 50%,var(--line))}
+.board-link{border-radius:18px;border:1px solid var(--line)}
+.board-link a{color:var(--p)}
+.next{border-top:0;margin-top:80px;padding:28px 32px;border-radius:28px;background:var(--n,var(--p));color:#fff}
+.next .mono{color:rgba(255,255,255,.8)}
+.next b{font-weight:800;letter-spacing:-.03em}
+.next .more{color:#fff;font-size:40px;transition:transform .3s cubic-bezier(.3,1.6,.5,1)}
+.next:hover b{color:#fff}
+.next:hover .more{transform:translateX(8px)}
+.about-lead em,.contact h2 span{color:var(--p)}
+.contact h2{text-transform:none;font-variation-settings:normal;font-weight:800;letter-spacing:-.04em}
+.about-lead{font-family:var(--f-display);font-weight:500;letter-spacing:-.015em}
+button{border-radius:99px}
+@media (prefers-reduced-motion:reduce){.shelf a,.cover .img,.next .more{transition:none}.shelf a:hover,.cover:hover .img{transform:none}}
+
+.timeline li{font-size:17px;padding:14px 0}
+.tools-grid{display:grid;grid-template-columns:repeat(3,1fr);column-gap:32px}
+@media (max-width:900px){.tools-grid{grid-template-columns:1fr 1fr}}
+@media (max-width:620px){.tools-grid{grid-template-columns:1fr}.timeline li{flex-direction:column;gap:2px}}
+
+.right-col{display:grid;grid-template-columns:repeat(12,1fr);gap:24px}
+.right-col .shelf-right{grid-column:7/13;margin-top:0}
+@media (max-width:900px){.right-col .shelf-right{grid-column:1/-1}}
+
+.home-links{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:48px}
+.home-links a{display:grid;gap:6px;text-decoration:none;padding:22px 24px;border-radius:24px;background:var(--n);color:#fff;position:relative;transition:transform .25s cubic-bezier(.3,1.6,.5,1)}
+.home-links a .mono{color:rgba(255,255,255,.8)}
+.home-links a b{font-family:var(--f-display);font-weight:800;font-size:clamp(28px,3vw,40px);letter-spacing:-.03em;line-height:1}
+.home-links a i{position:absolute;right:24px;bottom:20px;font-style:normal;font-size:28px}
+.home-links a:hover{transform:translateY(-4px) rotate(-1deg)}
+.project.contact .mail{margin-top:8px}
+@media (max-width:620px){.home-links{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:reduce){.home-links a{transition:none}.home-links a:hover{transform:none}}
+
+nav ul a{display:inline-flex;align-items:center;gap:8px;border:1px solid transparent;transition:transform .25s cubic-bezier(.3,1.6,.5,1),box-shadow .25s,background .2s,color .2s,border-color .2s}
+nav ul a::before{content:"";width:0;height:10px;border-radius:99px;background:var(--c,var(--accent));transition:width .25s cubic-bezier(.3,1.6,.5,1)}
+nav ul a:hover{background:var(--surface);border-color:var(--line);color:var(--ink);transform:translateY(-3px) rotate(-1.5deg);box-shadow:0 4px 0 var(--c,var(--accent))}
+nav ul a:hover::before{width:16px}
+nav ul a[aria-current]{background:var(--c,var(--ink));border-color:var(--c,var(--ink));color:#fff}
+nav ul a[aria-current]::before{width:16px;background:rgba(255,255,255,.85)}
+nav ul a[aria-current]:hover{box-shadow:0 4px 0 color-mix(in srgb,var(--c) 55%,#000)}
+@media (prefers-reduced-motion:reduce){nav ul a,nav ul a::before{transition:none}nav ul a:hover{transform:none}}
+
+
+/* ===== pagina Progetti ===== */
+.proj-intro{display:grid;grid-template-columns:repeat(12,1fr);gap:24px;align-items:end;margin-bottom:32px}
+.proj-lead{grid-column:1/7;margin:0;font-family:var(--f-display);font-size:clamp(20px,2vw,26px);line-height:1.3;font-weight:500;letter-spacing:-.01em;max-width:34ch}
+.stats{grid-column:7/13;display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:0}
+.stats div{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:16px 18px}
+.stats dt{font-family:var(--f-mono);font-size:12px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted)}
+.stats dd{margin:4px 0 0;font-family:var(--f-display);font-weight:800;font-size:clamp(28px,3vw,40px);letter-spacing:-.03em;line-height:1}
+.filters{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 40px}
+.filter{display:inline-flex;align-items:center;gap:8px;font:600 15px var(--f-body);color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:99px;padding:9px 16px;cursor:pointer;transition:transform .25s cubic-bezier(.3,1.6,.5,1),box-shadow .25s,background .2s,color .2s}
+.filter::before{content:"";width:16px;height:10px;border-radius:99px;background:var(--c)}
+.filter span{font-family:var(--f-mono);font-size:12px;color:var(--muted)}
+.filter:hover{transform:translateY(-3px) rotate(-1.5deg);box-shadow:0 4px 0 var(--c);background:var(--surface);color:var(--ink)}
+.filter[aria-pressed="true"]{background:var(--c);border-color:var(--c);color:#fff}
+.filter[aria-pressed="true"]::before{background:rgba(255,255,255,.85)}
+.filter[aria-pressed="true"] span{color:rgba(255,255,255,.85)}
+.pcards{display:grid;gap:56px}
+.pcard{display:grid;grid-template-columns:repeat(12,1fr);gap:24px;align-items:center;text-decoration:none;color:inherit}
+.pcard[hidden]{display:none!important}
+.pc-img{grid-column:1/8;position:relative;align-self:center;border-radius:24px;overflow:hidden;background:var(--p);transition:transform .3s cubic-bezier(.3,1.4,.5,1),box-shadow .3s cubic-bezier(.3,1.4,.5,1);max-width:100%}
+.pc-img .pc-main{width:100%;height:auto;transition:opacity .45s ease}
+.pc-img .pc-hover{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:opacity .45s ease}
+.pc-img .pc-hover{opacity:0}
+.pc-img .code{position:absolute;left:14px;top:14px;z-index:2;color:#fff;background:var(--p);padding:5px 10px;border-radius:99px;letter-spacing:.06em}
+.pcard:hover .pc-img{transform:translate(-4px,-4px);box-shadow:8px 8px 0 var(--p)}
+.pcard:hover .pc-hover{opacity:1}
+.pcard:hover .pc-main{opacity:0}
+.pc-info{grid-column:8/13;display:flex;flex-direction:column;gap:12px;min-width:0;padding:6px 0}
+.pc-cap{display:block;width:56px;height:30px;border-radius:99px;background:linear-gradient(90deg,var(--p) 50%,color-mix(in srgb,var(--p) 55%,#fff) 50%);box-shadow:inset 0 -4px 0 rgba(0,0,0,.12);transition:transform .35s cubic-bezier(.3,1.6,.5,1)}
+#eco .cs-title h1::before,.pc-cap.inv,.shelf a.inv i{background:linear-gradient(90deg,color-mix(in srgb,var(--p) 55%,#fff) 50%,var(--p) 50%)}
+.pcard:hover .pc-cap{transform:rotate(-12deg) translateY(-2px)}
+.pc-info .row{display:flex;justify-content:space-between;gap:12px}
+.pc-info h3{font-family:var(--f-display);font-weight:800;font-size:clamp(32px,3.4vw,48px);letter-spacing:-.03em;line-height:.95;margin:0}
+.pc-info p{margin:0;color:var(--muted);font-size:15px;max-width:46ch}
+.pc-facts{display:grid;grid-template-columns:auto 1fr;gap:6px 14px;margin:4px 0 0;padding:12px 14px;border-radius:16px;background:var(--surface);border:1px solid var(--line);font-size:14px}
+.pc-facts dt{font-family:var(--f-mono);font-size:12px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);padding-top:2px}
+.pc-facts dd{margin:0}
+.pc-thumbs{display:flex;gap:8px;margin-top:4px;align-items:flex-start}
+.pc-thumbs img{min-width:0;width:100%;height:auto;border-radius:10px;transition:transform .3s cubic-bezier(.3,1.6,.5,1)}
+.pcard:hover .pc-thumbs img:nth-child(1){transform:translateY(-4px) rotate(-2deg)}
+.pcard:hover .pc-thumbs img:nth-child(2){transform:translateY(-6px)}
+.pcard:hover .pc-thumbs img:nth-child(3){transform:translateY(-4px) rotate(2deg)}
+.pc-info .more{display:inline-flex;align-self:flex-start;font-size:14px;font-weight:600;color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:99px;padding:8px 14px;transition:background .2s,color .2s}
+.pcard:hover .more{background:var(--p);border-color:var(--p);color:#fff}
+.pcard.flip .pc-img{grid-column:6/13;grid-row:1}
+.pcard.flip .pc-info{grid-column:1/6;grid-row:1}
+.pcard.vert .pc-img{grid-column:2/6}
+.pcard.vert .pc-info{grid-column:7/13}
+.pcard.vert.flip .pc-img{grid-column:8/12;grid-row:1}
+.pcard.vert.flip .pc-info{grid-column:1/7;grid-row:1}
+@media (max-width:900px){
+  .proj-lead,.stats{grid-column:1/-1}
+  .pc-img,.pc-info,.pcard.flip .pc-img,.pcard.flip .pc-info,.pcard.vert .pc-img,.pcard.vert .pc-info,.pcard.vert.flip .pc-img,.pcard.vert.flip .pc-info{grid-column:1/-1;grid-row:auto}
+  .pcard.vert .pc-img{width:min(100%,420px);justify-self:center}
+  .pcards{gap:44px}
+}
+@media (max-width:620px){.stats{grid-template-columns:repeat(3,1fr);gap:8px}.stats div{padding:12px}.stats dd{font-size:24px;white-space:nowrap}}
+@media (prefers-reduced-motion:reduce){.filter,.pc-img,.pc-img img,.pc-cap,.pc-thumbs img{transition:none}.pcard:hover .pc-img,.filter:hover,.pcard:hover .pc-thumbs img,.pcard:hover .pc-cap{transform:none}}
+
+
+/* ===== Studio: processo e materiali ===== */
+.process{display:grid;gap:12px}
+.prow{display:flex;gap:12px;align-items:flex-start}
+.pfig{position:relative;min-width:0;display:block;border-radius:18px;overflow:hidden;color:inherit;text-decoration:none;background:var(--p);transition:transform .3s cubic-bezier(.3,1.4,.5,1),box-shadow .3s cubic-bezier(.3,1.4,.5,1)}
+.pfig img{width:100%;height:auto}
+.pf-cap{position:absolute;left:10px;bottom:10px;display:flex;align-items:baseline;gap:8px;background:var(--p);color:#fff;border-radius:99px;padding:6px 12px;font-size:14px}
+.pf-cap .mono{color:rgba(255,255,255,.8)}
+.pf-cap span:last-child{opacity:.8;font-size:12px}
+.pfig:hover{transform:translate(-3px,-3px) rotate(-.4deg);box-shadow:6px 6px 0 var(--p)}
+.matlist{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:10px}
+.matlist li{display:inline-flex;align-items:center;gap:8px;background:var(--surface);border:1px solid var(--line);border-radius:99px;padding:8px 14px 8px 10px;font-weight:600;font-size:15px;transition:transform .25s cubic-bezier(.3,1.6,.5,1),box-shadow .25s}
+.matlist li i{width:22px;height:12px;border-radius:99px;background:linear-gradient(90deg,var(--p) 50%,color-mix(in srgb,var(--p) 55%,#fff) 50%)}
+.matlist li span{font-family:var(--f-mono);font-size:12px;font-weight:400;color:var(--muted)}
+.matlist li:hover{transform:translateY(-3px) rotate(-1.5deg);box-shadow:0 4px 0 var(--p)}
+/* ===== Contatti ===== */
+.topics{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.topics li{background:var(--surface);border:1px solid var(--line);border-radius:24px;padding:22px;display:flex;flex-direction:column;gap:10px;transition:transform .3s cubic-bezier(.3,1.4,.5,1),box-shadow .3s}
+.topics li:hover{transform:translate(-3px,-3px);box-shadow:6px 6px 0 var(--p)}
+.topics li:hover .pc-cap{transform:rotate(-12deg)}
+.topics h3{margin:0;font-family:var(--f-display);font-weight:800;font-size:30px;letter-spacing:-.03em}
+.topics p{margin:0;color:var(--muted)}
+.topics .ex{margin-top:auto;font-size:13px;padding-top:10px;border-top:1px solid var(--line)}
+.compose{display:grid;gap:16px;background:var(--surface);border:1px solid var(--line);border-radius:24px;padding:24px}
+.f-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.field{display:grid;gap:8px;border:0;margin:0;padding:0;min-width:0}
+.field input,.field textarea{font:16px var(--f-body);color:var(--ink);background:var(--bg,transparent);border:1px solid var(--line);border-radius:14px;padding:12px 14px;width:100%;box-sizing:border-box;resize:vertical}
+.field input:focus,.field textarea:focus{outline:2px solid var(--p);outline-offset:1px}
+.radios{display:flex;flex-wrap:wrap;gap:8px}
+.radios label{cursor:pointer;position:relative}
+.radios input{position:absolute;inset:0;width:100%;height:100%;margin:0;opacity:0;pointer-events:none}
+.radios span{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line);border-radius:99px;padding:9px 14px;font-weight:600;font-size:15px;transition:background .2s,color .2s,transform .25s cubic-bezier(.3,1.6,.5,1)}
+.radios span::before{content:"";width:16px;height:10px;border-radius:99px;background:var(--c)}
+.radios input:checked+span{background:var(--c);border-color:var(--c);color:#fff}
+.radios input:checked+span::before{background:rgba(255,255,255,.85)}
+.radios input:focus-visible+span{outline:2px solid var(--c);outline-offset:2px}
+.radios label:hover span{transform:translateY(-2px) rotate(-1.5deg)}
+.send{justify-self:start;font:700 16px var(--f-body);color:#fff;background:var(--p);border:0;border-radius:99px;padding:13px 22px;cursor:pointer;transition:transform .25s cubic-bezier(.3,1.6,.5,1),box-shadow .25s}
+.send:hover{background:var(--p);color:#fff;transform:translateY(-3px);box-shadow:0 5px 0 color-mix(in srgb,var(--p) 60%,#000)}
+@media (max-width:900px){.topics{grid-template-columns:1fr}.f-row{grid-template-columns:1fr}}
+@media (max-width:620px){.prow{flex-wrap:wrap}.pfig{flex:1 1 100%!important}}
+@media (prefers-reduced-motion:reduce){.pfig,.matlist li,.topics li,.radios span,.send{transition:none}.pfig:hover,.matlist li:hover,.topics li:hover,.radios label:hover span,.send:hover{transform:none}}
+
+
+/* ===== restyle: reel home, varianti Bob ===== */
+.reel{margin:8px calc(50% - 50vw) 0;overflow:hidden;padding:18px 0 34px;-webkit-mask:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
+.reel{cursor:grab;touch-action:pan-y;user-select:none}
+.reel.dragging{cursor:grabbing}
+.reel.dragging a{pointer-events:none}
+.reel-track{display:flex;gap:20px;width:max-content;will-change:transform}
+.reel img{-webkit-user-drag:none;pointer-events:none}
+@keyframes reel{to{transform:translateX(calc(-50% - 10px))}}
+.reel a{position:relative;display:block;flex:none;height:220px;border-radius:20px;overflow:hidden;background:var(--p);text-decoration:none;transition:transform .35s cubic-bezier(.3,1.5,.5,1),box-shadow .35s cubic-bezier(.3,1.5,.5,1)}
+.reel a:nth-child(odd){--r:-1deg}.reel a:nth-child(even){--r:1deg}
+.reel img{height:100%;width:auto;display:block}
+.reel a:hover,.reel a:focus-visible{transform:translate(-4px,-6px) rotate(var(--r));box-shadow:8px 8px 0 var(--p)}
+.rl{position:absolute;left:10px;bottom:10px;display:flex;align-items:center;gap:7px;background:var(--p);color:#fff;border-radius:99px;padding:6px 12px 6px 8px;font-size:13px;font-weight:600;white-space:nowrap;opacity:0;transform:translateY(8px);transition:opacity .25s,transform .35s cubic-bezier(.3,1.6,.5,1)}
+.rl i{width:18px;height:11px;border-radius:99px;background:linear-gradient(90deg,#fff 50%,rgba(255,255,255,.55) 50%)}
+.rl b{font-family:var(--f-mono);font-weight:400;font-size:11px;opacity:.85}
+.reel a:hover .rl,.reel a:focus-visible .rl{opacity:1;transform:none}
+@media (max-width:620px){.reel a{height:150px}.rl{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.reel a{transition:none}.reel a:hover{transform:none}}
+.variants{margin:0}
+.vframe{position:relative;border-radius:18px;overflow:hidden}
+.five .paper{overflow:hidden}
+.five .paper img{border-radius:0}
+.vframe img{position:absolute;top:18px;left:18px;width:calc(100% - 36px)!important;height:auto!important;max-height:none!important;object-fit:fill!important;opacity:0;pointer-events:none;transition:opacity .45s ease,transform .45s cubic-bezier(.3,1.4,.5,1);transform:scale(.98)}
+.vframe img.on{position:relative;top:0;left:0;width:100%!important;opacity:1;pointer-events:auto;transform:none}
+.vbar{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-top:12px}
+.vbtns{display:flex;flex-wrap:wrap;gap:8px}
+.vbtn{display:inline-flex;align-items:center;gap:8px;font:600 14px var(--f-body);color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:99px;padding:8px 14px 8px 10px;cursor:pointer;transition:transform .25s cubic-bezier(.3,1.6,.5,1),box-shadow .25s}
+.vbtn i{width:22px;height:13px;border-radius:99px;background:var(--c);box-shadow:inset 0 -2px 0 rgba(0,0,0,.15),0 0 0 1px rgba(0,0,0,.12)}
+.vbtn:hover{background:var(--surface);color:var(--ink);transform:translateY(-3px) rotate(-1.5deg);box-shadow:0 4px 0 var(--p)}
+.vbtn[aria-pressed="true"]{background:var(--p);border-color:var(--p);color:#fff}
+.vbtn[aria-pressed="true"]:hover{background:var(--p);color:#fff}
+@media (prefers-reduced-motion:reduce){.vframe img,.vbtn{transition:none}.vbtn:hover{transform:none}}
+
+
+/* ===== leggibilità sui colori chiari + tema scuro ===== */
+/* testo scuro sul giallo di Bob the Blob */
+[style*="--p:#E9A81E"],[style*="--n:#E9A81E"],#bob{--on:#2B2935}
+.next[style*="--n:#E9A81E"],.next[style*="--n:#E9A81E"] b,.next[style*="--n:#E9A81E"] .more,.next[style*="--n:#E9A81E"]:hover b{color:#2B2935}
+.next[style*="--n:#E9A81E"] .mono{color:rgba(43,41,53,.75)}
+.pc-img .code,.rl,.pf-cap{color:var(--on,#fff)}
+.pc-img .code,.rl,.pf-cap{background:color-mix(in srgb,var(--p) 82%,#000)}
+[style*="--p:#E9A81E"] .pc-img .code,[style*="--p:#E9A81E"] .rl,[style*="--p:#E9A81E"].pfig .pf-cap,[style*="--p:#E9A81E"] .pf-cap{background:var(--p)}
+.rl i{background:linear-gradient(90deg,currentColor 50%,color-mix(in srgb,currentColor 55%,transparent) 50%)}
+.pcard:hover .more{color:var(--on,#fff)}
+.vbtn[aria-pressed="true"],.vbtn[aria-pressed="true"]:hover{color:var(--on,#fff)}
+.send,.send:hover{color:var(--on,#fff)}
+.totop{color:var(--on,#fff)}
+/* logo: antracite + giallo */
+.logo::before{background:linear-gradient(90deg,var(--accent) 50%,#E9A81E 50%)}
+/* tema scuro: schiarisci i due colori più scuri */
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) [style*="--p:#5A4FCF"]{--p:#8F87F2!important}
+ :root:not([data-theme="light"]) [style*="--n:#5A4FCF"]{--n:#8F87F2!important}
+ :root:not([data-theme="light"]) [style*="--c:#5A4FCF"]{--c:#8F87F2!important}
+ :root:not([data-theme="light"]) [style*="--p:#7A4A2E"]{--p:#A8714E!important}
+ :root:not([data-theme="light"]) [style*="--n:#7A4A2E"]{--n:#A8714E!important}}
+:root[data-theme="dark"] [style*="--p:#5A4FCF"]{--p:#8F87F2!important}
+:root[data-theme="dark"] [style*="--n:#5A4FCF"]{--n:#8F87F2!important}
+:root[data-theme="dark"] [style*="--c:#5A4FCF"]{--c:#8F87F2!important}
+:root[data-theme="dark"] [style*="--p:#7A4A2E"]{--p:#A8714E!important}
+:root[data-theme="dark"] [style*="--n:#7A4A2E"]{--n:#A8714E!important}
+
+
+/* ===== Studio: sezioni più vive ===== */
+.ways{gap:16px}
+.ways .concept{background:var(--surface);border:1px solid var(--line);border-top:0;border-radius:24px;padding:22px;position:relative;overflow:hidden;transition:transform .3s cubic-bezier(.3,1.4,.5,1),box-shadow .3s cubic-bezier(.3,1.4,.5,1)}
+.ways .concept::before{content:"";position:absolute;left:0;right:0;top:0;height:6px;background:var(--p)}
+.ways .concept .pc-cap{margin-bottom:12px}
+.ways .concept:hover{transform:translate(-3px,-3px);box-shadow:6px 6px 0 var(--p)}
+.ways .concept:hover .pc-cap{transform:rotate(-12deg)}
+.edu{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:16px;position:relative}
+.edu::before{content:"";position:absolute;left:12px;right:12px;top:31px;height:3px;border-radius:3px;background:linear-gradient(90deg,#2F8FC0,#E2231A,#E9A81E);opacity:.5}
+.edu li{position:relative;background:var(--surface);border:1px solid var(--line);border-radius:24px;padding:58px 22px 22px;display:flex;flex-direction:column;gap:6px;transition:transform .3s cubic-bezier(.3,1.4,.5,1),box-shadow .3s cubic-bezier(.3,1.4,.5,1)}
+.edu-dot{position:absolute;left:22px;top:20px;width:46px;height:24px;border-radius:99px;background:linear-gradient(90deg,var(--p) 50%,color-mix(in srgb,var(--p) 55%,#fff) 50%);box-shadow:inset 0 -3px 0 rgba(0,0,0,.14),0 0 0 4px var(--bg);transition:transform .35s cubic-bezier(.3,1.6,.5,1)}
+.edu .mono{color:color-mix(in srgb,var(--p) 72%,#000);font-weight:600}
+.edu h3{margin:0;font-family:var(--f-display);font-weight:800;font-size:26px;letter-spacing:-.02em;line-height:1.05}
+.edu p{margin:0;color:var(--ink)}
+.edu-school{margin-top:auto;padding-top:12px;border-top:1px solid var(--line);font-size:13px;color:var(--muted)}
+.edu li:hover{transform:translate(-3px,-3px);box-shadow:6px 6px 0 var(--p)}
+.edu li:hover .edu-dot{transform:rotate(-12deg)}
+.toolchips li{font-size:16px;padding:10px 16px 10px 12px}
+@media (max-width:900px){.edu{grid-template-columns:1fr}.edu::before{left:44px;right:auto;top:20px;bottom:20px;width:3px;height:auto;background:linear-gradient(180deg,#2F8FC0,#E2231A,#E9A81E)}}
+@media (prefers-reduced-motion:reduce){.ways .concept,.edu li,.edu-dot{transition:none}.ways .concept:hover,.edu li:hover{transform:none}}
+
+
+/* ===== Contatti più vivi ===== */
+.contact .cs-title{position:relative}
+.capcluster{position:absolute;right:0;top:-6px;display:grid;grid-template-columns:repeat(4,58px);gap:10px 8px;z-index:20}
+.capcluster .cap{display:block;width:58px;height:30px;border-radius:99px;background:linear-gradient(90deg,var(--p) 50%,color-mix(in srgb,var(--p) 55%,#fff) 50%);box-shadow:inset 0 -4px 0 rgba(0,0,0,.14),0 3px 6px rgba(0,0,0,.08);transform:translate(var(--dx,0px),var(--dy,0px)) rotate(var(--rot,calc((var(--i) - 3.5) * 6deg - 8deg))) scale(var(--s,1));transition:transform .35s cubic-bezier(.3,1.6,.5,1),box-shadow .25s;cursor:grab;touch-action:none;user-select:none;position:relative}
+.capcluster .cap.drag{--s:1.18;cursor:grabbing;transition:box-shadow .2s;box-shadow:inset 0 -4px 0 rgba(0,0,0,.14),0 14px 22px rgba(0,0,0,.22);z-index:5}
+.capcluster .cap.spin{animation:capSpin .6s cubic-bezier(.3,1.4,.5,1)}
+@keyframes capSpin{to{rotate:360deg}}
+.capcluster .cap.inv{background:linear-gradient(90deg,color-mix(in srgb,var(--p) 55%,#fff) 50%,var(--p) 50%)}
+.capcluster .cap:hover{--s:1.1}
+.contact .cs-title>.mono{position:relative;z-index:1}
+.contact .mail{background:var(--surface);border:1px solid var(--line);border-radius:24px;padding:22px 22px 22px;margin-top:20px;position:relative;overflow:hidden;gap:14px}
+.contact .mail::before{content:"";position:absolute;left:0;right:0;top:0;height:6px;background:linear-gradient(90deg,#3E5C8A 0 12.5%,#AC64A5 0 25%,#CE6E20 0 37.5%,#E2231A 0 50%,#2F8FC0 0 62.5%,#C46E78 0 75%,#E9A81E 0 87.5%,#7A4A2E 0)}
+.contact .mail{width:fit-content;max-width:100%;box-sizing:border-box;padding:18px 20px 16px}
+.contact .mail code{font-size:clamp(15px,1.6vw,20px);font-weight:600}
+@media (max-width:620px){.contact .mail{padding:18px}.contact .mail code{font-size:15.5px}}
+.contact .links{gap:10px;margin-top:16px}
+.contact .links a{display:inline-flex;align-items:center;gap:8px;text-decoration:none;color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:99px;padding:9px 16px 9px 12px;font-weight:600;transition:transform .25s cubic-bezier(.3,1.6,.5,1),box-shadow .25s}
+.contact .links a i{width:22px;height:12px;border-radius:99px;background:linear-gradient(90deg,var(--p) 50%,color-mix(in srgb,var(--p) 55%,#fff) 50%)}
+.contact .links a:hover{transform:translateY(-3px) rotate(-1.5deg);box-shadow:0 4px 0 var(--p)}
+.topics li{position:relative;overflow:hidden}
+.topics li::before{content:"";position:absolute;left:0;right:0;top:0;height:6px;background:var(--p)}
+.compose{position:relative;overflow:hidden;transition:box-shadow .3s}
+.compose::before{content:"";position:absolute;left:0;right:0;top:0;height:6px;background:var(--f);transition:background .3s}
+.compose .send,.compose .send:hover{background:var(--f);transition:background .3s,transform .25s cubic-bezier(.3,1.6,.5,1),box-shadow .25s}
+.compose .send:hover{box-shadow:0 5px 0 color-mix(in srgb,var(--f) 60%,#000)}
+.compose .field input:focus,.compose .field textarea:focus{outline-color:var(--f)}
+@media (max-width:900px){.capcluster{position:static;grid-column:1/-1;margin-top:18px;grid-template-columns:repeat(8,34px);gap:6px}.capcluster .cap{width:34px;height:18px}}
+@media (prefers-reduced-motion:reduce){.capcluster .cap,.contact .links a{transition:none}.capcluster .cap.spin{animation:none}.contact .links a:hover{transform:none}}
+
+
+/* ===== Contatti: riga email ===== */
+.reach{display:flex;align-items:center;justify-content:space-between;gap:16px 24px;flex-wrap:wrap;padding:6px 0 22px;margin-top:8px;position:relative}
+.reach::after{content:"";position:absolute;left:0;right:0;bottom:0;height:4px;border-radius:4px;background:linear-gradient(90deg,#3E5C8A 0 12.5%,#AC64A5 0 25%,#CE6E20 0 37.5%,#E2231A 0 50%,#2F8FC0 0 62.5%,#C46E78 0 75%,#E9A81E 0 87.5%,#7A4A2E 0)}
+.reach-mail{font-family:var(--f-display);font-weight:800;font-size:clamp(18px,4.6vw,48px);white-space:nowrap;letter-spacing:-.03em;line-height:1.05;color:var(--ink);text-decoration:none;background-image:linear-gradient(var(--hl,#2F8FC0),var(--hl,#2F8FC0));background-size:0 4px;background-repeat:no-repeat;background-position:0 100%;transition:background-size .4s cubic-bezier(.3,1.2,.5,1),color .2s;padding-bottom:4px}
+.reach-mail .arr{display:inline-block;font-size:.6em;vertical-align:.25em;color:var(--muted);transition:transform .35s cubic-bezier(.3,1.6,.5,1),color .2s}
+.reach-mail:hover,.reach-mail:focus-visible{background-size:100% 4px}
+.reach-mail:hover .arr{transform:translate(4px,-4px) rotate(8deg);color:var(--hl,#2F8FC0)}
+.reach-chips{display:flex;gap:10px;flex-wrap:wrap}
+.rchip,.rchip:hover{display:inline-flex;align-items:center;gap:8px;font:600 15px var(--f-body);color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:99px;padding:9px 16px 9px 12px;text-decoration:none;cursor:pointer;transition:transform .25s cubic-bezier(.3,1.6,.5,1),box-shadow .25s}
+.rchip i{width:22px;height:12px;border-radius:99px;background:linear-gradient(90deg,var(--p) 50%,color-mix(in srgb,var(--p) 55%,#fff) 50%)}
+.rchip:hover{transform:translateY(-3px) rotate(-1.5deg);box-shadow:0 4px 0 var(--p)}
+@media (prefers-reduced-motion:reduce){.reach-mail,.reach-mail .arr,.rchip{transition:none}.rchip:hover,.reach-mail:hover .arr{transform:none}}
+
+
+/* ===== Studio: testo introduttivo ===== */
+.about-lead{font-size:clamp(24px,2.7vw,38px);line-height:1.32}
+.about-lead em{font-style:normal;color:var(--p)}
+.hl{position:relative;color:inherit;text-decoration:none;white-space:normal;background:linear-gradient(transparent 58%,color-mix(in srgb,var(--p) 30%,transparent) 58%,color-mix(in srgb,var(--p) 30%,transparent) 92%,transparent 92%);padding:0 .08em;border-radius:.2em;transition:background .3s,color .2s;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+.hl:hover,.hl:focus-visible{background:linear-gradient(transparent 4%,color-mix(in srgb,var(--p) 30%,transparent) 4%,color-mix(in srgb,var(--p) 30%,transparent) 96%,transparent 96%);color:color-mix(in srgb,var(--p) 70%,#000)}
+.pv{position:absolute;left:50%;bottom:calc(100% + 10px);z-index:30;width:200px;padding:6px 6px 8px;background:var(--surface);border:1px solid var(--line);border-radius:16px;box-shadow:6px 6px 0 var(--p);opacity:0;pointer-events:none;transform:translate(-50%,10px) rotate(-3deg) scale(.85);transform-origin:50% 100%;transition:opacity .2s,transform .35s cubic-bezier(.3,1.6,.5,1)}
+.pv img{display:block;width:100%;height:auto;border-radius:11px}
+.pv b{display:flex;align-items:center;gap:6px;margin-top:6px;font:600 13px var(--f-body);color:var(--ink);letter-spacing:0}
+.pv b::before{content:"";width:18px;height:10px;border-radius:99px;background:linear-gradient(90deg,var(--p) 50%,color-mix(in srgb,var(--p) 55%,#fff) 50%)}
+.hl:hover .pv,.hl:focus-visible .pv{opacity:1;transform:translate(-50%,0) rotate(-3deg) scale(1)}
+.about-side{gap:12px}
+.aside-card{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:16px 18px}
+.aside-big{margin:6px 0 0;font-family:var(--f-display);font-size:22px;font-weight:700;letter-spacing:-.02em;display:flex;align-items:center;gap:10px}
+.pin{width:14px;height:14px;border-radius:50% 50% 50% 0;background:var(--p);transform:rotate(-45deg);flex:none}
+.aside-chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.aside-chips a{display:inline-flex;align-items:center;gap:7px;border:1px solid var(--line);border-radius:99px;padding:6px 12px 6px 9px;font-weight:600;font-size:14px;background:var(--bg);color:var(--ink);text-decoration:none;transition:transform .25s cubic-bezier(.3,1.6,.5,1),box-shadow .25s,background .2s,color .2s}
+.aside-chips a i{transition:transform .35s cubic-bezier(.3,1.6,.5,1)}
+.aside-chips a:hover,.aside-chips a:focus-visible{transform:translateY(-3px) rotate(-2deg);box-shadow:0 4px 0 var(--p)}
+.aside-chips a:hover i{transform:rotate(-14deg)}
+.aside-chips a:active{transform:translateY(1px);box-shadow:0 1px 0 var(--p)}
+@media (prefers-reduced-motion:reduce){.aside-chips a,.aside-chips a i{transition:none}.aside-chips a:hover,.aside-chips a:hover i{transform:none}}
+.aside-chips i{width:18px;height:10px;border-radius:99px;background:linear-gradient(90deg,var(--p) 50%,color-mix(in srgb,var(--p) 55%,#fff) 50%)}
+.aside-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.aside-stats b{display:block;font-family:var(--f-display);font-weight:800;font-size:30px;letter-spacing:-.03em;line-height:1}
+.aside-stats .mono{font-size:11px}
+@media (hover:none){.pv{display:none}}
+@media (prefers-reduced-motion:reduce){.pv,.hl{transition:none}}
+
+footer{display:flex;justify-content:space-between;padding-block:28px;border-top:1px solid var(--line);gap:16px;flex-wrap:wrap}
+
+@media (max-width:900px){
+  .cover.feature .img,.cover.feature .info,.cs-title h1,.cs-title .mono,.cs-intro .lead,.specs,.block-head h2,.block-head p,.about-lead,.about-side{grid-column:1/-1}
+  .cover.feature{row-gap:14px}
+  .cs-title .mono{text-align:left}
+  .concepts,.materials{grid-template-columns:1fr}
+  .covers{grid-template-columns:1fr 1fr}
+}
+@media (max-width:620px){
+  .pair,.covers{grid-template-columns:1fr}
+  .sheets{grid-template-columns:1fr 1fr}
+  .hero{padding-block:36px 48px}
+  section{padding-block:52px}
+  .block{margin-top:52px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="bodyG" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" style="stop-color:var(--obj-hi)"/><stop offset=".55" style="stop-color:var(--obj-mid)"/><stop offset="1" style="stop-color:var(--obj-lo)"/>
+    </linearGradient>
+    <radialGradient id="shadow" cx=".5" cy=".5" r=".5">
+      <stop offset="0" style="stop-color:var(--obj-dark);stop-opacity:.35"/><stop offset="1" style="stop-color:var(--obj-dark);stop-opacity:0"/>
+    </radialGradient>
+    <symbol id="ill-leva" viewBox="0 0 400 300">
+      <ellipse cx="190" cy="252" rx="80" ry="9" fill="url(#shadow)"/>
+      <rect x="140" y="236" width="100" height="14" rx="7" fill="var(--obj-dark)"/>
+      <rect x="185" y="110" width="10" height="130" rx="5" fill="url(#bodyG)"/>
+      <rect x="185" y="104" width="120" height="10" rx="5" fill="url(#bodyG)" transform="rotate(-18 190 109)"/>
+      <path d="M268 64 h64 a6 6 0 0 1 6 6 l-14 40 h-48 l-14 -40 a6 6 0 0 1 6 -6z" fill="url(#bodyG)" transform="rotate(12 300 86)"/>
+      <ellipse cx="296" cy="114" rx="22" ry="5" fill="var(--accent)" opacity=".85" transform="rotate(12 300 86)"/>
+      <circle cx="190" cy="109" r="9" fill="var(--obj-dark)"/>
+    </symbol>
+    <symbol id="ill-brace" viewBox="0 0 400 300">
+      <ellipse cx="200" cy="246" rx="96" ry="11" fill="url(#shadow)"/>
+      <rect x="128" y="226" width="144" height="16" rx="6" fill="var(--obj-dark)"/>
+      <path d="M146 226 L160 96 Q200 82 240 96 L254 226 Z" fill="url(#bodyG)"/>
+      <path d="M160 96 Q200 82 240 96 L236 110 Q200 98 164 110Z" fill="var(--obj-lo)"/>
+      <path d="M248 124 q46 10 40 54 q-4 26 -34 30" fill="none" stroke="var(--obj-dark)" stroke-width="12" stroke-linecap="round"/>
+      <path d="M152 120 L126 112 L132 104 L158 108Z" fill="url(#bodyG)"/>
+      <rect x="190" y="200" width="20" height="6" rx="3" fill="var(--accent)"/>
+    </symbol>
+    <symbol id="ill-sosta" viewBox="0 0 400 300">
+      <ellipse cx="200" cy="254" rx="104" ry="10" fill="url(#shadow)"/>
+      <g stroke="var(--obj-dark)" stroke-width="9" stroke-linecap="round">
+        <line x1="138" y1="250" x2="152" y2="170"/><line x1="262" y1="250" x2="248" y2="170"/>
+        <line x1="168" y1="250" x2="172" y2="176"/><line x1="232" y1="250" x2="228" y2="176"/>
+      </g>
+      <path d="M140 160 h120 a8 8 0 0 1 8 8 v6 a8 8 0 0 1 -8 8 h-120 a8 8 0 0 1 -8 -8 v-6 a8 8 0 0 1 8 -8z" fill="url(#bodyG)"/>
+      <path d="M150 160 Q148 92 170 70 h60 q22 22 20 90 z" fill="url(#bodyG)"/>
+      <rect x="185" y="90" width="30" height="5" rx="2.5" fill="var(--accent)"/>
+    </symbol>
+  </defs>
+</svg>
+
+<div class="wrap">
+<nav>
+  <a class="logo" href="#home">MARIO DE MICHELE</a>
+  <ul>
+    <li><a href="#progetti" style="--c:#3E5C8A">Progetti</a></li>
+    <li><a href="#studio" style="--c:#2E9E7A">About</a></li>
+    <li><a href="#contatti" style="--c:#5A4FCF">Contatti</a></li>
+  </ul>
+</nav>
+
+<!-- ============ HOME ============ -->
+<main data-view="home" id="home">
+  <header class="hero">
+    <div class="mono">Portfolio 2026 · Mario De Michele</div>
+    <h1>Interior <span>&amp; Product Design</span></h1>
+    <p>Progetto spazi e oggetti a misura di persona: rifugi, case piccole, personaggi da collezione. Dal concept alla tavola, fino al render.</p>
+    <nav class="shelf" aria-label="La collezione dei progetti">
+      <a href="#cantuccio" style="--p:#3E5C8A"><i></i><span>01</span><b>Il Cantuccio</b></a>
+      <a href="#ominous" style="--p:#AC64A5"><i></i><span>02</span><b>Ominous</b></a>
+      <a href="#twalk" style="--p:#CE6E20"><i></i><span>03</span><b>T-walk</b></a>
+      <a href="#oriente" style="--p:#E2231A"><i></i><span>04</span><b>Museu do Oriente</b></a>
+      <a class="inv" href="#eco" style="--p:#2F8FC0"><i></i><span>05</span><b>Eco not Ego</b></a>
+      <a href="#gladiatori" style="--p:#C46E78"><i></i><span>06</span><b>Gladiatori</b></a>
+      <a href="#bob" style="--p:#E9A81E"><i></i><span>07</span><b>Bob the Blob</b></a>
+      <a href="#vassoi" style="--p:#7A4A2E"><i></i><span>08</span><b>Coffee Trays</b></a>
+    </nav>
+    <div class="hero-meta">
+      <div><span class="mono">Base</span><b>Caserta, IT</b></div>
+      <div><span class="mono">Focus</span><b>Spazi intimi, arredo, prodotto</b></div>
+      <div><span class="mono">Progetti</span><b>8</b></div>
+    </div>
+    <div class="home-links">
+      <a href="#progetti" style="--n:#3E5C8A"><span class="mono">Esplora</span><b>Progetti</b><i>→</i></a>
+      <a href="#studio" style="--n:#2E9E7A"><span class="mono">Chi sono</span><b>About</b><i>→</i></a>
+      <a href="#contatti" style="--n:#5A4FCF"><span class="mono">Scrivimi</span><b>Contatti</b><i>→</i></a>
+    </div>
+  </header>
+  <section class="reel" aria-label="Copertine dei progetti">
+    <div class="reel-track"><a href="#cantuccio" style="--p:#3E5C8A"><img src="img/home/cantuccio.jpg" alt="Il Cantuccio" width="853" height="480" loading="lazy"><span class="rl"><i></i><b>01</b>Il Cantuccio</span></a><a href="#ominous" style="--p:#AC64A5"><img src="img/home/ominous.jpg" alt="Ominous" width="851" height="480" loading="lazy"><span class="rl"><i></i><b>02</b>Ominous</span></a><a href="#twalk" style="--p:#CE6E20"><img src="img/home/twalk.jpg" alt="T-walk" width="411" height="480" loading="lazy"><span class="rl"><i></i><b>03</b>T-walk</span></a><a href="#oriente" style="--p:#E2231A"><img src="img/home/oriente.jpg" alt="Museu do Oriente" width="853" height="480" loading="lazy"><span class="rl"><i></i><b>04</b>Museu do Oriente</span></a><a href="#eco" style="--p:#2F8FC0"><img src="img/home/eco.jpg" alt="Eco not Ego" width="339" height="480" loading="lazy"><span class="rl"><i></i><b>05</b>Eco not Ego</span></a><a href="#gladiatori" style="--p:#C46E78"><img src="img/home/gladiatori.jpg" alt="Gladiatori" width="1026" height="480" loading="lazy"><span class="rl"><i></i><b>06</b>Gladiatori</span></a><a href="#bob" style="--p:#E9A81E"><img src="img/home/bob.jpg" alt="Bob the Blob" width="554" height="480" loading="lazy"><span class="rl"><i></i><b>07</b>Bob the Blob</span></a><a href="#vassoi" style="--p:#7A4A2E"><img src="img/home/vassoi.jpg" alt="Coffee Trays" width="1018" height="480" loading="lazy"><span class="rl"><i></i><b>08</b>Coffee Trays</span></a><a href="#cantuccio" style="--p:#3E5C8A" aria-hidden="true" tabindex="-1"><img src="img/home/cantuccio.jpg" alt="" width="853" height="480" loading="lazy"><span class="rl"><i></i><b>01</b>Il Cantuccio</span></a><a href="#ominous" style="--p:#AC64A5" aria-hidden="true" tabindex="-1"><img src="img/home/ominous.jpg" alt="" width="851" height="480" loading="lazy"><span class="rl"><i></i><b>02</b>Ominous</span></a><a href="#twalk" style="--p:#CE6E20" aria-hidden="true" tabindex="-1"><img src="img/home/twalk.jpg" alt="" width="411" height="480" loading="lazy"><span class="rl"><i></i><b>03</b>T-walk</span></a><a href="#oriente" style="--p:#E2231A" aria-hidden="true" tabindex="-1"><img src="img/home/oriente.jpg" alt="" width="853" height="480" loading="lazy"><span class="rl"><i></i><b>04</b>Museu do Oriente</span></a><a href="#eco" style="--p:#2F8FC0" aria-hidden="true" tabindex="-1"><img src="img/home/eco.jpg" alt="" width="339" height="480" loading="lazy"><span class="rl"><i></i><b>05</b>Eco not Ego</span></a><a href="#gladiatori" style="--p:#C46E78" aria-hidden="true" tabindex="-1"><img src="img/home/gladiatori.jpg" alt="" width="1026" height="480" loading="lazy"><span class="rl"><i></i><b>06</b>Gladiatori</span></a><a href="#bob" style="--p:#E9A81E" aria-hidden="true" tabindex="-1"><img src="img/home/bob.jpg" alt="" width="554" height="480" loading="lazy"><span class="rl"><i></i><b>07</b>Bob the Blob</span></a><a href="#vassoi" style="--p:#7A4A2E" aria-hidden="true" tabindex="-1"><img src="img/home/vassoi.jpg" alt="" width="1018" height="480" loading="lazy"><span class="rl"><i></i><b>08</b>Coffee Trays</span></a></div>
+  </section>
+
+
+
+</main>
+
+<!-- ============ IL CANTUCCIO ============ -->
+<main data-view="cantuccio" id="cantuccio" class="project" hidden style="--p:#3E5C8A">
+  <div class="stickers" aria-hidden="true"><img class="stk" src="img/stickers/can-axo1.png" alt="" data-id="cantuccio-can-axo1" data-anchor="title" data-x="0.6" data-dy="-20" style="--rot:-8deg;--w:150px" width="420" height="370" draggable="false" title="Il volume del rifugio in assonometria · trascinami"><img class="stk" src="img/stickers/can-axo2.png" alt="" data-id="cantuccio-can-axo2" data-anchor="b2" data-x="0.32" data-dy="-50" style="--rot:7deg;--w:130px" width="399" height="420" draggable="false" title="Il cubo di vetro in assonometria · trascinami"></div>
+  <a class="back" href="#progetti">← Tutti i progetti</a>
+  <div class="cs-title">
+    <h1>Il Cantuccio <span>Una dimora dell'anima nella roccia</span></h1>
+    <span class="mono">01 · Interior design · Progetto accademico</span>
+  </div>
+
+  <figure style="margin:0;display:grid;gap:10px">
+    <div class="wide"><img src="img/notte.jpg" alt="Il Cantuccio di notte: la cella in vetro illuminata, incastonata nella scogliera sopra il mare, con la Via Lattea" width="1800" height="1013"></div>
+    <figcaption><span class="mono">Vista notturna</span><span class="mono">Scogliere di Moher, IE</span></figcaption>
+  </figure>
+
+
+  <div class="cs-intro">
+    <div class="lead">
+      <p>Un rifugio per una sola persona, scavato per metà nella scogliera. Un luogo <em>lontano dalla quotidianità</em> dove isolarsi dal mondo e passare del tempo in serenità.</p>
+      <p>La struttura è semi-ipogea: la parte interna, rivestita in marmo, è incastrata nella roccia; quella esposta è un telaio in acciaio e vetro, sorretto da un intreccio di lastre in vetro strutturale. Si arriva dall'alto, scendendo gradini scavati nella pietra e protetti da una copertura che riprende lo stesso linguaggio.</p>
+      <p>Il progetto offre un punto di vista nuovo sulla scogliera e sul mare, senza alterare il paesaggio in cui si inserisce.</p>
+    </div>
+    <dl class="specs">
+      <dt>Luogo</dt><dd>Scogliere di Moher, costa occidentale d'Irlanda</dd>
+      <dt>Tipologia</dt><dd>Rifugio semi-ipogeo</dd>
+      <dt>Utenti</dt><dd>1 persona</dd>
+      <dt>Materiali</dt><dd>Acciaio, marmo, vetro strutturale</dd>
+      <dt>Elaborati</dt><dd>Tavola A1, piante funzionali, schizzi assonometrici, render</dd>
+    </dl>
+  </div>
+
+  <div class="block">
+    <div class="block-head">
+      <h2>Concept</h2>
+      <p>Tre idee di spazio guidano il progetto: il passaggio, il raccoglimento e il calore di un luogo appartato.</p>
+    </div>
+    <div class="concepts">
+      <div class="concept">
+        <span class="mono">Riferimento 1</span>
+        <h3>Lo spazio della soglia</h3>
+        <p>La soglia sta tra due realtà: è confine e passaggio insieme. Non ha bisogno di limiti netti, perché gli spazi che collega sono quelli che lei stessa apre.</p>
+        <blockquote>La soglia delimita e apre.</blockquote>
+      </div>
+      <div class="concept">
+        <span class="mono">Riferimento 2</span>
+        <h3>Il cantuccio</h3>
+        <p>Una sorta di cofanetto dove alimentare il bisogno di segretezza e intimità. Uno spazio di solitudine e raccoglimento, pensato per il benessere interiore.</p>
+      </div>
+      <div class="concept">
+        <span class="mono">Riferimento 3</span>
+        <h3>L'inglenook</h3>
+        <p>L'incavo accanto al camino, nato come focolare parzialmente chiuso e diventato luogo di calore intimo. Qui la seduta a bolla ne prende il ruolo.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="block">
+    <div class="block-head">
+      <h2>L'esperienza</h2>
+      <p>La discesa nella roccia porta a una porta di luce. Dentro, il marmo verde richiama il colore della pietra viva, mentre il vetro lascia entrare la scogliera.</p>
+    </div>
+    <div class="pair">
+      <figure>
+        <div><img src="img/scala.jpg" alt="La scala scavata nella roccia che scende verso la porta illuminata" width="1400" height="788" loading="lazy"></div>
+        <figcaption><span class="mono">La discesa</span><span class="mono">Gradini scavati nella roccia</span></figcaption>
+      </figure>
+      <figure>
+        <div><img src="img/interno.jpg" style="object-position:30% 50%" alt="Interno: una persona al computer sulla seduta a bolla, pareti in marmo verde e lampade sospese cromate" width="1400" height="788" loading="lazy"></div>
+        <figcaption><span class="mono">L'interno</span><span class="mono">Marmo verde, seduta a bolla</span></figcaption>
+      </figure>
+    </div>
+    <figure style="margin:24px 0 0;display:grid;gap:10px">
+      <div class="wide"><img src="img/giorno.jpg" alt="Il Cantuccio di giorno: il volume in acciaio e vetro sporge dalla parete rocciosa sopra il mare" width="1800" height="1013" loading="lazy"></div>
+      <figcaption><span class="mono">Vista diurna</span><span class="mono">La cella sporge dalla scogliera</span></figcaption>
+    </figure>
+  </div>
+
+  <div class="block">
+    <div class="block-head">
+      <h2>Distribuzione</h2>
+      <p>Pensato per una sola persona, lo spazio non ha distanze sociali da organizzare: le piante leggono percorsi, privacy e uso nell'arco della giornata.</p>
+    </div>
+    <div class="sheets">
+      <figure class="sheet">
+        <div><img src="img/pianta-percorsi.png" alt="Pianta con ingombro arredi in rosa e zona di passaggio in giallo" loading="lazy"></div>
+        <figcaption><span class="mono">Pianta 01 · Percorsi</span>
+          <span class="key"><span><i style="background:#ee77c4"></i>Ingombro arredi</span><span><i style="background:#f9ef7f"></i>Zona di passaggio</span></span></figcaption>
+      </figure>
+      <figure class="sheet">
+        <div><img src="img/pianta-privato.png" alt="Pianta con lo spazio privato evidenziato in blu" loading="lazy"></div>
+        <figcaption><span class="mono">Pianta 02 · Privacy</span>
+          <span class="key"><span><i style="background:#93a7d3"></i>Spazio privato</span></span></figcaption>
+      </figure>
+      <figure class="sheet">
+        <div><img src="img/pianta-24h.png" alt="Pianta con la zona utilizzabile 24 ore evidenziata in salmone" loading="lazy"></div>
+        <figcaption><span class="mono">Pianta 03 · Uso</span>
+          <span class="key"><span><i style="background:#f2b39b"></i>Zona 24h</span></span></figcaption>
+      </figure>
+    </div>
+  </div>
+
+  <div class="block">
+    <div class="block-head">
+      <h2>Volumi</h2>
+      <p>Schizzi assonometrici del telaio: la cella in vetro, la seduta a bolla e l'intreccio di lastre strutturali che la sorregge dal basso.</p>
+    </div>
+    <div class="sheets">
+      <figure class="sheet"><div><img src="img/axo-1.png" alt="Schizzo assonometrico frontale con la seduta a bolla" loading="lazy"></div><figcaption><span class="mono">Schizzo A · Fronte</span></figcaption></figure>
+      <figure class="sheet"><div><img src="img/axo-2.png" alt="Schizzo assonometrico dal lato dell'ingresso" loading="lazy"></div><figcaption><span class="mono">Schizzo B · Ingresso</span></figcaption></figure>
+      <figure class="sheet"><div><img src="img/axo-3.png" alt="Schizzo assonometrico del telaio con supporti in vetro strutturale" loading="lazy"></div><figcaption><span class="mono">Schizzo C · Telaio</span></figcaption></figure>
+    </div>
+  </div>
+
+  <div class="block">
+    <div class="block-head">
+      <h2>Materiali</h2>
+      <p>L'isolamento interiore tradotto in costruzione con soli tre materiali.</p>
+    </div>
+    <div class="materials">
+      <div class="mat">
+        <div class="swatch sw-marmo" role="img" aria-label="Campione di marmo verde"></div>
+        <span class="mono">Pareti incastonate</span>
+        <h3>Marmo</h3>
+        <p>Riveste le pareti dentro la roccia. Il tono è vicino a quello della pietra viva visibile dall'esterno, così il rivestimento rafforza il carattere naturale della parete.</p>
+      </div>
+      <div class="mat">
+        <div class="swatch sw-acciaio" role="img" aria-label="Campione di acciaio"></div>
+        <span class="mono">Telaio e montanti</span>
+        <h3>Acciaio</h3>
+        <p>Incornicia i pannelli in vetro della cella e della copertura e collega le lastre strutturali. Scelto per l'alta resistenza a fronte di un peso contenuto.</p>
+      </div>
+      <div class="mat">
+        <div class="swatch sw-vetro" role="img" aria-label="Campione di vetro"></div>
+        <span class="mono">Involucro e sostegni</span>
+        <h3>Vetro strutturale</h3>
+        <p>Il protagonista del progetto. Trasparente ma resistente agli agenti atmosferici, non deturpa il paesaggio e regala una vista aperta sul mare.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="board-link">
+    <span><span class="mono">Tavola completa</span><br>Tavola 1 · formato A1 · PDF 1,6 MB</span>
+    <a href="img/tavola-cantuccio.pdf" target="_blank" rel="noopener">Apri la tavola</a>
+  </div>
+
+  <a class="next" href="#ominous" style="--n:#AC64A5"><span><span class="mono">Progetto successivo</span><b>Ominous</b></span><span class="more">→</span></a>
+</main>
+
+<!-- ============ OMINOUS ============ -->
+<main data-view="ominous" id="ominous" class="project" hidden style="--p:#AC64A5">
+  <div class="stickers" aria-hidden="true"><img class="stk" src="img/stickers/om-divano.png" alt="" data-id="ominous-om-divano" data-anchor="title" data-x="0.6" data-dy="-10" style="--rot:-6deg;--w:190px" width="420" height="326" draggable="false" title="Il divano a bolle · trascinami"></div>
+  <a class="back" href="#progetti">← Tutti i progetti</a>
+  <div class="cs-title">
+    <h1>Ominous <span>Una mini house per studenti</span></h1>
+    <span class="mono">02 · Interior design · A.A. 2024/25</span>
+  </div>
+
+  <figure style="margin:0;display:grid;gap:10px">
+    <a class="wide" href="img/ominous/render-3-hd.jpg" target="_blank" rel="noopener" style="display:block"><img src="img/ominous/cover-ominous-page.jpg" alt="Ominous: il letto sul soppalco con cuscini verdi e rosa davanti alla libreria in legno con TV" width="2560" height="1441" style="aspect-ratio:auto"></a>
+    <figcaption><span class="mono">Render completo · 3603 × 2028 px</span><a class="mono" href="img/ominous/render-3-hd.jpg" target="_blank" rel="noopener">Apri in alta risoluzione ↗</a></figcaption>
+  </figure>
+
+
+  <div class="cs-intro">
+    <div class="lead">
+      <p>Una casa di 25 m² che mette insieme tutto quello che serve a uno studente, con <em>un carattere che non passa inosservato</em>.</p>
+      <p>Ominous nasce dal bisogno di abitazioni accessibili e sostenibili per le nuove generazioni. Lo spazio è compatto ma non rinuncia al comfort: una zona relax con un divano progettato su misura, una cucina, un bagno e una zona notte su un soppalco a vista.</p>
+      <p>Il contrasto tra colori accesi e toni di bianco e nero crea un'atmosfera volutamente spaesante. È un modo per raccontare il senso di estraneità che molti giovani provano verso il mondo che li circonda.</p>
+    </div>
+    <dl class="specs">
+      <dt>Tipologia</dt><dd>Mini house, abitazione per studenti</dd>
+      <dt>Superficie</dt><dd>25 m²</dd>
+      <dt>Utenti</dt><dd>Studenti tra 18 e 35 anni</dd>
+      <dt>Corso</dt><dd>Interior design, CdL Design per l'Innovazione, curriculum Product Eco-design</dd>
+      <dt>Ateneo</dt><dd>Università della Campania Luigi Vanvitelli</dd>
+      <dt>Docenti</dt><dd>Arch. PhD Simona Ottieri, tutor Arch. PhD Luigi Arcopinto</dd>
+    </dl>
+  </div>
+
+  <div class="block">
+    <div class="block-head">
+      <h2>Metaprogetto</h2>
+      <p>Chi abita la casa, cosa deve trasmettere e quali progetti hanno fatto da riferimento.</p>
+    </div>
+    <div class="idk">
+      <div class="concept">
+        <span class="mono">Committenza</span>
+        <h3>Lo spazio estraneo</h3>
+        <p>Una casa per studenti che riprende la logica dell'urbanistica moderna, ma con interni che si distinguono dal grigio della città.</p>
+      </div>
+      <div class="concept">
+        <span class="mono">Funzioni</span>
+        <h3>Piccoli spazi, grandi comfort</h3>
+        <p>Tutto ciò che serve alla vita quotidiana in pochi metri: il letto sale sul soppalco e libera la superficie per vivere la casa.</p>
+      </div>
+      <div class="concept">
+        <span class="mono">Stile</span>
+        <h3>Design estroso per una vita estrosa</h3>
+        <p>Colori sgargianti e scelte controcorrente fanno della casa un'estensione della personalità eccentrica di chi la abita.</p>
+      </div>
+    </div>
+    <div class="keywords" aria-label="Parole chiave"><span>/Personalità</span><span>/Ispirazione</span><span>/Estraneazione</span></div>
+
+    <div class="refs">
+      <div class="concept">
+        <span class="mono">Progetto d'autore</span>
+        <h3>Paper Log House · Shigeru Ban</h3>
+        <p>Rifugi d'emergenza nati dopo il terremoto di Kobe del 1995: pareti in tubi di carta riciclata, fondazioni in casse riempite di sabbia, montaggio a secco anche senza manodopera specializzata.</p>
+      </div>
+      <div class="concept">
+        <span class="mono">Caso studio</span>
+        <h3>OPod Tube House · James Law</h3>
+        <p>Un mini appartamento ricavato da un tubo fognario in cemento di 2,5 m di diametro: soggiorno, cucina e bagno in poco più di 9 m², impilabile per creare edifici modulari.</p>
+      </div>
+      <div class="concept">
+        <span class="mono">Caso studio</span>
+        <h3>Richard and Cassie's Teal Tiny Home</h3>
+        <p>Una tiny house dai colori decisi, dove il legno e le tinte sature danno identità a uno spazio molto piccolo.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="block">
+    <div class="block-head">
+      <h2>Moodboard</h2>
+      <p>Mosaici pastello, interni colorati, legno e grandi superfici in bianco e nero: le atmosfere da cui è partito il progetto.</p>
+    </div>
+    <div class="duo">
+      <figure><div class="paper"><img src="img/ominous/moodboard.jpg" alt="Moodboard con mosaico di piastrelle pastello, tiny house verde acqua e interni colorati" loading="lazy"></div></figure>
+      <figure><div class="paper"><img src="img/ominous/vista-alto.jpg" alt="Vista dall'alto della casa: soppalco con letto, bagno, cucina e tavolo giallo su pavimento a motivi bianchi e neri" loading="lazy"></div>
+        <figcaption><span class="mono">Vista dall'alto</span><span class="mono">Pavimento a motivi bianchi e neri</span></figcaption></figure>
+    </div>
+  </div>
+
+  <div class="block">
+    <div class="block-head">
+      <h2>Pianta e sezioni</h2>
+      <p>Un quadrato compatto organizzato attorno alla parete attrezzata in legno. Quattro sezioni in scala 1:50 leggono la casa su ogni lato.</p>
+    </div>
+    <figure class="sheet" style="margin-bottom:24px"><div style="aspect-ratio:auto"><img style="width:100%;max-height:none" src="img/ominous/pianta.jpg" alt="Pianta quotata e prospetto della mini house in scala 1:50" loading="lazy"></div>
+      <figcaption><span class="mono">Pianta e prospetto · Scala 1:50</span></figcaption></figure>
+    <div class="sections">
+      <figure><img src="img/ominous/sezione-a.jpg" alt="Sezione A-A': divano, mobili in legno sotto il soppalco e bancone con sgabelli" loading="lazy"><figcaption><span class="mono">Sezione A–A'</span><span class="mono">Divano e bancone</span></figcaption></figure>
+      <figure><img src="img/ominous/sezione-b.jpg" alt="Sezione B-B': parete libreria con TV, scala al soppalco e il divano Big Bubbles" loading="lazy"><figcaption><span class="mono">Sezione B–B'</span><span class="mono">Parete attrezzata</span></figcaption></figure>
+      <figure><img src="img/ominous/sezione-c.jpg" alt="Sezione C-C': bagno in cemento, frigorifero verde, pensili blu e dipinto" loading="lazy"><figcaption><span class="mono">Sezione C–C'</span><span class="mono">Bagno e cucina</span></figcaption></figure>
+      <figure><img src="img/ominous/sezione-d.jpg" alt="Sezione D-D': divano viola, scala e soppalco" loading="lazy"><figcaption><span class="mono">Sezione D–D'</span><span class="mono">Soppalco</span></figcaption></figure>
+    </div>
+  </div>
+
+  <div class="block">
+    <div class="block-head">
+      <h2>Esploso</h2>
+      <p>Gli arredi su misura scomposti: parete libreria, soppalco con scala a cassetti, cucina e bagno.</p>
+    </div>
+    <div class="sheets" style="grid-template-columns:1fr 1fr">
+      <figure class="sheet"><div style="aspect-ratio:auto"><img style="width:100%;max-height:none" src="img/ominous/esploso-1.jpg" alt="Esploso assonometrico degli arredi, primo punto di vista" loading="lazy"></div><figcaption><span class="mono">Esploso · Vista 1</span></figcaption></figure>
+      <figure class="sheet"><div style="aspect-ratio:auto"><img style="width:100%;max-height:none" src="img/ominous/esploso-2.jpg" alt="Esploso assonometrico degli arredi, secondo punto di vista" loading="lazy"></div><figcaption><span class="mono">Esploso · Vista 2</span></figcaption></figure>
+    </div>
+  </div>
+
+  <div class="block">
+    <div class="block-head">
+      <h2>Palette e materiali</h2>
+      <p>Azzurro, verde, fucsia, rosa e giallo saturano lo spazio di luce e vivacità. Marmi e ceramiche in bianco e nero fanno da contrappunto.</p>
+    </div>
+    <div class="palette" style="margin-bottom:40px">
+      <div class="chipc"><i style="background:#6dc4ca"></i><code>#6DC4CA</code></div>
+      <div class="chipc"><i style="background:#69b42f"></i><code>#69B42F</code></div>
+      <div class="chipc"><i style="background:#ac64a5"></i><code>#AC64A5</code></div>
+      <div class="chipc"><i style="background:#d7a1c9"></i><code>#D7A1C9</code></div>
+      <div class="chipc"><i style="background:#f0ec8e"></i><code>#F0EC8E</code></div>
+    </div>
+    <div class="duo">
+      <figure><div class="paper"><img src="img/ominous/materiali.jpg" alt="Scheda materiali con campioni di marmo, ceramica, legno, acciaio e resina" loading="lazy"></div></figure>
+      <ul class="mlist">
+        <li>Resina epossidica opaca <span>Finiture</span></li>
+        <li>Marmo nero <span>Superfici</span></li>
+        <li>Marmo bianco <span>Superfici</span></li>
+        <li>Ceramica nera <span>Bagno</span></li>
+        <li>Legno di acero rosa <span>Arredi</span></li>
+        <li>Acciaio inox <span>Dettagli</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="block">
+    <div class="block-head">
+      <h2>Big Bubbles</h2>
+      <p>Il divano disegnato per la casa. Il nome richiama le gomme da masticare dei primi anni Duemila e le loro bolle; le forme invece guardano alla sperimentazione contemporanea.</p>
+    </div>
+    <figure class="sheet"><div style="aspect-ratio:auto"><img style="width:100%;max-height:none" src="img/ominous/big-bubbles.jpg" alt="Big Bubbles: modello 3D del divano a nuvola viola e azzurro con viste quotate" loading="lazy"></div>
+      <figcaption><span class="mono">Viste quotate · 183 · 87 · 74 cm</span></figcaption></figure>
+    <p style="max-width:62ch;color:var(--muted);margin:20px 0 0">Si mimetizza in un ambiente pieno di colore e allo stesso tempo ne è il punto di contrasto, per le sue geometrie morbide e la sua palette.</p>
+  </div>
+
+  <div class="block">
+    <div class="block-head">
+      <h2>Render</h2>
+      <p>La casa abitata: il letto sul soppalco, la libreria che diventa parete, il tavolo giallo sotto l'oblò.</p>
+    </div>
+    <div class="gallery">
+      <figure><img src="img/ominous/render-3.jpg" alt="Letto sul soppalco con cuscini verdi e rosa davanti alla libreria" loading="lazy"></figure>
+      <figure><img src="img/ominous/render-2.jpg" alt="Parete libreria in legno con TV e oggetti colorati" loading="lazy"></figure>
+      <figure><img src="img/ominous/render-1.jpg" alt="Il divano Big Bubbles e la scala a cassetti verso il soppalco" loading="lazy"></figure>
+      <figure><img src="img/ominous/render-6.jpg" alt="Tavolo giallo con portatile sotto l'oblò, divano viola sullo sfondo" loading="lazy"></figure>
+      <figure><img src="img/ominous/render-7.jpg" alt="Libreria laterale, grande dipinto e tavolo" loading="lazy"></figure>
+      <figure><img src="img/ominous/render-5.jpg" alt="Libreria con TV, letto sul soppalco, tavolo giallo e dipinto a parete" loading="lazy"></figure>
+    </div>
+  </div>
+
+  <div class="docs">
+    <div class="board-link">
+      <span><span class="mono">Tavola</span><br>Formato A1 · PDF 0,6 MB</span>
+      <a href="img/ominous/tavola-ominous.pdf" target="_blank" rel="noopener">Apri la tavola</a>
+    </div>
+    <div class="board-link">
+      <span><span class="mono">Book di progetto</span><br>Formato A3 · 50 pagine · PDF 3,5 MB</span>
+      <a href="img/ominous/book-ominous.pdf" target="_blank" rel="noopener">Apri il book</a>
+    </div>
+  </div>
+
+  <a class="next" href="#twalk" style="--n:#CE6E20"><span><span class="mono">Progetto successivo</span><b>T-walk</b></span><span class="more">→</span></a>
+</main>
+
+<!-- ============ T-WALK ============ -->
+<main data-view="twalk" id="twalk" class="project" hidden style="--p:#CE6E20">
+  <div class="stickers" aria-hidden="true"><img class="stk" src="img/stickers/tw-fronte.png" alt="" data-id="twalk-tw-fronte" data-anchor="title" data-x="0.63" data-dy="-40" style="--rot:8deg;--w:110px" width="254" height="420" draggable="false" title="T-walk visto di fronte · trascinami"><img class="stk" src="img/stickers/tw-schizzo.png" alt="" data-id="twalk-tw-schizzo" data-anchor="b2" data-x="0.3" data-dy="-60" style="--rot:-6deg;--w:170px" width="420" height="418" draggable="false" title="Schizzo di T-walk · trascinami"></div>
+  <a class="back" href="#progetti">← Tutti i progetti</a>
+  <div class="cs-title">
+    <h1>T-walk <span>By my side, un robot che accompagna</span></h1>
+    <span class="mono">03 · Industrial design · A.A. 2021/22</span>
+  </div>
+
+  <div class="split">
+    <figure>
+      <img src="img/twalk/cover-twalk.jpg" alt="T-walk in uso: un uomo seduto sul robot, vista laterale con ruote arancioni, su una terrazza urbana" width="1497" height="1749">
+      <figcaption><span class="mono">Render in contesto</span><span class="mono">Vista laterale</span></figcaption>
+    </figure>
+    <div class="side">
+      <div class="lead">
+      <p>Un robot di trasporto che <em>porta la spesa e, se serve, anche te</em>. Pensato per chi ha tra i 50 e i 74 anni e vuole restare autonomo.</p>
+      <p>T-walk si muove in modo semi-autonomo nei supermercati, nei centri commerciali, nei parchi e sulle piste ciclabili. Si imposta il percorso da un dispositivo wireless; quando serve si controlla in tempo reale dal telefono o si guida con una leva manuale.</p>
+      <p>Ha una seduta intercambiabile che aiuta ad alzarsi grazie a un braccio meccanico, un vano refrigerato dietro lo schienale e una piattaforma che, tolti seduta e vano, porta carichi pesanti. Quattro ruote motorizzate, sensori e ricarica elettrica.</p>
+    </div>
+      <dl class="specs">
+      <dt>Tipologia</dt><dd>Robot di trasporto semi-autonomo</dd>
+      <dt>Target</dt><dd>Senior tra 50 e 74 anni, estendibile con sedute diverse</dd>
+      <dt>Contesti</dt><dd>Supermercati, centri commerciali, parchi, piste ciclabili</dd>
+      <dt>Materiali</dt><dd>Alluminio, Moplen, PVC</dd>
+      <dt>Corso</dt><dd>Laboratorio di Industrial Design II, CdL Design e Comunicazione, Università Vanvitelli</dd>
+      <dt>Docenti</dt><dd>Prof. Francesco Fittipaldi, Prof.ssa Rosanna Veneziano, tutor Dott.ssa Michela Carlomagno</dd>
+      <dt>Gruppo</dt><dd>Mario De Michele, Sabrina Alluzzi, Immacolata Borrelli, Simona Crispino, Giuseppa Esposito, Mariafrancesca Romano</dd>
+    </dl>
+    </div>
+  </div>
+
+  <div class="block">
+    <div class="block-head">
+      <h2>Metaprogetto</h2>
+      <p>Muoversi in città con oggetti e persone, senza pesi addosso e con mezzi a basse emissioni.</p>
+    </div>
+    <div class="idk">
+      <div class="concept">
+        <span class="mono">Problema</span>
+        <h3>Perdere l'autonomia</h3>
+        <p>Per molti anziani la paura più grande è non riuscire più a muoversi da soli. Trasportare spesa e borse in città diventa un ostacolo quotidiano.</p>
+      </div>
+      <div class="concept">
+        <span class="mono">Obiettivo</span>
+        <h3>Mobilità sostenibile e digitale</h3>
+        <p>Ottimizzare il trasporto di oggetti e persone con mezzi a basse emissioni, unendo mobilità sostenibile e tecnologie digitali.</p>
+      </div>
+      <div class="concept">
+        <span class="mono">Proposta</span>
+        <h3>Un robot che pianifica il percorso</h3>
+        <p>Posizionamento e navigazione semi-autonoma: il robot evita persone e ostacoli e porta i carichi al posto dell'utente.</p>
+      </div>
+    </div>
+    <div class="keywords" aria-label="Parole chiave" style="--k1:#ce6e20"><span style="color:#ce6e20">/Cooperativo</span><span style="color:#777a47">/Ibrido</span><span style="color:var(--muted)">/Semi-autonomo</span></div>
+
+    <div class="duo" style="margin-top:40px">
+      <figure><div class="paper"><img style="width:100%" src="img/twalk/mindmap.jpg" alt="Mappa mentale attorno al tema transportation robot" loading="lazy"></div>
+        <figcaption><span class="mono">Mind map</span></figcaption></figure>
+      <div class="concept" style="border-top:0;padding-top:0">
+        <span class="mono">Casi studio</span>
+        <ul class="mlist">
+          <li>Trike Takeme <span>Chan, Huen, Mak · 2018</span></li>
+          <li>Delivery Droid <span>Marathon · 2017</span></li>
+          <li>Robot multifunzionale W3 <span>Keenon Robotics · 2021</span></li>
+          <li>Folding bike for couriers <span>Anton Kosteckii</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="block">
+    <div class="block-head">
+      <h2>Scenario</h2>
+      <p>Una moodboard tra spesa, sedute da gaming e ruote motorizzate, e gli schemi d'uso: salire sulla piattaforma, regolare la seduta, farsi accompagnare, riporre la spesa nel vano refrigerato.</p>
+    </div>
+    <div class="pair">
+      <figure><div class="paper" style="background:var(--paper);padding:14px"><img style="width:100%;aspect-ratio:auto;object-fit:contain" src="img/twalk/moodboard.jpg" alt="Moodboard con persone anziane al mercato, sedute imbottite, ruote motorizzate e robot di consegna" loading="lazy"></div>
+        <figcaption><span class="mono">Moodboard</span></figcaption></figure>
+      <figure><div class="paper" style="background:var(--paper);padding:14px"><img style="width:100%;aspect-ratio:auto;object-fit:contain" src="img/twalk/schemi.jpg" alt="Schemi funzionali disegnati a mano: accesso, seduta, accompagnamento e vano refrigerato" loading="lazy"></div>
+        <figcaption><span class="mono">Schemi funzionali</span></figcaption></figure>
+    </div>
+  </div>
+
+  <div class="block">
+    <div class="block-head">
+      <h2>Schizzi</h2>
+      <p>Dalla prima forma a goccia con il braccio meccanico nella seduta alle varianti di colore.</p>
+    </div>
+    <div class="sheets">
+      <figure class="sheet"><div style="aspect-ratio:auto"><img style="width:100%;max-height:none" src="img/twalk/sketch-1.jpg" alt="Schizzo a matita del robot con dettaglio del braccio meccanico removibile" loading="lazy"></div><figcaption><span class="mono">Forma e braccio meccanico</span></figcaption></figure>
+      <figure class="sheet"><div style="aspect-ratio:auto"><img style="width:100%;max-height:none" src="img/twalk/sketch-2.jpg" alt="Schizzo a colori in variante verde, vista prospettica e dall'alto" loading="lazy"></div><figcaption><span class="mono">Variante verde</span></figcaption></figure>
+      <figure class="sheet"><div style="aspect-ratio:auto"><img style="width:100%;max-height:none" src="img/twalk/sketch-3.jpg" alt="Schizzo a colori in variante arancione con utente seduto" loading="lazy"></div><figcaption><span class="mono">Variante arancione</span></figcaption></figure>
+    </div>
+  </div>
+
+  <div class="block">
+    <div class="block-head">
+      <h2>Disegni tecnici</h2>
+      <p>Viste quotate, sezione A–A' e confronto con la figura umana in piedi e seduta.</p>
+    </div>
+    <div class="sheets">
+      <figure class="sheet"><div style="aspect-ratio:auto"><img style="width:100%;max-height:none" src="img/twalk/tecnico-1.jpg" alt="Prospetti e pianta quotati del robot" loading="lazy"></div><figcaption><span class="mono">Viste quotate</span></figcaption></figure>
+      <figure class="sheet"><div style="aspect-ratio:auto"><img style="width:100%;max-height:none" src="img/twalk/tecnico-2.jpg" alt="Pianta con traccia della sezione A e sezione longitudinale" loading="lazy"></div><figcaption><span class="mono">Sezione A–A'</span></figcaption></figure>
+      <figure class="sheet"><div style="aspect-ratio:auto"><img style="width:100%;max-height:none" src="img/twalk/tecnico-3.jpg" alt="Disegni del robot accanto alla figura umana" loading="lazy"></div><figcaption><span class="mono">Ergonomia</span></figcaption></figure>
+    </div>
+  </div>
+
+  <div class="block">
+    <div class="block-head">
+      <h2>Palette e materiali</h2>
+      <p>L'arancione per il benessere fisico e mentale, il verde per equilibrio e stabilità, grigio e nero come neutri. Scocca in alluminio, Moplen e PVC.</p>
+    </div>
+    <div class="palette">
+      <div class="chipc"><i style="background:#ce6e20"></i><code>#CE6E20</code></div>
+      <div class="chipc"><i style="background:#222323"></i><code>#222323</code></div>
+      <div class="chipc"><i style="background:#777a47"></i><code>#777A47</code></div>
+      <div class="chipc"><i style="background:#4f5741"></i><code>#4F5741</code></div>
+      <div class="chipc"><i style="background:#808081"></i><code>#808081</code></div>
+    </div>
+  </div>
+
+  <div class="block">
+    <div class="block-head">
+      <h2>Render</h2>
+      <p>Il robot in uso su una terrazza in città, i dettagli della seduta e le viste in still life.</p>
+    </div>
+    <figure style="margin:0 0 24px;display:grid;gap:10px">
+      <div class="wide"><img src="img/twalk/render-contesto.jpg" style="aspect-ratio:auto" alt="T-walk su una terrazza urbana sotto un cavalcavia" width="1864" height="1165" loading="lazy"></div>
+      <figcaption><span class="mono">Il robot in città</span><span class="mono">Terrazza urbana</span></figcaption>
+    </figure>
+    <div class="pair">
+      <figure><div><img style="aspect-ratio:auto" src="img/twalk/render-persona-2.jpg" alt="Un uomo seduto su T-walk, vista frontale" loading="lazy"></div></figure>
+      <figure><div><img style="aspect-ratio:auto" src="img/twalk/render-persona-1.jpg" alt="Un uomo seduto su T-walk, vista laterale con ruote arancioni" loading="lazy"></div></figure>
+    </div>
+    <div class="pair" style="margin-top:24px">
+      <figure><div class="paper" style="background:var(--paper);padding:14px"><img style="width:100%;aspect-ratio:auto;object-fit:contain" src="img/twalk/render-tavola.jpg" alt="Render di dettaglio: seduta arancione, vista dall'alto e laterale" loading="lazy"></div>
+        <figcaption><span class="mono">Dettagli</span></figcaption></figure>
+      <figure><div class="paper" style="background:var(--paper);padding:14px"><img style="width:100%;aspect-ratio:auto;object-fit:contain" src="img/twalk/render-still.jpg" alt="Render still life su fondo bianco da quattro punti di vista" loading="lazy"></div>
+        <figcaption><span class="mono">Still life</span></figcaption></figure>
+    </div>
+  </div>
+
+  <a class="next" href="#oriente" style="--n:#E2231A"><span><span class="mono">Progetto successivo</span><b>Museu do Oriente</b></span><span class="more">→</span></a>
+</main>
+
+<!-- ============ MUSEU DO ORIENTE ============ -->
+<main data-view="oriente" id="oriente" class="project" hidden style="--p:#E2231A">
+  <a class="back" href="#progetti">← Tutti i progetti</a>
+  <div class="cs-title">
+    <h1>Museu do Oriente <span>Una caffetteria tra Giappone antico e design di oggi</span></h1>
+    <span class="mono">04 · Interior design · Lisbona · 2022/23</span>
+  </div>
+
+  <figure style="margin:0;display:grid;gap:10px">
+    <div class="wide"><img src="img/oriente/render-oni.jpg" style="aspect-ratio:auto" alt="La nuova caffetteria: pareti in legno bruciato, lampade di carta a soffitto, pavimento chiaro e una maschera oni rossa in primo piano" width="1920" height="1080"></div>
+    <figcaption><span class="mono">Modello 3D</span><span class="mono">La sala con le maschere oni</span></figcaption>
+  </figure>
+
+  <div class="cs-intro">
+    <div class="lead">
+      <p>La caffetteria del Museu do Oriente di Lisbona ripensata come <em>un luogo in cui fermarsi</em>, nell'atmosfera delle vecchie architetture giapponesi.</p>
+      <p>Lo spazio esistente era freddo e statico: grandi pilastri, un doppio soffitto molto alto e luci fredde non invitavano a restare. Il progetto trasforma i pilastri in protagonisti, con tavoli appesi e angoli riservati tra un pilastro e l'altro.</p>
+      <p>Pareti scure in legno bruciato, luci soffuse e lampade di carta richiamano il Giappone antico; arredi di Finn Juhl, Afteroom e Isamu Noguchi portano il design giapponese contemporaneo.</p>
+    </div>
+    <dl class="specs">
+      <dt>Luogo</dt><dd>Caffetteria del Museu do Oriente, Lisbona</dd>
+      <dt>Tipologia</dt><dd>Riprogettazione di una caffetteria museale</dd>
+      <dt>Materiali</dt><dd>Bambù, legno bruciato, gres, specchio</dd>
+      <dt>Corso</dt><dd>Design V, Esercizio II, Licenciatura em Design, 3º anno</dd>
+      <dt>Ateneo</dt><dd>Faculdade de Arquitetura, Universidade de Lisboa</dd>
+      <dt>Progetto con</dt><dd>Alessia Napolitano</dd>
+    </dl>
+  </div>
+
+  <div class="block">
+    <div class="block-head">
+      <h2>Fase 1 · Studio</h2>
+      <p>Prima di tutto lo spazio così com'è: dove le persone passano, dove si fermano e quanto pesano i pilastri. Una prima maquette ha mostrato che erano troppo grandi per essere ignorati.</p>
+    </div>
+    <div class="pair">
+      <figure><div><img src="img/oriente/esistente-2.jpg" alt="La caffetteria esistente: tavoli bianchi, sedie rosse e luci fredde" width="1280" height="853" loading="lazy"></div><figcaption><span class="mono">Stato di fatto</span><span class="mono">Sala</span></figcaption></figure>
+      <figure><div><img src="img/oriente/esistente-1.jpg" alt="Il bancone della caffetteria esistente" width="1280" height="854" loading="lazy"></div><figcaption><span class="mono">Stato di fatto</span><span class="mono">Bancone</span></figcaption></figure>
+    </div>
+    <div class="duo" style="margin-top:24px">
+      <figure><div class="paper"><img style="width:100%" src="img/oriente/circolazione.jpg" alt="Pianta con area di circolazione, area di sosta e percorsi delle persone tra lobby e caffetteria" loading="lazy"></div>
+        <figcaption><span class="mono">Circolazione e sosta</span></figcaption></figure>
+      <figure><div class="paper" style="padding:0;overflow:hidden"><img style="width:100%" src="img/oriente/studio-maquette.jpg" alt="Maquette di studio in cartoncino bianco con i pilastri" loading="lazy"></div>
+        <figcaption><span class="mono">Maquette di studio</span></figcaption></figure>
+    </div>
+  </div>
+
+  <div class="block">
+    <div class="block-head">
+      <h2>Fase 2 · Sperimentazione</h2>
+      <p>Prove di disposizione basate sull'ergonomia degli arredi. L'idea degli angoli riservati tra i pilastri resta in tutte le versioni.</p>
+    </div>
+    <div class="idk" style="margin-bottom:28px">
+      <div class="concept"><span class="mono">Opzione 1</span><h3>Tavoli intorno ai pilastri</h3><p>Piani a diverse altezze tutt'intorno: difficile trovare sedute adatte a ogni quota.</p></div>
+      <div class="concept"><span class="mono">Opzione 2</span><h3>Tavoli negli spazi liberi</h3><p>Più posti a sedere, ma non restava spazio per passare.</p></div>
+      <div class="concept"><span class="mono">Soluzione</span><h3>Pareti allineate</h3><p>L'ingresso e la parete accanto si spostano sul perimetro esterno, così la stessa forma si ripete sui due lati.</p></div>
+    </div>
+    <div class="stack">
+      <figure><div class="paper" style="background:var(--paper);padding:24px"><img style="width:100%;aspect-ratio:auto;object-fit:contain" src="img/oriente/pianta-pareti.jpg" alt="Pianta con le pareti spostate sul perimetro esterno" width="1800" height="1174" loading="lazy"></div>
+        <figcaption><span class="mono">Soluzione</span><span class="mono">Nuovo perimetro</span></figcaption></figure>
+      <figure><div class="paper" style="background:var(--paper);padding:24px"><img style="width:100%;aspect-ratio:auto;object-fit:contain" src="img/oriente/opzione-1.jpg" alt="Opzione 1: tavoli che girano tutt'intorno ai pilastri a diverse altezze" width="1800" height="1174" loading="lazy"></div>
+        <figcaption><span class="mono">Opzione 1</span><span class="mono">Tavoli intorno ai pilastri</span></figcaption></figure>
+      <figure><div class="paper" style="background:var(--paper);padding:24px"><img style="width:100%;aspect-ratio:auto;object-fit:contain" src="img/oriente/opzione-2.jpg" alt="Opzione 2: tavoli negli spazi liberi tra i pilastri" width="1800" height="1174" loading="lazy"></div>
+        <figcaption><span class="mono">Opzione 2</span><span class="mono">Tavoli negli spazi liberi</span></figcaption></figure>
+    </div>
+  </div>
+
+  <div class="block">
+    <div class="block-head">
+      <h2>Fase 3 · Concept</h2>
+    </div>
+    <div class="pair" style="align-items:stretch">
+      <figure><div><img style="aspect-ratio:auto" src="img/oriente/riferimenti.jpg" alt="Riferimenti: caffetteria scura con bancone, distributori e banco di street food giapponese" width="1400" height="1057" loading="lazy"></div><figcaption><span class="mono">Riferimenti</span></figcaption></figure>
+      <figure style="grid-template-rows:1fr auto auto">
+        <p class="concept-text">L'architettura giapponese antica, scura e con luci basse, incontra il design giapponese di oggi. Le maschere oni in legno rosso sono appese alle pareti; la finestra sulla cucina ricorda i banchi dei venditori di cibo di strada.</p>
+        <div><img style="aspect-ratio:auto" src="img/oriente/render-distributori.jpg" alt="Una ragazza seduta su una poltroncina rosa davanti ai distributori colorati in stile giapponese" width="1728" height="972" loading="lazy"></div>
+        <figcaption><span class="mono">Distributori</span><span class="mono">Angolo relax</span></figcaption>
+      </figure>
+    </div>
+  </div>
+
+  <div class="block">
+    <div class="block-head">
+      <h2>Materiali</h2>
+      <p>Bambù e legno bruciato, due legni molto usati in Giappone, creano un contrasto netto che addolcisce la luce dei LED. Il pavimento in gres riprende il colore del bambù ed è facile da pulire. Gli specchi sui pilastri li fanno quasi sparire e allargano la sala.</p>
+    </div>
+    <div class="materials">
+      <div class="mat"><div class="swatch" style="background:repeating-linear-gradient(90deg,#c8964f 0 14px,#b9853f 14px 16px,#d4a560 16px 30px)" role="img" aria-label="Campione di bambù"></div><span class="mono">Pannelli e tavoli</span><h3>Bambù</h3><p>Listelli a parete e piani dei tavoli appesi ai pilastri.</p></div>
+      <div class="mat"><div class="swatch" style="background:repeating-linear-gradient(90deg,#1b1a19 0 22px,#262422 22px 24px)" role="img" aria-label="Campione di legno bruciato"></div><span class="mono">Pareti</span><h3>Legno bruciato</h3><p>Il fondo scuro che dà profondità alla sala e fa risaltare il bambù.</p></div>
+      <div class="mat"><div class="swatch" style="background:linear-gradient(135deg,#9aa0a6,#e9ecef 45%,#8a9096)" role="img" aria-label="Campione di specchio"></div><span class="mono">Pilastri</span><h3>Specchio e gres</h3><p>Specchio sui pilastri e pavimento in gres color bambù.</p></div>
+    </div>
+  </div>
+
+  <div class="block">
+    <div class="block-head">
+      <h2>Arredi</h2>
+      <p>Il pezzo esclusivo sono i tavoli appesi ai pilastri e le luci a parete, entrambi in bambù. Intorno, arredi d'autore che richiamano il design giapponese.</p>
+    </div>
+    <div class="duo">
+      <figure><div><img style="width:100%;border-radius:18px" src="img/oriente/render-panca.jpg" alt="Un ragazzo con il portatile su una poltroncina rosa davanti alla parete in listelli di bambù" width="1728" height="972" loading="lazy"></div><figcaption><span class="mono">Pezzo esclusivo</span><span class="mono">Parete e tavolo in bambù</span></figcaption></figure>
+      <ul class="mlist">
+        <li>Japan Chair · Finn Juhl <span>Rovere · 61 × 70 × 78 cm</span></li>
+        <li>The Eye Table · Finn Juhl <span>Noce · 90 × 56 × 50 cm</span></li>
+        <li>Counter Chair · Afteroom <span>Acciaio, compensato, pelle · H 92 cm</span></li>
+        <li>Cognac Chair · Afteroom <span>Acciaio, compensato · H 77 cm</span></li>
+        <li>Akari 50EN · Isamu Noguchi <span>Carta washi · Ø 50 cm</span></li>
+        <li>Akari 70EN · Isamu Noguchi <span>Carta washi · Ø 70 cm</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="block">
+    <div class="block-head">
+      <h2>Progetto esecutivo</h2>
+      <p>Pianta degli arredi, pianta del controsoffitto con le luci e sezioni A–A', B–B', C–C'.</p>
+    </div>
+    <div class="stack">
+      <figure><div class="paper" style="background:var(--paper);padding:24px"><img style="width:100%;aspect-ratio:auto;object-fit:contain" src="img/oriente/pianta.jpg" alt="Pianta esecutiva con arredi" width="2200" height="1555" loading="lazy"></div>
+        <figcaption><span class="mono">Pianta</span></figcaption></figure>
+      <figure><div class="paper" style="background:var(--paper);padding:24px"><img style="width:100%;aspect-ratio:auto;object-fit:contain" src="img/oriente/controsoffitto.jpg" alt="Pianta del controsoffitto con le lampade" width="2200" height="1555" loading="lazy"></div>
+        <figcaption><span class="mono">Controsoffitto</span></figcaption></figure>
+      <figure><div class="paper" style="background:var(--paper);padding:24px"><img style="width:100%;aspect-ratio:auto;object-fit:contain" src="img/oriente/sezioni.jpg" alt="Sezioni A-A', B-B' e C-C'" width="2200" height="1555" loading="lazy"></div>
+        <figcaption><span class="mono">Sezioni A–A', B–B', C–C'</span></figcaption></figure>
+    </div>
+  </div>
+
+  <div class="block">
+    <div class="block-head">
+      <h2>Modello 3D</h2>
+      <p>La sala finita: luce calda dal basso, lampade Akari a soffitto e la vista verso l'esterno.</p>
+    </div>
+    <div class="sections">
+      <figure><img src="img/oriente/render-bambu.jpg" alt="Due ragazzi davanti alla parete in bambù, uno in piedi e uno seduto" loading="lazy"></figure>
+      <figure><img src="img/oriente/render-lampade.jpg" alt="La sala con i tavoli intorno ai pilastri e le lampade di carta" loading="lazy"></figure>
+      <figure style="grid-column:1/-1"><img src="img/oriente/render-vetrata.jpg" alt="Tavoli e sedie davanti alla vetrata sulla città" loading="lazy"></figure>
+    </div>
+  </div>
+
+  <a class="next" href="#eco" style="--n:#2F8FC0"><span><span class="mono">Progetto successivo</span><b>Eco not Ego</b></span><span class="more">→</span></a>
+</main>
+
+
+<!-- ============ ECO NOT EGO ============ -->
+<main data-view="eco" id="eco" class="project" hidden style="--p:#2F8FC0">
+  <div class="stickers" aria-hidden="true"><img class="stk" src="img/stickers/eco-mani.png" alt="" data-id="eco-eco-mani" data-anchor="title" data-x="0.62" data-dy="-30" style="--rot:-8deg;--w:140px" width="378" height="420" draggable="false" title="Il mondo nelle mani · trascinami"></div>
+  <a class="back" href="#progetti">← Tutti i progetti</a>
+  <div class="cs-title">
+    <h1>Eco not Ego <span>Grafica per il clima</span></h1>
+    <span class="mono">05 · Graphic design · A.A. 2021/22</span>
+  </div>
+
+  <div class="pair">
+    <figure>
+      <div style="background:var(--surface)"><img src="img/eco/cover-eco.jpg" style="aspect-ratio:auto;object-fit:contain" alt="Copertina del volume Eco not Ego: un orso polare su un blocco di ghiaccio che si scioglie, su fondo blu" width="1200" height="1697"></div>
+      <figcaption><span class="mono">Copertina del volume</span><span class="mono">Eco not Ego</span></figcaption>
+    </figure>
+    <figure>
+      <div style="background:var(--surface)"><img src="img/eco/in-our-hands.jpg" style="aspect-ratio:auto;object-fit:contain" alt="Manifesto In Our Hands: una mano disegnata che regge il pianeta Terra" width="1200" height="1697" loading="lazy"></div>
+      <figcaption><span class="mono">Manifesto</span><span class="mono">In Our Hands</span></figcaption>
+    </figure>
+  </div>
+
+  <div class="cs-intro">
+    <div class="lead">
+      <p>Un volume di grafica dedicato al cambiamento climatico, con un messaggio semplice: <em>più ecologia, meno ego</em>.</p>
+      <p>Il progetto nasce nel Laboratorio di Graphic Creations a partire dallo studio di Alfons Mucha e dell'Art Nouveau. In questa pagina raccolgo le illustrazioni del volume e due mie esercitazioni individuali, un'illustrazione e uno studio sul colore.</p>
+    </div>
+    <dl class="specs">
+      <dt>Tipologia</dt><dd>Volume illustrato ed esercitazioni di grafica</dd>
+      <dt>Tema</dt><dd>Cambiamento climatico</dd>
+      <dt>Corso</dt><dd>Laboratorio di Graphic Creations, CdL Design e Comunicazione</dd>
+      <dt>Ateneo</dt><dd>Università della Campania Luigi Vanvitelli</dd>
+      <dt>Docente</dt><dd>Prof. Arch. Ornella Zerlenga</dd>
+      <dt>Gruppo</dt><dd>Mario De Michele, Giuseppa Esposito, Mariafrancesca Romano</dd>
+    </dl>
+  </div>
+
+  <div class="block">
+    <div class="block-head">
+      <h2>Illustrazione</h2>
+      <p>I'm still hungry, illustrazione per il concorso Plana: il bisogno di ascoltare una natura oppressa dall'uomo e dall'industria, raccontato con poche linee e un pianeta da mordere.</p>
+    </div>
+    <div class="pair solo">
+      <figure><div class="paper" style="background:var(--paper);padding:24px"><img style="width:100%;aspect-ratio:auto;object-fit:contain" src="img/eco/plana.jpg" alt="Illustrazione I'm still hungry: un volto stilizzato che addenta il pianeta Terra" width="1039" height="1133" loading="lazy"></div>
+        <figcaption><span class="mono">I'm still hungry</span><span class="mono">Concorso Plana</span></figcaption></figure>
+    </div>
+  </div>
+
+  <div class="block">
+    <div class="block-head">
+      <h2>Colore</h2>
+      <p>Tre famiglie di colore, calde, verdi e blu, descritte rispettivamente in CMYK, HSB e RGB.</p>
+    </div>
+    <figure class="sheet"><div style="aspect-ratio:auto"><img style="width:100%;max-height:none" src="img/eco/palette.jpg" alt="Tre palette di colori con valori CMYK, HSB e RGB" width="2000" height="421" loading="lazy"></div></figure>
+  </div>
+
+  <a class="next" href="#gladiatori" style="--n:#C46E78"><span><span class="mono">Progetto successivo</span><b>Gladiatori</b></span><span class="more">→</span></a>
+</main>
+
+<!-- ============ GLADIATORI ============ -->
+<main data-view="gladiatori" id="gladiatori" class="project" hidden style="--p:#C46E78">
+  <div class="stickers" aria-hidden="true"><img class="stk" src="img/stickers/glad-1.png" alt="" data-id="gladiatori-glad-1" data-anchor="title" data-x="0.62" data-dy="-40" style="--rot:-7deg;--w:100px" width="270" height="420" draggable="false" title="Un gladiatore · trascinami"><img class="stk" src="img/stickers/glad-3.png" alt="" data-id="gladiatori-glad-3" data-anchor="b2" data-x="0.33" data-dy="-60" style="--rot:6deg;--w:100px" width="279" height="420" draggable="false" title="Un altro gladiatore · trascinami"></div>
+  <a class="back" href="#progetti">← Tutti i progetti</a>
+  <div class="cs-title">
+    <h1>Gladiatori <span>Figure da collezione e gioco da tavolo per l'Anfiteatro Campano</span></h1>
+    <span class="mono">06 · Product design · Tesi di laurea</span>
+  </div>
+
+  <figure style="margin:0;display:grid;gap:10px">
+    <div class="wide"><img src="img/gladiatori/render-prospettiva.jpg" style="aspect-ratio:auto" alt="Quattro statuine di gladiatori dipinte, con elmi metallici e tuniche, sulle loro basi nere" width="1915" height="896"></div>
+    <figcaption><span class="mono">Il set di quattro gladiatori</span><span class="mono">Render</span></figcaption>
+  </figure>
+
+  <div class="cs-intro">
+    <div class="lead">
+      <p>Un merchandising pensato per i più giovani: <em>quattro gladiatori da collezionare e con cui giocare</em>, simbolo dell'Anfiteatro Campano.</p>
+      <p>Invece dei soliti gadget con il logo o delle repliche del monumento, il progetto prende la figura più legata all'anfiteatro, il gladiatore, e la semplifica nello stile delle figure da collezione Funko: una figura "deformed", più vicina a un manichino che a una persona.</p>
+      <p>Alle figure si aggiunge il gioco. Sul modello di Heroclix, ogni statuina poggia su una base girevole che mostra i valori di gara; carte personaggio e dadi completano la partita, giocata su una tavola a riquadri.</p>
+    </div>
+    <dl class="specs">
+      <dt>Tipologia</dt><dd>Figure da collezione e gioco da tavolo</dd>
+      <dt>Target</dt><dd>Ragazzi e giovani</dd>
+      <dt>Set</dt><dd>4 gladiatori di epoca romana</dd>
+      <dt>Materiali</dt><dd>PVC dipinto</dd>
+      <dt>Riferimenti</dt><dd>Bruno Munari, Funko Pop!, Heroclix</dd>
+      <dt>Contesto</dt><dd>Tesi di laurea, relatore Prof. Claudio Gambardella</dd>
+    </dl>
+  </div>
+
+  <div class="block">
+    <div class="block-head">
+      <h2>L'idea di base</h2>
+      <p>La figura di partenza: proporzioni da collezione, elmo e scudi appena accennati. Poi la base, che dà stabilità alla statuina ed è il cuore del gioco.</p>
+    </div>
+    <div class="pair">
+      <figure><div class="paper" style="background:var(--paper);padding:18px"><img style="width:100%;aspect-ratio:auto;object-fit:contain" src="img/gladiatori/idea-figura.jpg" alt="Il modello di base del gladiatore, senza base" width="1600" height="1465" loading="lazy"></div>
+        <figcaption><span class="mono">La figura</span></figcaption></figure>
+      <figure><div class="paper" style="background:var(--paper);padding:18px"><img style="width:100%;aspect-ratio:auto;object-fit:contain" src="img/gladiatori/idea-base.jpg" alt="Il modello di base del gladiatore montato sulla base" width="1600" height="1465" loading="lazy"></div>
+        <figcaption><span class="mono">La figura sulla base</span></figcaption></figure>
+    </div>
+    <div class="stack" style="margin-top:24px">
+      <figure><div class="paper" style="background:var(--paper);padding:18px"><img style="width:100%;aspect-ratio:auto;object-fit:contain" src="img/gladiatori/base-dial.jpg" alt="Le due parti della base: disco superiore con fessura e disco inferiore" width="1512" height="609" loading="lazy"></div>
+        <figcaption><span class="mono">La base girevole</span><span class="mono">Due pezzi</span></figcaption></figure>
+    </div>
+  </div>
+
+  <div class="block">
+    <div class="block-head">
+      <h2>Il gioco</h2>
+      <p>Ogni giocatore schiera la sua formazione sulla tavola a riquadri, che riprende la pianta dell'anfiteatro. A ogni turno i personaggi compiono fino a tre azioni; due dadi a sei facce decidono abilità, danni e KO.</p>
+    </div>
+    <figure style="margin:0;display:grid;gap:10px">
+      <div class="wide"><img style="aspect-ratio:auto" src="img/gladiatori/tavola-gioco.jpg" alt="Tavola di gioco: vista aerea dell'Anfiteatro Campano divisa in riquadri" width="1684" height="1190" loading="lazy"></div>
+      <figcaption><span class="mono">Tavola di gioco</span><span class="mono">L'anfiteatro a riquadri</span></figcaption>
+    </figure>
+    <div class="idk" style="margin-top:32px">
+      <div class="concept"><span class="mono">Inizio</span><h3>Formazione e ordine</h3><p>Ogni personaggio parte dal primo click della base. Si tirano due dadi per decidere chi comincia, poi si scelgono le aree di partenza sulla mappa.</p></div>
+      <div class="concept"><span class="mono">Turno</span><h3>Quattro fasi</h3><p>Inizio del turno, fase delle azioni con fino a tre azioni, fine del turno e rimozione dei segnalini azione.</p></div>
+      <div class="concept"><span class="mono">Regole chiave</span><h3>Amici, avversari, adiacenza</h3><p>Le caselle che si toccano, anche in diagonale, sono adiacenti: è lì che i gladiatori si sfidano con le loro abilità.</p></div>
+    </div>
+  </div>
+
+  <div class="block">
+    <div class="block-head">
+      <h2>Modello 3D</h2>
+      <p>Quattro gladiatori diversi per elmo, armatura e protezioni delle gambe, ispirati ai reperti trovati negli scavi vicino all'anfiteatro. Sono in PVC, dipinti per ricordare metallo e stoffa.</p>
+    </div>
+    <div class="stack">
+      <figure><div class="paper" style="background:var(--paper);padding:18px"><img style="width:100%;aspect-ratio:auto;object-fit:contain" src="img/gladiatori/set-grigio.jpg" alt="I quattro gladiatori in vista frontale, modello grigio" width="2241" height="662" loading="lazy"></div>
+        <figcaption><span class="mono">Il set</span><span class="mono">Vista frontale</span></figcaption></figure>
+      <figure><div class="paper" style="background:var(--paper);padding:18px"><img style="width:100%;aspect-ratio:auto;object-fit:contain" src="img/gladiatori/render-grigio.jpg" alt="I quattro gladiatori in prospettiva sulle loro basi, modello grigio" width="1832" height="856" loading="lazy"></div>
+        <figcaption><span class="mono">In prospettiva</span></figcaption></figure>
+      <figure><div class="paper" style="background:var(--paper);padding:18px"><img style="width:100%;aspect-ratio:auto;object-fit:contain" src="img/gladiatori/set-frontale-dipinto.jpg" alt="I quattro gladiatori in vista frontale con materiali e colori: elmi in metallo, corpo rosa, gonnellini in rame e basi nere" width="2241" height="662" loading="lazy"></div>
+        <figcaption><span class="mono">Il set con materiali e colori</span><span class="mono">Vista frontale</span></figcaption></figure>
+      <figure><div><img style="width:100%;border-radius:18px" src="img/gladiatori/set-colore.jpg" alt="I quattro gladiatori dipinti in vista frontale" width="1918" height="601" loading="lazy"></div>
+        <figcaption><span class="mono">Il set dipinto</span></figcaption></figure>
+    </div>
+  </div>
+
+  <div class="block">
+    <div class="block-head">
+      <h2>Disegni tecnici</h2>
+      <p>La base è in due pezzi pieni in PVC: il disco superiore ha due fori per la figura e una fessura; quello inferiore si incastra con un perno e ruota, mostrando a ogni lancio un valore diverso. Le figure invece sono cave e quindi più leggere. Misure in mm.</p>
+    </div>
+    <div class="pair">
+      <figure><div class="paper" style="background:var(--paper);padding:18px"><img style="width:100%;aspect-ratio:auto;object-fit:contain" src="img/gladiatori/disegno-rotazione.jpg" alt="Schema della rotazione della base" loading="lazy"></div>
+        <figcaption><span class="mono">Rotazione della base</span></figcaption></figure>
+      <figure><div class="paper" style="background:var(--paper);padding:18px"><img style="width:100%;aspect-ratio:auto;object-fit:contain" src="img/gladiatori/disegno-figura.jpg" alt="Sezione quotata e vista dall'alto della figura" loading="lazy"></div>
+        <figcaption><span class="mono">Figura</span><span class="mono">Sezione e pianta</span></figcaption></figure>
+      <figure><div class="paper" style="background:var(--paper);padding:18px"><img style="width:100%;aspect-ratio:auto;object-fit:contain" src="img/gladiatori/disegno-base-sezioni.jpg" alt="Pianta e sezioni quotate della base" loading="lazy"></div>
+        <figcaption><span class="mono">Base</span><span class="mono">Pianta e sezioni</span></figcaption></figure>
+      <figure><div class="paper" style="background:var(--paper);padding:18px"><img style="width:100%;aspect-ratio:auto;object-fit:contain" src="img/gladiatori/disegno-base-figura.jpg" alt="Pianta della base con sezioni B-B' e prospetti quotati della figura" loading="lazy"></div>
+        <figcaption><span class="mono">Insieme</span><span class="mono">Base e figura</span></figcaption></figure>
+    </div>
+  </div>
+
+  <a class="next" href="#bob" style="--n:#E9A81E"><span><span class="mono">Progetto successivo</span><b>Bob the Blob</b></span><span class="more">→</span></a>
+</main>
+
+<!-- ============ BOB THE BLOB ============ -->
+<main data-view="bob" id="bob" class="project" hidden style="--p:#E9A81E">
+  <div class="stickers" aria-hidden="true"><img class="stk" src="img/stickers/bob-sveglia.png" alt="" data-id="bob-bob-sveglia" data-anchor="title" data-x="0.6" data-dy="-40" style="--rot:-6deg;--w:130px" width="396" height="416" draggable="false" title="Bob sveglia · trascinami"><img class="stk" src="img/stickers/bob-scatola.png" alt="" data-id="bob-bob-scatola" data-anchor="b3" data-x="0.32" data-dy="-40" style="--rot:5deg;--w:150px" width="420" height="311" draggable="false" title="Bob nella scatola · trascinami"><img class="stk" src="img/stickers/bob-molla.png" alt="" data-id="bob-bob-molla" data-anchor="b6" data-x="0.3" data-dy="-60" style="--rot:-4deg;--w:90px" width="274" height="420" draggable="false" title="Bob a molla · trascinami"></div>
+  <a class="back" href="#progetti">← Tutti i progetti</a>
+  <div class="cs-title">
+    <h1>Bob the Blob <span>Collezionismo e psiche di massa</span></h1>
+    <span class="mono">07 · Product design · Tesi magistrale · A.A. 2025/26</span>
+  </div>
+
+  <figure style="margin:0;display:grid;gap:10px">
+    <div class="wide" style="background:#fff"><img style="aspect-ratio:auto" src="img/bob/render-rosso.jpg" alt="Le cinque sorpresine di Bob the Blob in bianco e rosso" width="2400" height="555"></div>
+    <figcaption><span class="mono">Le cinque fasi di Bob the Blob</span><span class="mono">Variante rossa</span></figcaption>
+  </figure>
+
+  <div class="cs-intro">
+    <div class="lead">
+      <p>Una serie di sorpresine da collezione che <em>critica il collezionismo dall'interno</em>: un oggetto da collezionare che fa riflettere su chi colleziona.</p>
+      <p>La tesi parte dall'ovetto Kinder, che ha avvicinato quasi tutti al collezionismo da bambini, ne studia il marketing e la produzione, e poi la psicologia del collezionista. Il risultato è Bob the Blob, ipotesi di una collaborazione tra Alessi e Kinder Ferrero.</p>
+      <p>Lo stile prende le forme morbide e ironiche degli oggetti Alessi di Stefano Giovannoni e Guido Venturini; il formato è quello delle sorprese Kinder, chiuse nella capsula gialla.</p>
+    </div>
+    <dl class="specs">
+      <dt>Tipologia</dt><dd>Serie di sorprese da collezione</dd>
+      <dt>Set</dt><dd>5 personaggi, 4 varianti di colore</dd>
+      <dt>Materiali</dt><dd>Personaggi in polistirene (PS) lucido, capsula in polipropilene (PP)</dd>
+      <dt>Riferimenti</dt><dd>Kinder Sorpresa, Alessi, Nendoroid, Labubu</dd>
+      <dt>Corso</dt><dd>Laurea magistrale in Design per l'Innovazione, Product Ecodesign</dd>
+      <dt>Tesi</dt><dd>Storia e Patrimoni del Design e della Comunicazione Visiva. Relatrice Prof.ssa Francesca Castanò, correlatore Dott. Claudio Gambardella</dd>
+    </dl>
+  </div>
+
+  <div class="block">
+    <div class="block-head">
+      <h2>Lo studio</h2>
+      <p>Tre capitoli di ricerca prima del progetto: la storia dell'ovetto, il suo sistema di marketing e produzione, la figura del collezionista.</p>
+    </div>
+    <div class="idk">
+      <div class="concept"><span class="mono">Capitolo 1</span><h3>In principio fu l'ovetto</h3><p>Dall'uovo di Pasqua come simbolo di rinascita all'ovetto Kinder del 1974: una Pasqua in piccolo, tutto l'anno, con una sorpresa da montare dentro.</p></div>
+      <div class="concept"><span class="mono">Capitolo 2</span><h3>Marketing e produzione</h3><p>L'esperienza "3 in 1" di cioccolato, sorpresa e gioco; un collezionismo "implicito", mai dichiarato; serie da centinaia di migliaia di pezzi stampati a iniezione.</p></div>
+      <div class="concept"><span class="mono">Capitolo 3</span><h3>Il collezionista</h3><p>Ordine e mancanza, memoria e desiderio: ogni pezzo aggiunto risponde a un bisogno di completezza e ne apre subito un altro.</p></div>
+    </div>
+  </div>
+
+  <div class="block">
+    <div class="block-head">
+      <h2>Innovation of meaning</h2>
+      <p>Seguendo Roberto Verganti, il valore dell'ovetto non sta nel cioccolato ma nel significato: l'attesa e la scoperta della sorpresa. È un'innovazione radicale di significato, non di tecnologia.</p>
+    </div>
+    <figure class="sheet"><div style="aspect-ratio:auto"><img style="width:100%;max-height:none" src="img/bob/innovation.jpg" alt="Diagramma delle forme di innovazione: market pull, technology push e radical meaning innovation" width="2000" height="1428" loading="lazy"></div></figure>
+  </div>
+
+  <div class="block">
+    <div class="block-head">
+      <h2>Le 5 fasi dell'uovo</h2>
+      <p>Il rituale che rende unico il prodotto, scomposto in cinque momenti: la confezione, il guscio, la capsula, l'apertura e la sorpresa con il suo foglietto.</p>
+    </div>
+    <div class="five">
+      <figure><div class="paper"><img src="img/bob/fase-36.jpg" alt="Ovetto Kinder nella confezione" width="820" height="820" loading="lazy"></div><figcaption><span class="mono">1 · Confezione</span></figcaption></figure>
+      <figure><div class="paper"><img src="img/bob/fase-37.jpg" alt="Guscio di cioccolato" width="820" height="820" loading="lazy"></div><figcaption><span class="mono">2 · Guscio</span></figcaption></figure>
+      <figure><div class="paper"><img src="img/bob/fase-38.jpg" alt="Guscio aperto con la capsula gialla" width="820" height="820" loading="lazy"></div><figcaption><span class="mono">3 · Capsula</span></figcaption></figure>
+      <figure><div class="paper"><img src="img/bob/fase-39.jpg" alt="Capsula aperta con la sorpresa all'interno" width="820" height="820" loading="lazy"></div><figcaption><span class="mono">4 · Apertura</span></figcaption></figure>
+      <figure><div class="paper"><img src="img/bob/fase-40.jpg" alt="La sorpresa montata con il suo foglietto illustrato" width="820" height="820" loading="lazy"></div><figcaption><span class="mono">5 · Sorpresa</span></figcaption></figure>
+    </div>
+  </div>
+
+  <div class="block">
+    <div class="block-head">
+      <h2>Le icone</h2>
+      <p>Le serie storiche di sorpresine che hanno fatto nascere il collezionismo di intere generazioni: personaggi in serie, riconoscibili, da completare.</p>
+    </div>
+    <div class="sheets s4">
+      <figure class="sheet"><div style="aspect-ratio:auto"><img style="width:100%;max-height:none" src="img/bob/icone-54.jpg" alt="Serie storiche di sorpresine Kinder" loading="lazy"></div></figure>
+      <figure class="sheet"><div style="aspect-ratio:auto"><img style="width:100%;max-height:none" src="img/bob/icone-55.jpg" alt="Serie storiche di sorpresine Kinder" loading="lazy"></div></figure>
+      <figure class="sheet"><div style="aspect-ratio:auto"><img style="width:100%;max-height:none" src="img/bob/icone-56.jpg" alt="Serie storiche di sorpresine Kinder" loading="lazy"></div></figure>
+      <figure class="sheet"><div style="aspect-ratio:auto"><img style="width:100%;max-height:none" src="img/bob/icone-57.jpg" alt="Serie storiche di sorpresine Kinder" loading="lazy"></div></figure>
+    </div>
+  </div>
+
+  <div class="block">
+    <div class="block-head">
+      <h2>Il collezionista</h2>
+      <p>I tratti che la tesi individua nella psiche del collezionista, da cui nascono i cinque personaggi.</p>
+    </div>
+    <ul class="mlist traits">
+      <li>Forte investimento affettivo negli oggetti</li>
+      <li>Percezione relativa del denaro</li>
+      <li>Razionalizzazione dopo l'acquisto</li>
+      <li>Ricerca di completezza</li>
+      <li>Bisogno di ordine e controllo</li>
+      <li>Sacrifici economici selettivi</li>
+      <li>La collezione come identità</li>
+      <li>Rapporto ambivalente con il tempo</li>
+      <li>Piacere cognitivo</li>
+      <li>Tratti ossessivi funzionali</li>
+    </ul>
+  </div>
+
+  <div class="block">
+    <div class="block-head">
+      <h2>Tendenze</h2>
+      <p>Dal mercato delle figure da collezione emergono tre costanti: linee morbide e sinuose, figure "deformed" sempre più stilizzate come i Nendoroid, e il colore come motore della rarità, come nelle varianti di Labubu.</p>
+    </div>
+    <div class="idk">
+      <div class="concept"><span class="mono">Forma</span><h3>Linee morbide</h3><p>Come la zuccheriera Gino Zucchino di Guido Venturini per Alessi.</p></div>
+      <div class="concept"><span class="mono">Proporzioni</span><h3>Figure deformed</h3><p>Lo stile chibi giapponese: personaggi rimpiccioliti e stilizzati.</p></div>
+      <div class="concept"><span class="mono">Colore</span><h3>Varianti e rarità</h3><p>Stessa figura, colori diversi: alcune comuni, altre rare. Il colore crea il desiderio di completare la serie.</p></div>
+    </div>
+  </div>
+
+  <div class="block">
+    <div class="block-head">
+      <h2>Le cinque fasi di Bob</h2>
+      <p>Ogni personaggio nasconde un intento parodistico o critico verso il collezionista.</p>
+    </div>
+    <div class="concepts c5">
+      <div class="concept"><span class="mono">Fase 1</span><h3>Bob</h3><p>Nessun ornamento: solo la forma goffa e ironica, parodia del collezionista più comune.</p></div>
+      <div class="concept"><span class="mono">Fase 2</span><h3>Il denaro</h3><p>Un serpente avvinghiato alla sua pila di monete: il rapporto tossico con le finanze.</p></div>
+      <div class="concept"><span class="mono">Fase 3</span><h3>La prigione</h3><p>L'hobby che opprime: la gioia del possedere diventa prigionia.</p></div>
+      <div class="concept"><span class="mono">Fase 4</span><h3>Il tempo</h3><p>La corsa alle nuove uscite e alle tirature limitate, ogni giorno.</p></div>
+      <div class="concept"><span class="mono">Fase 5</span><h3>Il pezzo raro</h3><p>La gioia di possedere un oggetto unico, motivo d'invidia nella community.</p></div>
+    </div>
+  </div>
+
+  <div class="block">
+    <div class="block-head">
+      <h2>Sezioni e disegni tecnici</h2>
+      <p>Viste, sezioni e ingombri dei cinque personaggi, misure in cm, e il loro alloggiamento nella capsula.</p>
+    </div>
+    <div class="sheets s2">
+      <figure class="sheet"><div style="aspect-ratio:auto"><img style="width:100%;max-height:none" src="img/bob/materiali.jpg" alt="Materiali e finiture: capsula in PP e personaggi in PS lucido" loading="lazy"></div><figcaption><span class="mono">Materiali e finiture</span></figcaption></figure>
+      <figure class="sheet"><div style="aspect-ratio:auto"><img style="width:100%;max-height:none" src="img/bob/disegno-85.jpg" alt="I cinque personaggi dentro la capsula" loading="lazy"></div><figcaption><span class="mono">Nella capsula</span></figcaption></figure>
+      <figure class="sheet"><div style="aspect-ratio:auto"><img style="width:100%;max-height:none" src="img/bob/disegno-79.jpg" alt="Disegni tecnici del primo personaggio" loading="lazy"></div></figure>
+      <figure class="sheet"><div style="aspect-ratio:auto"><img style="width:100%;max-height:none" src="img/bob/disegno-80.jpg" alt="Disegni tecnici del personaggio con la spirale" loading="lazy"></div></figure>
+      <figure class="sheet"><div style="aspect-ratio:auto"><img style="width:100%;max-height:none" src="img/bob/disegno-81.jpg" alt="Disegni tecnici del personaggio nella scatola, viste dall'alto" loading="lazy"></div></figure>
+      <figure class="sheet"><div style="aspect-ratio:auto"><img style="width:100%;max-height:none" src="img/bob/disegno-82.jpg" alt="Sagome quotate del personaggio nella scatola" loading="lazy"></div></figure>
+      <figure class="sheet"><div style="aspect-ratio:auto"><img style="width:100%;max-height:none" src="img/bob/disegno-83.jpg" alt="Disegni tecnici del personaggio con le mani sulla testa" loading="lazy"></div></figure>
+      <figure class="sheet"><div style="aspect-ratio:auto"><img style="width:100%;max-height:none" src="img/bob/disegno-84.jpg" alt="Disegni tecnici del personaggio piccolo" loading="lazy"></div></figure>
+    </div>
+  </div>
+
+  <div class="block">
+    <div class="block-head">
+      <h2>Render</h2>
+      <p>Lo stesso set in quattro varianti di colore: come nelle serie da collezione, il colore decide quanto un pezzo è raro.</p>
+    </div>
+    <figure class="variants">
+      <div class="paper vframe" style="background:#fff;padding:18px"><img class="vimg on" data-v="bianco" src="img/bob/render-bianco.jpg" alt="Le cinque figure nella variante bianca" width="2400" height="561" loading="lazy"><img class="vimg" data-v="legno" src="img/bob/render-legno.jpg" alt="Le cinque figure nella variante marrone" width="2400" height="553" loading="lazy"><img class="vimg" data-v="rosso" src="img/bob/render-rosso.jpg" alt="Le cinque figure nella variante rossa" width="2400" height="555" loading="lazy"><img class="vimg" data-v="nero" src="img/bob/render-nero.jpg" alt="Le cinque figure nella variante nera" width="2400" height="555" loading="lazy"></div>
+      <figcaption class="vbar"><span class="mono">Variante</span><div class="vbtns" role="group" aria-label="Scegli la variante di colore"><button type="button" class="vbtn" data-v="bianco" aria-pressed="true" style="--c:#ECEAE4"><i></i>Bianca</button><button type="button" class="vbtn" data-v="legno" aria-pressed="false" style="--c:#8A5A3B"><i></i>Marrone</button><button type="button" class="vbtn" data-v="rosso" aria-pressed="false" style="--c:#D6372B"><i></i>Rossa</button><button type="button" class="vbtn" data-v="nero" aria-pressed="false" style="--c:#1D1C21"><i></i>Nera</button></div></figcaption>
+    </figure>
+    </div>
+
+  <a class="next" href="#vassoi" style="--n:#7A4A2E"><span><span class="mono">Progetto successivo</span><b>Coffee Trays</b></span><span class="more">→</span></a>
+</main>
+
+<!-- ============ VASSOI ============ -->
+<main data-view="vassoi" id="vassoi" class="project" hidden style="--p:#7A4A2E">
+  <div class="stickers" aria-hidden="true"><img class="stk" src="img/stickers/va-tazza.png" alt="" data-id="vassoi-va-tazza" data-anchor="title" data-x="0.62" data-dy="-40" style="--rot:8deg;--w:130px" width="411" height="420" draggable="false" title="La tazzina di The Coffee Stain · trascinami"><img class="stk" src="img/stickers/va-unround.png" alt="" data-id="vassoi-va-unround" data-anchor="b2" data-x="0.3" data-dy="-40" style="--rot:-8deg;--w:170px" width="420" height="249" draggable="false" title="Il vassoio The Unround Table · trascinami"></div>
+  <a class="back" href="#progetti">← Tutti i progetti</a>
+  <div class="cs-title">
+    <h1>Coffee Trays <span>Tre vassoi per servire il caffè</span></h1>
+    <span class="mono">08 · Product design</span>
+  </div>
+
+  <figure style="margin:0;display:grid;gap:10px">
+    <div class="wide"><img src="img/vassoi/cover-vassoi.jpg" style="aspect-ratio:auto" alt="Le tre tavole di presentazione affiancate: The Coffee Stain, The Unround Table e The S(q)uare" width="2334" height="1100"></div>
+    <figcaption><span class="mono">The Coffee Stain · The Unround Table · The S(q)uare</span></figcaption>
+  </figure>
+
+  <div class="cs-intro">
+    <div class="lead">
+      <p>Tre vassoi per il caffè, ognuno con <em>una forma e un carattere propri</em>.</p>
+      <p>Il primo nasce dalle macchie di caffè, il secondo ripensa il vassoio quadrato con gli appoggi per le tazzine negli angoli, il terzo gioca con quadrati a diverse altezze. Ogni vassoio ha la sua tavola di presentazione, con un'identità grafica dedicata, e una scheda tecnica.</p>
+    </div>
+    <dl class="specs">
+      <dt>Tipologia</dt><dd>Serie di tre vassoi</dd>
+      <dt>Uso</dt><dd>Servizio del caffè</dd>
+      <dt>Elaborati</dt><dd>Tavole di presentazione, modelli 3D, dati tecnici</dd>
+    </dl>
+  </div>
+
+  <div class="block">
+    <div class="block-head">
+      <h2>The Coffee Stain</h2>
+      <p>Un vassoio a forma di macchia di caffè, con un foro piccolo e uno grande per tazzine e piattini. Le tavole riprendono le gocce e i chicchi su un fondo color crema.</p>
+    </div>
+    <div class="tray">
+      <figure><img src="img/vassoi/coffee-stain.jpg" alt="Tavola The Coffee Stain: il vassoio a forma di macchia marrone su fondo crema con chicchi di caffè" width="1323" height="1871" loading="lazy"></figure>
+      <figure><img src="img/vassoi/coffee-stain-dati.jpg" alt="Tavola con i dati tecnici di The Coffee Stain" width="1323" height="1871" loading="lazy"></figure>
+      <dl class="specs">
+        <dt>Base</dt><dd>440 × 390 mm</dd>
+        <dt>Foro piccolo</dt><dd>Ø 40 mm</dd>
+        <dt>Foro grande</dt><dd>145 × 70 mm</dd>
+        <dt>Bordo</dt><dd>H 40 mm · sp. 10 mm</dd>
+      </dl>
+    </div>
+  </div>
+
+  <div class="block">
+    <div class="block-head">
+      <h2>The Unround Table</h2>
+      <p>Un vassoio quadrato con quattro incavi circolari negli angoli, dove appoggiare le tazzine, e una barra laterale. Tavole arancioni su un fondo di chicchi.</p>
+    </div>
+    <div class="tray">
+      <figure><img src="img/vassoi/unround.jpg" alt="Tavola The Unround Table: vassoio arancione quadrato con incavi negli angoli su fondo di chicchi di caffè" width="1323" height="1871" loading="lazy"></figure>
+      <figure><img src="img/vassoi/unround-dati.jpg" alt="Tavola con i dati tecnici e il modello 3D di The Unround Table" width="1323" height="1871" loading="lazy"></figure>
+      <dl class="specs">
+        <dt>Base quadrata</dt><dd>260 mm</dd>
+        <dt>Incavi</dt><dd>Ø 72 mm</dd>
+        <dt>Bordo</dt><dd>H 20 mm · sp. 5 mm</dd>
+        <dt>Barra laterale</dt><dd>200 mm</dd>
+      </dl>
+    </div>
+  </div>
+
+  <div class="block">
+    <div class="block-head">
+      <h2>The S(q)uare</h2>
+      <p>Una base quadrata con quadrati rialzati a diverse altezze, in rosso e nero: un piccolo paesaggio a gradini su cui disporre tazzine e piattini.</p>
+    </div>
+    <div class="tray">
+      <figure><img src="img/vassoi/square.jpg" alt="Tavola The S(q)uare: il vassoio rosso con quadrati rialzati su fondo a gradini rossi" width="1323" height="1871" loading="lazy"></figure>
+      <figure><img src="img/vassoi/square-dati.jpg" alt="Tavola con i dati tecnici e il modello 3D di The S(q)uare" width="1323" height="1871" loading="lazy"></figure>
+      <dl class="specs">
+        <dt>Base</dt><dd>600 × 600 mm</dd>
+        <dt>Quadrati laterali e superiore</dt><dd>200 × 200 mm</dd>
+        <dt>Quadrato superiore</dt><dd>H 40–60 mm</dd>
+        <dt>Bordo</dt><dd>H 20 mm · sp. 10 mm</dd>
+      </dl>
+    </div>
+  </div>
+
+  <a class="next" href="#cantuccio" style="--n:#3E5C8A"><span><span class="mono">Progetto successivo</span><b>Il Cantuccio</b></span><span class="more">→</span></a>
+</main>
+
+
+
+<!-- ============ PROGETTI ============ -->
+<main data-view="progetti" id="progetti" class="project" hidden style="--p:#3E5C8A">
+  <a class="back" href="#home">← Home</a>
+  <div class="cs-title">
+    <h1>Progetti <span>Otto pezzi della collezione</span></h1>
+    <span class="mono">Interior · Prodotto · Grafica</span>
+  </div>
+  <div class="proj-intro">
+    <p class="proj-lead">Spazi, oggetti e grafica: ogni progetto è un pezzo della collezione, con il suo colore.</p>
+    <dl class="stats">
+      <div><dt>Progetti</dt><dd>8</dd></div>
+      <div><dt>Ambiti</dt><dd>3</dd></div>
+      <div><dt>Anni</dt><dd>2021–26</dd></div>
+    </dl>
+  </div>
+  <div class="filters" role="group" aria-label="Filtra i progetti">
+    <button type="button" class="filter" data-f="all" aria-pressed="true" style="--c:#2E9E7A">Tutti <span>8</span></button>
+    <button type="button" class="filter" data-f="interior" aria-pressed="false" style="--c:#AC64A5">Interior <span>3</span></button>
+    <button type="button" class="filter" data-f="prodotto" aria-pressed="false" style="--c:#CE6E20">Prodotto <span>4</span></button>
+    <button type="button" class="filter" data-f="grafica" aria-pressed="false" style="--c:#2F8FC0">Grafica <span>1</span></button>
+  </div>
+  <div class="pcards">
+    <a class="pcard" href="#cantuccio" data-cat="interior" style="--p:#3E5C8A">
+      <div class="pc-img">
+        <span class="mono code">01 · Interior</span>
+        <img class="pc-main" src="img/notte.jpg" alt="Il Cantuccio: copertina del progetto" width="1800" height="1013" loading="lazy">
+        <img class="pc-hover" src="img/giorno.jpg" alt="" loading="lazy">
+      </div>
+      <div class="pc-info">
+        <i class="pc-cap" aria-hidden="true"></i>
+        <div class="row"><span class="mono">Scogliere di Moher, IE</span><span class="mono">2026</span></div>
+        <h3>Il Cantuccio</h3>
+        <p>Un rifugio per una sola persona, scavato per metà nella scogliera. Un luogo lontano dalla quotidianità, con vista sul mare.</p>
+        <dl class="pc-facts"><dt>Tipologia</dt><dd>Rifugio semi-ipogeo</dd><dt>Materiali</dt><dd>Acciaio, marmo, vetro strutturale</dd></dl>
+        <div class="pc-thumbs"><img src="img/thumbs/scala.jpg" alt="" width="720" height="405" loading="lazy" style="flex:1.778"><img src="img/thumbs/interno.jpg" alt="" width="720" height="405" loading="lazy" style="flex:1.778"><img src="img/thumbs/giorno.jpg" alt="" width="720" height="405" loading="lazy" style="flex:1.778"></div>
+        <span class="more">Apri il progetto →</span>
+      </div>
+    </a>
+    <a class="pcard" href="#ominous" data-cat="interior" style="--p:#AC64A5">
+      <div class="pc-img">
+        <span class="mono code">02 · Interior</span>
+        <img class="pc-main" src="img/ominous/cover-ominous.jpg" alt="Ominous: copertina del progetto" width="2560" height="1444" loading="lazy">
+        <img class="pc-hover" src="img/ominous/cover-ominous-page.jpg" alt="" loading="lazy">
+      </div>
+      <div class="pc-info">
+        <i class="pc-cap" aria-hidden="true"></i>
+        <div class="row"><span class="mono">Mini house · 25 m²</span><span class="mono">2024/25</span></div>
+        <h3>Ominous</h3>
+        <p>Una mini house per studenti: colori accesi contro il bianco e nero, soppalco a vista e arredi su misura.</p>
+        <dl class="pc-facts"><dt>Tipologia</dt><dd>Abitazione per studenti</dd><dt>Materiali</dt><dd>Acero rosa, marmo, ceramica, resina</dd></dl>
+        <div class="pc-thumbs"><img src="img/thumbs/ominous-render-1.jpg" alt="" width="720" height="405" loading="lazy" style="flex:1.778"><img src="img/thumbs/ominous-render-6.jpg" alt="" width="720" height="406" loading="lazy" style="flex:1.773"><img src="img/thumbs/ominous-sezione-b.jpg" alt="" width="720" height="401" loading="lazy" style="flex:1.796"></div>
+        <span class="more">Apri il progetto →</span>
+      </div>
+    </a>
+    <a class="pcard vert" href="#twalk" data-cat="prodotto" style="--p:#CE6E20">
+      <div class="pc-img">
+        <span class="mono code">03 · Industrial design</span>
+        <img class="pc-main" src="img/twalk/cover-twalk.jpg" alt="T-walk: copertina del progetto" width="1497" height="1749" loading="lazy">
+        <img class="pc-hover" src="img/twalk/hover-persona.jpg" alt="" loading="lazy">
+      </div>
+      <div class="pc-info">
+        <i class="pc-cap" aria-hidden="true"></i>
+        <div class="row"><span class="mono">Robot di trasporto</span><span class="mono">2021/22</span></div>
+        <h3>T-walk</h3>
+        <p>Un robot semi-autonomo che porta la spesa e, se serve, anche chi la fa. Pensato per i senior.</p>
+        <dl class="pc-facts"><dt>Tipologia</dt><dd>Robot di trasporto</dd><dt>Materiali</dt><dd>Alluminio, Moplen, PVC</dd></dl>
+        <div class="pc-thumbs"><img src="img/thumbs/twalk-render-contesto.jpg" alt="" width="720" height="450" loading="lazy" style="flex:1.600"><img src="img/thumbs/twalk-sketch-3.jpg" alt="" width="720" height="439" loading="lazy" style="flex:1.640"><img src="img/thumbs/twalk-tecnico-3.jpg" alt="" width="531" height="520" loading="lazy" style="flex:1.021"></div>
+        <span class="more">Apri il progetto →</span>
+      </div>
+    </a>
+    <a class="pcard" href="#oriente" data-cat="interior" style="--p:#E2231A">
+      <div class="pc-img">
+        <span class="mono code">04 · Interior</span>
+        <img class="pc-main" src="img/oriente/render-oni.jpg" alt="Museu do Oriente: copertina del progetto" width="1920" height="1080" loading="lazy">
+        <img class="pc-hover" src="img/oriente/render-lampade.jpg" alt="" loading="lazy">
+      </div>
+      <div class="pc-info">
+        <i class="pc-cap" aria-hidden="true"></i>
+        <div class="row"><span class="mono">Lisbona</span><span class="mono">2022/23</span></div>
+        <h3>Museu do Oriente</h3>
+        <p>La caffetteria del museo ripensata nell&#x27;atmosfera delle vecchie architetture giapponesi, con i pilastri trasformati in tavoli.</p>
+        <dl class="pc-facts"><dt>Tipologia</dt><dd>Caffetteria museale</dd><dt>Materiali</dt><dd>Bambù, legno bruciato, gres, specchio</dd></dl>
+        <div class="pc-thumbs"><img src="img/thumbs/oriente-render-bambu.jpg" alt="" width="720" height="405" loading="lazy" style="flex:1.778"><img src="img/thumbs/oriente-render-distributori.jpg" alt="" width="720" height="405" loading="lazy" style="flex:1.778"><img src="img/thumbs/oriente-render-vetrata.jpg" alt="" width="720" height="405" loading="lazy" style="flex:1.778"></div>
+        <span class="more">Apri il progetto →</span>
+      </div>
+    </a>
+    <a class="pcard vert" href="#eco" data-cat="grafica" style="--p:#2F8FC0">
+      <div class="pc-img">
+        <span class="mono code">05 · Graphic design</span>
+        <img class="pc-main" src="img/eco/cover-eco.jpg" alt="Eco not Ego: copertina del progetto" width="1200" height="1697" loading="lazy">
+        <img class="pc-hover" src="img/eco/in-our-hands.jpg" alt="" loading="lazy">
+      </div>
+      <div class="pc-info">
+        <i class="pc-cap inv" aria-hidden="true"></i>
+        <div class="row"><span class="mono">Volume e grafica</span><span class="mono">2021/22</span></div>
+        <h3>Eco not Ego</h3>
+        <p>Un volume di grafica sul cambiamento climatico, con illustrazioni e uno studio sul colore.</p>
+        <dl class="pc-facts"><dt>Tipologia</dt><dd>Volume illustrato</dd><dt>Materiali</dt><dd>Illustrazione, colore, impaginazione</dd></dl>
+        <div class="pc-thumbs"><img src="img/thumbs/eco-plana.jpg" alt="" width="477" height="520" loading="lazy" style="flex:0.917"><img src="img/thumbs/eco-palette.jpg" alt="" width="720" height="152" loading="lazy" style="flex:4.737"><img src="img/thumbs/eco-in-our-hands.jpg" alt="" width="368" height="520" loading="lazy" style="flex:0.708"></div>
+        <span class="more">Apri il progetto →</span>
+      </div>
+    </a>
+    <a class="pcard" href="#gladiatori" data-cat="prodotto" style="--p:#C46E78">
+      <div class="pc-img">
+        <span class="mono code">06 · Product design</span>
+        <img class="pc-main" src="img/gladiatori/render-prospettiva.jpg" alt="Gladiatori: copertina del progetto" width="1915" height="896" loading="lazy">
+        <img class="pc-hover" src="img/gladiatori/render-grigio.jpg" alt="" loading="lazy">
+      </div>
+      <div class="pc-info">
+        <i class="pc-cap" aria-hidden="true"></i>
+        <div class="row"><span class="mono">Anfiteatro Campano</span><span class="mono">Tesi</span></div>
+        <h3>Gladiatori</h3>
+        <p>Quattro gladiatori da collezionare e con cui giocare: figure e gioco da tavolo per l&#x27;Anfiteatro Campano.</p>
+        <dl class="pc-facts"><dt>Tipologia</dt><dd>Figure e gioco da tavolo</dd><dt>Materiali</dt><dd>PVC dipinto</dd></dl>
+        <div class="pc-thumbs"><img src="img/thumbs/gladiatori-idea-base.jpg" alt="" width="568" height="520" loading="lazy" style="flex:1.092"><img src="img/thumbs/gladiatori-tavola-gioco.jpg" alt="" width="720" height="509" loading="lazy" style="flex:1.415"><img src="img/thumbs/gladiatori-set-colore.jpg" alt="" width="720" height="226" loading="lazy" style="flex:3.186"></div>
+        <span class="more">Apri il progetto →</span>
+      </div>
+    </a>
+    <a class="pcard" href="#bob" data-cat="prodotto" style="--p:#E9A81E">
+      <div class="pc-img">
+        <span class="mono code">07 · Product design</span>
+        <img class="pc-main" src="img/bob/render-rosso.jpg" alt="Bob the Blob: copertina del progetto" width="2400" height="555" loading="lazy">
+        <img class="pc-hover" src="img/bob/render-nero.jpg" alt="" loading="lazy">
+      </div>
+      <div class="pc-info">
+        <i class="pc-cap" aria-hidden="true"></i>
+        <div class="row"><span class="mono">Tesi magistrale</span><span class="mono">2025/26</span></div>
+        <h3>Bob the Blob</h3>
+        <p>Sorpresine da collezione che criticano il collezionismo dall&#x27;interno. Ipotesi di collaborazione tra Alessi e Kinder.</p>
+        <dl class="pc-facts"><dt>Tipologia</dt><dd>Sorprese da collezione</dd><dt>Materiali</dt><dd>Polistirene, polipropilene</dd></dl>
+        <div class="pc-thumbs"><img src="img/thumbs/bob-disegno-85.jpg" alt="" width="404" height="520" loading="lazy" style="flex:0.777"><img src="img/thumbs/bob-innovation.jpg" alt="" width="720" height="514" loading="lazy" style="flex:1.401"><img src="img/thumbs/bob-fase-39.jpg" alt="" width="520" height="520" loading="lazy" style="flex:1.000"></div>
+        <span class="more">Apri il progetto →</span>
+      </div>
+    </a>
+    <a class="pcard" href="#vassoi" data-cat="prodotto" style="--p:#7A4A2E">
+      <div class="pc-img">
+        <span class="mono code">08 · Product design</span>
+        <img class="pc-main" src="img/vassoi/cover-vassoi.jpg" alt="Coffee Trays: copertina del progetto" width="2334" height="1100" loading="lazy">
+        <img class="pc-hover" src="img/vassoi/hover-dati.jpg" alt="" loading="lazy">
+      </div>
+      <div class="pc-info">
+        <i class="pc-cap" aria-hidden="true"></i>
+        <div class="row"><span class="mono">Vassoi</span><span class="mono">Serie di tre</span></div>
+        <h3>Coffee Trays</h3>
+        <p>Tre vassoi per il caffè, ognuno con una forma e un carattere propri: The Coffee Stain, The Unround Table e The S(q)uare.</p>
+        <dl class="pc-facts"><dt>Tipologia</dt><dd>Serie di tre vassoi</dd><dt>Materiali</dt><dd>Servizio del caffè</dd></dl>
+        <div class="pc-thumbs"><img src="img/thumbs/vassoi-coffee-stain.jpg" alt="" width="368" height="520" loading="lazy" style="flex:0.708"><img src="img/thumbs/vassoi-unround.jpg" alt="" width="368" height="520" loading="lazy" style="flex:0.708"><img src="img/thumbs/vassoi-square.jpg" alt="" width="368" height="520" loading="lazy" style="flex:0.708"></div>
+        <span class="more">Apri il progetto →</span>
+      </div>
+    </a>
+  </div>
+
+  <a class="next" href="#studio" style="--n:#2E9E7A"><span><span class="mono">Chi c'è dietro</span><b>About</b></span><span class="more">→</span></a>
+</main>
+
+<!-- ============ STUDIO ============ -->
+<main data-view="studio" id="studio" class="project" hidden style="--p:#2E9E7A">
+  <a class="back" href="#home">← Home</a>
+  <div class="cs-title">
+    <h1>About <span>Spazi e oggetti a misura di persona</span></h1>
+    <span class="mono">Mario De Michele · Caserta, IT</span>
+  </div>
+
+  <div class="about" style="margin-top:8px">
+    <p class="about-lead">Sono Mario, designer con base a Caserta. Progetto spazi e oggetti che mettono al centro <em>chi li vive</em>: <a class="hl" href="#cantuccio" style="--p:#3E5C8A">luoghi in cui raccogliersi<span class="pv" aria-hidden="true"><img src="img/home/cantuccio.jpg" alt="" loading="lazy"><b>Il Cantuccio</b></span></a>, <a class="hl" href="#ominous" style="--p:#AC64A5">case piccole ma complete<span class="pv" aria-hidden="true"><img src="img/home/ominous.jpg" alt="" loading="lazy"><b>Ominous</b></span></a>, <a class="hl" href="#bob" style="--p:#E9A81E">personaggi da collezionare<span class="pv" aria-hidden="true"><img src="img/home/bob.jpg" alt="" loading="lazy"><b>Bob the Blob</b></span></a> e <a class="hl" href="#twalk" style="--p:#CE6E20">strumenti facili da usare ogni giorno<span class="pv" aria-hidden="true"><img src="img/home/twalk.jpg" alt="" loading="lazy"><b>T-walk</b></span></a>.</p>
+    <div class="about-side">
+      <div class="aside-card">
+        <div class="mono">Base</div>
+        <p class="aside-big"><span class="pin" aria-hidden="true"></span>Caserta, Italia</p>
+      </div>
+      <div class="aside-card">
+        <div class="mono">Ambiti</div>
+        <div class="aside-chips"><a href="#progetti" data-filter="interior" style="--p:#3E5C8A"><i></i>Interior</a><a href="#progetti" data-filter="prodotto" style="--p:#CE6E20"><i></i>Prodotto</a><a href="#progetti" data-filter="grafica" style="--p:#2F8FC0"><i></i>Grafica</a></div>
+      </div>
+      <div class="aside-card aside-stats">
+        <div><b>8</b><span class="mono">Progetti</span></div>
+        <div><b>3</b><span class="mono">Ambiti</span></div>
+        <div><b>2020</b><span class="mono">Dal</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="block">
+    <div class="block-head">
+      <h2>Come lavoro</h2>
+      <p>Tre costanti che attraversano i progetti, dagli spazi alle figure da collezione.</p>
+    </div>
+    <div class="idk ways">
+      <div class="concept" style="--p:#AC64A5"><i class="pc-cap" aria-hidden="true"></i><span class="mono">Persone</span><h3>Su misura di chi lo usa</h3><p>Ogni progetto parte da un utente preciso: lo studente di Ominous, il senior di T-walk, il collezionista di Bob the Blob.</p></div>
+      <div class="concept" style="--p:#E9A81E"><i class="pc-cap" aria-hidden="true"></i><span class="mono">Carattere</span><h3>Colore e forme morbide</h3><p>Palette decise, materiali riconoscibili e forme che invitano a toccare, dal marmo verde del Cantuccio alle capsule colorate.</p></div>
+      <div class="concept" style="--p:#2F8FC0"><i class="pc-cap" aria-hidden="true"></i><span class="mono">Significato</span><h3>Oggetti che raccontano</h3><p>Il design come racconto e, quando serve, come critica: un oggetto da collezione può far riflettere su chi colleziona.</p></div>
+    </div>
+  </div>
+
+
+  <div class="block">
+    <div class="block-head">
+      <h2>Dal foglio al render</h2>
+      <p>Le fasi che ritornano in ogni progetto, raccontate con le tavole della collezione.</p>
+    </div>
+    <div class="process">
+      <div class="prow"><a class="pfig" href="#ominous" style="flex:0.968;--p:#AC64A5"><img src="img/ominous/moodboard.jpg" alt="Riferimenti, dal progetto Ominous" width="1104" height="1140" loading="lazy"><span class="pf-cap"><span class="mono">01</span><b>Riferimenti</b><span>Ominous</span></span></a><a class="pfig" href="#twalk" style="flex:1.641;--p:#CE6E20"><img src="img/twalk/sketch-3.jpg" alt="Schizzo, dal progetto T-walk" width="1800" height="1097" loading="lazy"><span class="pf-cap"><span class="mono">02</span><b>Schizzo</b><span>T-walk</span></span></a><a class="pfig" href="#gladiatori" style="flex:1.505;--p:#C46E78"><img src="img/gladiatori/disegno-figura.jpg" alt="Disegno, dal progetto Gladiatori" width="1928" height="1281" loading="lazy"><span class="pf-cap"><span class="mono">03</span><b>Disegno</b><span>Gladiatori</span></span></a></div>
+      <div class="prow"><a class="pfig" href="#ominous" style="flex:1.264;--p:#AC64A5"><img src="img/ominous/materiali.jpg" alt="Materiali, dal progetto Ominous" width="1400" height="1108" loading="lazy"><span class="pf-cap"><span class="mono">04</span><b>Materiali</b><span>Ominous</span></span></a><a class="pfig" href="#ominous" style="flex:1.779;--p:#AC64A5"><img src="img/ominous/render-1.jpg" alt="Render, dal progetto Ominous" width="1800" height="1012" loading="lazy"><span class="pf-cap"><span class="mono">05</span><b>Render</b><span>Ominous</span></span></a></div>
+    </div>
+  </div>
+
+  <div class="block">
+    <div class="block-head">
+      <h2>Materiali</h2>
+      <p>Quelli che tornano nei progetti, ognuno col colore del pezzo da cui viene.</p>
+    </div>
+    <ul class="matlist"><li style="--p:#3E5C8A"><i></i>Acciaio<span>Il Cantuccio</span></li><li style="--p:#3E5C8A"><i></i>Marmo<span>Il Cantuccio</span></li><li style="--p:#3E5C8A"><i></i>Vetro strutturale<span>Il Cantuccio</span></li><li style="--p:#AC64A5"><i></i>Acero rosa<span>Ominous</span></li><li style="--p:#AC64A5"><i></i>Resina<span>Ominous</span></li><li style="--p:#AC64A5"><i></i>Ceramica<span>Ominous</span></li><li style="--p:#CE6E20"><i></i>Alluminio<span>T-walk</span></li><li style="--p:#CE6E20"><i></i>Moplen<span>T-walk</span></li><li style="--p:#E2231A"><i></i>Bambù<span>Museu do Oriente</span></li><li style="--p:#E2231A"><i></i>Legno bruciato<span>Museu do Oriente</span></li><li style="--p:#E2231A"><i></i>Gres<span>Museu do Oriente</span></li><li style="--p:#C46E78"><i></i>PVC dipinto<span>Gladiatori</span></li><li style="--p:#E9A81E"><i></i>Polistirene<span>Bob the Blob</span></li><li style="--p:#E9A81E"><i></i>Polipropilene<span>Bob the Blob</span></li></ul>
+  </div>
+  <div class="block">
+    <div class="block-head">
+      <h2>Formazione</h2>
+      <p>Corsi e laboratori da cui nascono i progetti di questo portfolio.</p>
+    </div>
+    <ol class="edu"><li style="--p:#2F8FC0"><span class="edu-dot" aria-hidden="true"></span><span class="mono">2020 – 2023</span><h3>Laurea triennale</h3><p>Design e Comunicazione</p><span class="edu-school">Università Vanvitelli</span></li><li style="--p:#E2231A"><span class="edu-dot" aria-hidden="true"></span><span class="mono">2022/23</span><h3>Design V</h3><p>Il progetto del Museu do Oriente</p><span class="edu-school">Universidade de Lisboa</span></li><li style="--p:#E9A81E"><span class="edu-dot" aria-hidden="true"></span><span class="mono">2023 – 2025</span><h3>Laurea magistrale</h3><p>Design per l'Innovazione, Product Ecodesign</p><span class="edu-school">Università Vanvitelli</span></li></ol>
+  </div>
+
+  <div class="block">
+    <div class="block-head">
+      <h2>Strumenti</h2>
+      <p>Dalla modellazione al render, fino all'impaginazione delle tavole.</p>
+    </div>
+    <ul class="matlist toolchips"><li style="--p:#3E5C8A"><i></i>Rhino 8<span>Modellazione</span></li><li style="--p:#AC64A5"><i></i>Twinmotion<span>Render</span></li><li style="--p:#CE6E20"><i></i>Blender<span>Animazione</span></li><li style="--p:#C46E78"><i></i>Illustrator<span>Tavole</span></li><li style="--p:#2E9E7A"><i></i>Figma<span>Layout</span></li></ul>
+  </div>
+
+  <div class="block">
+    <div class="block-head">
+      <h2>La collezione</h2>
+      <p>Otto progetti, ognuno con il suo colore.</p>
+    </div>
+    <div class="right-col">
+    <nav class="shelf shelf-right" aria-label="Progetti">
+      <a href="#cantuccio" style="--p:#3E5C8A"><i></i><span>01</span><b>Il Cantuccio</b></a>
+      <a href="#ominous" style="--p:#AC64A5"><i></i><span>02</span><b>Ominous</b></a>
+      <a href="#twalk" style="--p:#CE6E20"><i></i><span>03</span><b>T-walk</b></a>
+      <a href="#oriente" style="--p:#E2231A"><i></i><span>04</span><b>Museu do Oriente</b></a>
+      <a class="inv" href="#eco" style="--p:#2F8FC0"><i></i><span>05</span><b>Eco not Ego</b></a>
+      <a href="#gladiatori" style="--p:#C46E78"><i></i><span>06</span><b>Gladiatori</b></a>
+      <a href="#bob" style="--p:#E9A81E"><i></i><span>07</span><b>Bob the Blob</b></a>
+      <a href="#vassoi" style="--p:#7A4A2E"><i></i><span>08</span><b>Coffee Trays</b></a>
+    </nav>
+    </div>
+  </div>
+
+  <a class="next" href="#contatti" style="--n:#5A4FCF"><span><span class="mono">Parliamone</span><b>Contatti</b></span><span class="more">→</span></a>
+</main>
+
+<!-- ============ CONTATTI ============ -->
+<main data-view="contatti" id="contatti" class="project contact" hidden style="--p:#5A4FCF">
+  <a class="back" href="#home">← Home</a>
+  <div class="cs-title">
+    <h1>Contatti <span>Hai uno spazio o un oggetto da progettare?</span></h1>
+    <span class="mono">Caserta, IT</span>
+    <div class="capcluster" aria-hidden="true"><span class="cap" style="--p:#3E5C8A;--i:0" title="Il Cantuccio · trascinami"></span><span class="cap" style="--p:#AC64A5;--i:1" title="Ominous · trascinami"></span><span class="cap" style="--p:#CE6E20;--i:2" title="T-walk · trascinami"></span><span class="cap" style="--p:#E2231A;--i:3" title="Museu do Oriente · trascinami"></span><span class="cap inv" style="--p:#2F8FC0;--i:4" title="Eco not Ego · trascinami"></span><span class="cap" style="--p:#C46E78;--i:5" title="Gladiatori · trascinami"></span><span class="cap" style="--p:#E9A81E;--i:6" title="Bob the Blob · trascinami"></span><span class="cap" style="--p:#7A4A2E;--i:7" title="Coffee Trays · trascinami"></span></div>
+  </div>
+    <div class="reach">
+      <a class="reach-mail" href="mailto:demichele.mario.99@gmail.com"><span id="email">demichele.mario.99@gmail.com</span> <span class="arr" aria-hidden="true">↗</span></a>
+      <div class="reach-chips">
+        <button id="copy" class="rchip" type="button" style="--p:#2E9E7A"><i></i>Copia email</button>
+        <a class="rchip" href="https://www.behance.net/mariodemichele1" target="_blank" rel="noopener" style="--p:#3E5C8A"><i></i>Behance</a>
+        <a class="rchip" href="https://www.linkedin.com/in/mario-de-michele-129002400/" target="_blank" rel="noopener" style="--p:#AC64A5"><i></i>LinkedIn</a>
+      </div>
+    </div>
+
+  <div class="block">
+    <div class="block-head">
+      <h2>Di cosa parliamo</h2>
+      <p>Tre ambiti, gli stessi della collezione.</p>
+    </div>
+    <ul class="topics"><li style="--p:#3E5C8A"><i class="pc-cap" aria-hidden="true"></i><span class="mono">Spazi</span><h3>Interior</h3><p>Case piccole, rifugi, locali e allestimenti.</p><span class="ex">Il Cantuccio, Ominous, Museu do Oriente</span></li><li style="--p:#CE6E20"><i class="pc-cap" aria-hidden="true"></i><span class="mono">Oggetti</span><h3>Prodotto</h3><p>Oggetti d'uso, giochi e personaggi da collezione.</p><span class="ex">T-walk, Gladiatori, Bob the Blob, Coffee Trays</span></li><li style="--p:#2F8FC0"><i class="pc-cap inv" aria-hidden="true"></i><span class="mono">Carta</span><h3>Grafica</h3><p>Volumi, tavole e identità visive.</p><span class="ex">Eco not Ego</span></li></ul>
+  </div>
+
+  <div class="block">
+    <div class="block-head">
+      <h2>Scrivimi</h2>
+      <p>Compila qui: si apre la tua app di posta con il messaggio già pronto.</p>
+    </div>
+    <form class="compose" id="compose" style="--f:#3E5C8A">
+      <div class="f-row">
+        <label class="field"><span class="mono">Nome</span><input name="nome" autocomplete="name" placeholder="Come ti chiami"></label>
+        <fieldset class="field"><legend class="mono">Ambito</legend><div class="radios"><label style="--c:#3E5C8A"><input type="radio" name="ambito" value="Interior" checked><span>Interior</span></label><label style="--c:#CE6E20"><input type="radio" name="ambito" value="Prodotto"><span>Prodotto</span></label><label style="--c:#2F8FC0"><input type="radio" name="ambito" value="Grafica"><span>Grafica</span></label></div></fieldset>
+      </div>
+      <label class="field"><span class="mono">Messaggio</span><textarea name="msg" rows="5" placeholder="Raccontami lo spazio o l'oggetto che hai in mente"></textarea></label>
+      <button type="submit" class="send">Prepara l'email <span aria-hidden="true">→</span></button>
+    </form>
+  </div>
+
+  <a class="next" href="#progetti" style="--n:#3E5C8A"><span><span class="mono">Intanto guarda</span><b>Progetti</b></span><span class="more">→</span></a>
+</main>
+
+<footer>
+  <span class="mono">© 2026 Mario De Michele</span>
+  <span class="mono">Caserta · 41.07° N, 14.33° E</span>
+</footer>
+</div>
+
+<script>
+(function(){
+  const views=[...document.querySelectorAll('[data-view]')];
+  const home=document.getElementById('home');
+  function route(){
+    const id=decodeURIComponent(location.hash.slice(1));
+    const target=id?document.getElementById(id):null;
+    const view=(target&&target.closest('[data-view]'))||home;
+    views.forEach(v=>{v.hidden=v!==view});
+    document.documentElement.dataset.view=view.id;
+    document.querySelectorAll('nav ul a').forEach(l=>{l.toggleAttribute('aria-current',l.getAttribute('href')==='#'+view.id)});
+    if(target&&target!==view){target.scrollIntoView()}else{window.scrollTo(0,0)}
+  }
+  window.addEventListener('hashchange',route);
+  route();
+
+
+  // filtri pagina Progetti
+  const fbtn=[...document.querySelectorAll('.filter')], cards=[...document.querySelectorAll('.pcard')];
+  function layout(){let k=0;cards.forEach(c=>{if(!c.hidden){c.classList.toggle('flip',k%2===1);k++;}});}
+  fbtn.forEach(b=>b.addEventListener('click',()=>{
+    const f=b.dataset.f; fbtn.forEach(x=>x.setAttribute('aria-pressed',x===b?'true':'false'));
+    cards.forEach(c=>{c.hidden=!(f==='all'||c.dataset.cat===f)}); layout();
+  }));
+  layout();
+
+  const cf=document.getElementById('compose');
+  if(cf)cf.addEventListener('submit',e=>{e.preventDefault();
+    const f=new FormData(cf),to=document.getElementById('email').textContent.trim();
+    const sub='Progetto '+(f.get('ambito')||'')+(f.get('nome')?' · '+f.get('nome'):'');
+    const body=(f.get('msg')||'')+(f.get('nome')?'\n\n'+f.get('nome'):'');
+    location.href='mailto:'+to+'?subject='+encodeURIComponent(sub)+'&body='+encodeURIComponent(body);
+  });
+
+  document.querySelectorAll('.variants').forEach(f=>{const bs=[...f.querySelectorAll('.vbtn')],is=[...f.querySelectorAll('.vimg')];
+    bs.forEach(b=>b.addEventListener('click',()=>{bs.forEach(x=>x.setAttribute('aria-pressed',x===b?'true':'false'));is.forEach(i=>i.classList.toggle('on',i.dataset.v===b.dataset.v))}))});
+
+  if(cf){const setF=()=>{const r=cf.querySelector('input[name=ambito]:checked');if(r)cf.style.setProperty('--f',getComputedStyle(r.closest('label')).getPropertyValue('--c').trim())};
+    cf.addEventListener('change',setF);setF();}
+
+  const rm=document.querySelector('.reach-mail');if(rm){const C=['#3E5C8A','#AC64A5','#CE6E20','#E2231A','#2F8FC0','#C46E78','#E9A81E','#7A4A2E'];let k=4;rm.addEventListener('mouseenter',()=>{k=(k+1)%C.length;rm.style.setProperty('--hl',C[k])})}
+  const btn=document.getElementById('copy');
+  btn.addEventListener('click',()=>{
+    const el=document.getElementById('email');
+    const done=()=>{btn.textContent='Copiata';setTimeout(()=>btn.textContent='Copia email',1800)};
+    const sel=()=>{const r=document.createRange();r.selectNodeContents(el);const s=getSelection();s.removeAllRanges();s.addRange(r);btn.textContent='Premi Ctrl+C'};
+    try{navigator.clipboard.writeText(el.textContent).then(done).catch(sel)}catch(e){sel()}
+  });
+})();
+</script>
+<div class="lb" id="lb" hidden role="dialog" aria-modal="true" aria-label="Immagine ingrandita">
+  <div class="lb-stage" id="lbStage"><img id="lbImg" alt=""></div>
+  <div class="lb-bar top">
+    <span class="mono" id="lbCount"></span>
+    <button type="button" class="lb-btn" id="lbClose" aria-label="Chiudi">✕</button>
+  </div>
+  <button type="button" class="lb-btn lb-nav lb-p" id="lbPrev" aria-label="Immagine precedente">←</button>
+  <button type="button" class="lb-btn lb-nav lb-n" id="lbNext" aria-label="Immagine successiva">→</button>
+  <div class="lb-bar bottom">
+    <span class="lb-cap" id="lbCap"></span>
+    <div class="lb-zoom">
+      <button type="button" class="lb-btn" id="lbOut" aria-label="Riduci">−</button>
+      <span class="mono" id="lbPct">100%</span>
+      <button type="button" class="lb-btn" id="lbIn" aria-label="Ingrandisci">+</button>
+    </div>
+  </div>
+</div>
+<style>
+.zoomable{cursor:zoom-in}
+.zt{transition:transform .35s cubic-bezier(.3,1.5,.5,1),box-shadow .35s cubic-bezier(.3,1.5,.5,1)}
+.zt:hover,.zt:has(img:focus-visible),img.zt:focus-visible{transform:translate(-4px,-4px) rotate(var(--zr,-.4deg));box-shadow:8px 8px 0 var(--p,#2B2935)}
+img.zoomable:focus{outline:none}
+img.zt:focus-visible,.zt:has(img:focus-visible){outline:2px solid var(--p,#2B2935);outline-offset:3px}
+@media (hover:hover) and (pointer:fine){.zoomable{cursor:none}}
+.zt:active{transform:translate(-1px,-1px) scale(.99);box-shadow:3px 3px 0 var(--p,#2B2935);transition-duration:.12s}
+.zpill{position:fixed;left:0;top:0;z-index:999;pointer-events:none;display:flex;align-items:center;gap:7px;padding:7px 12px 7px 9px;border-radius:99px;background:var(--zc,#2B2935);color:#fff;font:600 13px var(--f-body);box-shadow:0 6px 18px rgba(0,0,0,.18);opacity:0;transform:translate(var(--zx),var(--zy)) scale(.6) rotate(-8deg);transition:opacity .2s,transform .35s cubic-bezier(.3,1.6,.5,1)}
+.zpill i{width:18px;height:11px;border-radius:99px;background:linear-gradient(90deg,#fff 50%,rgba(255,255,255,.55) 50%);transition:transform .35s cubic-bezier(.3,1.6,.5,1)}
+.zpill.on{opacity:1;transform:translate(var(--zx),var(--zy)) scale(1) rotate(-3deg)}
+.zpill.on i{transform:rotate(-20deg)}
+.zpill{padding:0;width:36px;height:20px;gap:0;background:linear-gradient(90deg,var(--zc,#2B2935) 50%,color-mix(in srgb,var(--zc,#2B2935) 55%,#fff) 50%);box-shadow:inset 0 -3px 0 rgba(0,0,0,.14),0 4px 12px rgba(0,0,0,.2)}
+.lb-stage img.pop{animation:lbPop .42s cubic-bezier(.3,1.5,.5,1)}
+.lb-stage img.slide-l{animation:lbSlideL .38s cubic-bezier(.3,1.3,.5,1)}
+.lb-stage img.slide-r{animation:lbSlideR .38s cubic-bezier(.3,1.3,.5,1)}
+@keyframes lbPop{from{opacity:0;scale:.86;rotate:-2deg}to{opacity:1;scale:1;rotate:0deg}}
+@keyframes lbSlideL{from{opacity:0;translate:60px 0;rotate:1.5deg}to{opacity:1;translate:0 0;rotate:0deg}}
+@keyframes lbSlideR{from{opacity:0;translate:-60px 0;rotate:-1.5deg}to{opacity:1;translate:0 0;rotate:0deg}}
+@media (hover:none),(pointer:coarse){.zpill{display:none}}
+@media (prefers-reduced-motion:reduce){.zt{transition:none}.zt:hover,.zt:focus-within{transform:none}.zpill{transition:opacity .2s}.zpill,.zpill.on{transform:translate(var(--zx),var(--zy))}.lb-stage img.pop,.lb-stage img.slide-l,.lb-stage img.slide-r{animation:none}}
+.lb{position:fixed;inset:0;z-index:1000;background:rgba(14,14,18,.97);color:#fff;touch-action:none;animation:lbIn .25s ease}
+.lb[hidden]{display:none}
+@keyframes lbIn{from{opacity:0}to{opacity:1}}
+.lb-stage{position:absolute;inset:0;overflow:hidden;display:flex;align-items:center;justify-content:center;cursor:zoom-in}
+.lb-stage.zoomed{cursor:grab}.lb-stage.drag{cursor:grabbing}
+.lb-stage img{max-width:calc(100vw - 32px);max-height:calc(100vh - 140px);width:auto;height:auto;transform-origin:0 0;user-select:none;-webkit-user-drag:none;will-change:transform;border-radius:6px}
+.lb-stage img.anim{transition:transform .25s ease}
+.lb-bar{position:absolute;z-index:2;left:0;right:0;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 16px;pointer-events:none}
+.lb-bar>*{pointer-events:auto}
+.lb-bar.top{top:0;background:linear-gradient(rgba(14,14,18,.7),transparent)}.lb-bar.bottom{bottom:0;background:linear-gradient(transparent,rgba(14,14,18,.7))}
+.lb .mono{color:rgba(255,255,255,.75)}
+.lb-cap{font-size:14px;color:rgba(255,255,255,.85);max-width:60ch;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.lb-zoom{display:flex;align-items:center;gap:10px;margin-left:auto}
+.lb-zoom .mono{min-width:4ch;text-align:center}
+.lb-btn{width:44px;height:44px;border-radius:99px;border:1px solid rgba(255,255,255,.25);background:rgba(255,255,255,.08);color:#fff;font:600 18px var(--f-body);cursor:pointer;display:inline-flex;align-items:center;justify-content:center;transition:background .2s,transform .25s cubic-bezier(.3,1.6,.5,1)}
+.lb-btn:hover{background:var(--lbc,#2B2935);border-color:var(--lbc,#2B2935);transform:scale(1.08)}
+.lb-btn:focus-visible{outline:2px solid #fff;outline-offset:2px}
+.lb-nav{position:absolute;z-index:2;top:50%;margin-top:-22px;background:rgba(14,14,18,.6)}
+.lb-nav.lb-p{left:16px}.lb-nav.lb-n{right:16px}
+.lb-nav[hidden]{display:none}
+@media (max-width:620px){.lb-nav{top:auto;bottom:14px;margin:0}.lb-nav.lb-p{left:16px}.lb-nav.lb-n{left:68px;right:auto}.lb-cap{display:none}}
+@media (prefers-reduced-motion:reduce){.lb{animation:none}.lb-stage img.anim{transition:none}.lb-btn{transition:none}}
+</style>
+<script>
+(()=>{
+  const SKIP=new Set(['home','progetti','studio','contatti']);
+  const lb=document.getElementById('lb'),stage=document.getElementById('lbStage'),im=document.getElementById('lbImg');
+  const $=id=>document.getElementById(id);
+  let list=[],idx=0,s=1,tx=0,ty=0,base={w:0,h:0},lastFocus=null;
+  const ok=img=>{if(img.closest('.stickers'))return false;const m=img.closest('main[data-view]');const l=img.closest('a');return m&&!SKIP.has(m.dataset.view)&&!(l&&(l.getAttribute('href')||'').startsWith('#'))&&!img.closest('.lb')};
+  const clips=e=>e&&getComputedStyle(e).overflow!=='visible';
+  let zk=0;
+  document.querySelectorAll('main[data-view] img').forEach(i=>{if(ok(i)){
+    let t=i;const filled=e=>{const c=getComputedStyle(e);return c.backgroundColor!=='rgba(0, 0, 0, 0)'||c.backgroundImage!=='none'};
+    for(let e=i.parentElement,k=0;k<3&&e&&!/^(MAIN|FIGURE)$/.test(e.tagName)&&(e.children.length<=2||e.classList.contains('vframe'));k++,e=e.parentElement){if(filled(e)){t=e;break}}
+    if(t===i){if(clips(i.parentElement))t=i.parentElement;else if(clips(i.parentElement.parentElement)&&i.parentElement.children.length===1)t=i.parentElement.parentElement;}
+    if(!t.classList.contains('zt')){t.classList.add('zt');t.style.setProperty('--zr',(zk++%2?'.4deg':'-.4deg'))}
+    i.classList.add('zoomable');i.tabIndex=0;i.setAttribute('role','button');if(!i.getAttribute('aria-label'))i.setAttribute('aria-label','Ingrandisci immagine'+(i.alt?': '+i.alt:''))}});
+  const caption=i=>{const f=i.closest('figure');const fc=f&&f.querySelector('figcaption');return (fc&&fc.textContent.trim())||i.alt||''};
+  function apply(anim){im.classList.toggle('anim',!!anim);im.style.transform=`translate(${tx}px,${ty}px) scale(${s})`;$('lbPct').textContent=Math.round(s*100)+'%';stage.classList.toggle('zoomed',s>1.01)}
+  function center(){const r=stage.getBoundingClientRect();base.w=im.offsetWidth;base.h=im.offsetHeight;
+    // image is flex-centered; transform origin 0 0 relative to its own box
+    s=1;tx=0;ty=0;apply(false)}
+  function clamp(){const w=base.w*s,h=base.h*s,vw=stage.clientWidth,vh=stage.clientHeight;
+    const ox=(vw-base.w)/2,oy=(vh-base.h)/2; // image box position
+    const minX=Math.min(0,vw-w-ox)-0, maxX=Math.max(0,-ox);
+    if(w<=vw){tx=(base.w-w)/2}else{tx=Math.min(-ox,Math.max(vw-ox-w,tx))}
+    if(h<=vh){ty=(base.h-h)/2}else{ty=Math.min(-oy,Math.max(vh-oy-h,ty))}}
+  function zoomAt(ns,cx,cy,anim){ns=Math.max(1,Math.min(6,ns));const r=im.getBoundingClientRect();
+    const px=(cx-r.left)/s,py=(cy-r.top)/s; // point in image coords
+    tx+= (cx-r.left) - px*ns; ty+=(cy-r.top)-py*ns; s=ns; clamp(); apply(anim)}
+  function zoomCenter(f){const r=stage.getBoundingClientRect();zoomAt(s*f,r.left+r.width/2,r.top+r.height/2,true)}
+  const pill=document.createElement('div');pill.className='zpill';pill.setAttribute('aria-hidden','true');document.body.appendChild(pill);
+  let pillOn=false;
+  document.addEventListener('pointermove',e=>{if(e.pointerType!=='mouse')return;const z=!lb.hidden?null:e.target.closest&&e.target.closest('img.zoomable');
+    if(z){if(!pillOn){const m=z.closest('main');pill.style.setProperty('--zc',getComputedStyle(m).getPropertyValue('--p').trim()||'#2B2935')}
+      pill.style.setProperty('--zx',(e.clientX-pill.offsetWidth/2)+'px');pill.style.setProperty('--zy',(e.clientY-pill.offsetHeight/2)+'px')}
+    if(!!z!==pillOn){pillOn=!!z;pill.classList.toggle('on',pillOn)}},{passive:true});
+  const anim=c=>{im.classList.remove('pop','slide-l','slide-r');void im.offsetWidth;im.classList.add(c)};
+  let dir='pop';
+  function show(i){const n=(i+list.length)%list.length;dir=idx>=0&&idx!==n?(i>idx?'slide-l':'slide-r'):'pop';idx=n;const src=list[idx];anim(dir);
+    im.onload=()=>center();im.src=src.currentSrc||src.src;im.alt=src.alt||'';
+    $('lbCap').textContent=caption(src);$('lbCount').textContent=(idx+1)+' / '+list.length;
+    $('lbPrev').hidden=$('lbNext').hidden=list.length<2;
+    if(im.complete&&im.naturalWidth)center()}
+  function open(img){const m=img.closest('main[data-view]');list=[...m.querySelectorAll('img.zoomable')];
+    const c=getComputedStyle(m).getPropertyValue('--p').trim();lb.style.setProperty('--lbc',c||'#2B2935');
+    lastFocus=img;pill.classList.remove('on');pillOn=false;idx=-1;lb.hidden=false;document.documentElement.style.overflow='hidden';show(list.indexOf(img));$('lbClose').focus()}
+  function close(){lb.hidden=true;document.documentElement.style.overflow='';im.removeAttribute('src');if(lastFocus)lastFocus.focus()}
+  document.addEventListener('click',e=>{const i=e.target.closest('img.zoomable');if(i){e.preventDefault();open(i)}});
+  document.addEventListener('keydown',e=>{
+    if(lb.hidden){if((e.key==='Enter'||e.key===' ')&&document.activeElement&&document.activeElement.classList.contains('zoomable')){e.preventDefault();open(document.activeElement)}return}
+    if(e.key==='Escape')close();else if(e.key==='ArrowRight')show(idx+1);else if(e.key==='ArrowLeft')show(idx-1);
+    else if(e.key==='+'||e.key==='=')zoomCenter(1.5);else if(e.key==='-')zoomCenter(1/1.5);
+    else if(e.key==='Tab'){const f=[...lb.querySelectorAll('button:not([hidden])')];const a=f.indexOf(document.activeElement);
+      if(e.shiftKey&&a<=0){e.preventDefault();f[f.length-1].focus()}else if(!e.shiftKey&&a===f.length-1){e.preventDefault();f[0].focus()}}
+  });
+  $('lbClose').onclick=close;$('lbPrev').onclick=()=>show(idx-1);$('lbNext').onclick=()=>show(idx+1);
+  $('lbIn').onclick=()=>zoomCenter(1.5);$('lbOut').onclick=()=>zoomCenter(1/1.5);
+  window.addEventListener('resize',()=>{if(!lb.hidden)center()});
+  window.addEventListener('hashchange',()=>{if(!lb.hidden)close()});
+  stage.addEventListener('wheel',e=>{e.preventDefault();zoomAt(s*Math.exp(-e.deltaY*0.0018),e.clientX,e.clientY,false)},{passive:false});
+  // pointer: drag to pan, pinch to zoom, tap on background closes, double tap toggles zoom
+  const pts=new Map();let start=null,moved=false,lastTap=0,pinch=null;
+  stage.addEventListener('pointerdown',e=>{stage.setPointerCapture(e.pointerId);pts.set(e.pointerId,{x:e.clientX,y:e.clientY});moved=false;
+    if(pts.size===1)start={x:e.clientX,y:e.clientY,tx,ty};
+    if(pts.size===2){const [a,b]=[...pts.values()];pinch={d:Math.hypot(a.x-b.x,a.y-b.y),s}}});
+  stage.addEventListener('pointermove',e=>{if(!pts.has(e.pointerId))return;pts.set(e.pointerId,{x:e.clientX,y:e.clientY});
+    if(pts.size===2&&pinch){const [a,b]=[...pts.values()];moved=true;zoomAt(pinch.s*Math.hypot(a.x-b.x,a.y-b.y)/pinch.d,(a.x+b.x)/2,(a.y+b.y)/2,false);return}
+    if(start&&pts.size===1){const dx=e.clientX-start.x,dy=e.clientY-start.y;if(Math.abs(dx)+Math.abs(dy)>4)moved=true;
+      if(s>1.01){stage.classList.add('drag');tx=start.tx+dx;ty=start.ty+dy;clamp();apply(false)}}});
+  const up=e=>{if(!pts.has(e.pointerId))return;pts.delete(e.pointerId);stage.classList.remove('drag');
+    if(pts.size<2)pinch=null;
+    if(pts.size===0&&start){const dx=e.clientX-start.x;
+      if(!moved){const now=Date.now();
+        if(now-lastTap<300){zoomAt(s>1.01?1:2.5,e.clientX,e.clientY,true);lastTap=0}
+        else{lastTap=now;const onImg=e.target===im;setTimeout(()=>{if(lastTap===now){if(!onImg)close();else if(s<=1.01)zoomAt(2.5,e.clientX,e.clientY,true)}},300)}}
+      else if(s<=1.01&&Math.abs(dx)>60&&e.pointerType!=='mouse')show(idx+(dx<0?1:-1));
+      start=null}};
+  stage.addEventListener('pointerup',up);stage.addEventListener('pointercancel',up);
+})();
+</script>
+<button type="button" class="totop" id="totop" aria-label="Torna su" hidden><span aria-hidden="true">↑</span></button>
+<style>
+.totop{position:fixed;right:20px;bottom:20px;z-index:900;width:46px;height:76px;padding:0;border-radius:99px;border:0;cursor:pointer;color:var(--on,#fff);
+  background:linear-gradient(180deg,var(--tc,#2B2935) 50%,color-mix(in srgb,var(--tc,#2B2935) 55%,#fff) 50%);
+  box-shadow:inset 0 -5px 0 rgba(0,0,0,.14),4px 4px 0 color-mix(in srgb,var(--tc,#2B2935) 45%,#000);
+  font:700 19px var(--f-body);display:flex;flex-direction:column;align-items:center;justify-content:flex-start;padding-top:9px;
+  opacity:0;transform:translateY(24px) rotate(8deg) scale(.7);pointer-events:none;
+  transition:opacity .25s,transform .4s cubic-bezier(.3,1.6,.5,1),box-shadow .3s cubic-bezier(.3,1.6,.5,1)}
+.totop[hidden]{display:flex}
+.totop.on{opacity:1;transform:rotate(-6deg);pointer-events:auto}
+.totop span{display:block;line-height:1;transition:transform .35s cubic-bezier(.3,1.6,.5,1)}
+.totop.on:hover{background:linear-gradient(180deg,var(--tc,#2B2935) 50%,color-mix(in srgb,var(--tc,#2B2935) 55%,#fff) 50%);color:var(--on,#fff);transform:translate(-3px,-3px) rotate(-12deg);box-shadow:inset 0 -5px 0 rgba(0,0,0,.14),7px 7px 0 color-mix(in srgb,var(--tc,#2B2935) 45%,#000)}
+.totop.on:hover span{transform:translateY(-3px)}
+.totop.on:active{transform:translate(2px,2px) rotate(-6deg);box-shadow:inset 0 -3px 0 rgba(0,0,0,.14),1px 1px 0 color-mix(in srgb,var(--tc,#2B2935) 45%,#000);transition-duration:.08s}
+.totop:focus-visible{outline:2px solid var(--tc,#2B2935);outline-offset:4px}
+@media (max-width:620px){.totop{right:16px;bottom:16px;width:42px;height:68px;font-size:17px}}
+@media (prefers-reduced-motion:reduce){.totop,.totop span{transition:opacity .2s}.totop,.totop.on,.totop.on:hover,.totop.on:hover span,.totop.on:active{transform:none}}
+</style>
+<script>
+(()=>{const b=document.getElementById('totop');b.hidden=false;
+  const tint=()=>{const v=document.documentElement.dataset.view||'home';const m=document.getElementById(v);
+    let c=m&&getComputedStyle(m).getPropertyValue('--p').trim();if(!c){const l=document.querySelector('nav ul a[aria-current]');c=l?getComputedStyle(l).getPropertyValue('--c').trim():''}
+    b.style.setProperty('--tc',c||'#2B2935');b.style.setProperty('--on',(m&&getComputedStyle(m).getPropertyValue('--on').trim())||'#fff')};
+  const upd=()=>b.classList.toggle('on',scrollY>Math.min(500,innerHeight*.6));
+  addEventListener('scroll',upd,{passive:true});addEventListener('hashchange',()=>setTimeout(()=>{tint();upd()},0));
+  b.addEventListener('click',()=>{const r=matchMedia('(prefers-reduced-motion: reduce)').matches;scrollTo({top:0,behavior:r?'auto':'smooth'});
+    const f=document.querySelector('main[data-view]:not([hidden]) h1');if(f){f.tabIndex=-1;setTimeout(()=>f.focus({preventScroll:true}),r?0:500)}});
+  tint();upd();
+})();
+</script>
+<style>
+main.project{position:relative}
+.stickers{position:absolute;inset:0;pointer-events:none;z-index:40}
+.stk{position:absolute;left:0;top:0;width:var(--w);height:auto;max-width:none;pointer-events:auto;cursor:grab;touch-action:none;user-select:none;-webkit-user-drag:none;
+  transform:translate(var(--x,0px),var(--y,0px)) rotate(var(--rot)) scale(var(--s,1));
+  filter:drop-shadow(0 2px 1px rgba(0,0,0,.18)) drop-shadow(0 8px 14px rgba(0,0,0,.16));
+  transition:transform .35s cubic-bezier(.3,1.6,.5,1),filter .25s;opacity:0}
+.stk.ready{opacity:1;animation:stkIn .6s cubic-bezier(.3,1.6,.5,1) both;animation-delay:var(--d,0s)}
+@keyframes stkIn{from{opacity:0;scale:.4;rotate:-25deg}to{opacity:1;scale:1;rotate:0deg}}
+.stk:hover{--s:1.06;filter:drop-shadow(0 3px 1px rgba(0,0,0,.2)) drop-shadow(0 14px 20px rgba(0,0,0,.2))}
+.stk.drag{cursor:grabbing;--s:1.12;transition:filter .2s;filter:drop-shadow(0 4px 2px rgba(0,0,0,.2)) drop-shadow(0 22px 28px rgba(0,0,0,.26))}
+.stk.spin{animation:stkSpin .7s cubic-bezier(.3,1.4,.5,1)}
+@keyframes stkSpin{to{rotate:360deg}}
+@media (max-width:900px){.stk{width:calc(var(--w) * .68)}}
+@media (prefers-reduced-motion:reduce){.stk{transition:none}.stk.ready{animation:none}.stk.spin{animation:none}}
+</style>
+<script>
+(()=>{
+  const KEY='stickers-v1';let saved={};try{saved=JSON.parse(localStorage.getItem(KEY)||'{}')}catch(e){}
+  const save=()=>{try{localStorage.setItem(KEY,JSON.stringify(saved))}catch(e){}};
+  let z=50;
+  function anchorTop(m,a){if(a==='title'){const t=m.querySelector('.cs-title');return t?t.offsetTop:0}
+    const n=parseInt(a.slice(1),10);const bh=m.querySelectorAll('.block-head');const el=bh[Math.min(n,bh.length)-1];
+    let y=0,e=el;while(e&&e!==m){y+=e.offsetTop;e=e.offsetParent}return y}
+  function place(m){const W=m.clientWidth,H=m.scrollHeight;
+    m.querySelectorAll('.stk').forEach((st,i)=>{const w=st.offsetWidth,h=st.offsetHeight;const sv=saved[st.dataset.id];
+      let x,y;if(sv){x=sv.x*W;y=sv.y}else{x=parseFloat(st.dataset.x)*W;y=anchorTop(m,st.dataset.anchor)+parseFloat(st.dataset.dy)}
+      x=Math.max(-w*.2,Math.min(W-w*.8,x));y=Math.max(0,Math.min(H-h,y));
+      st.style.setProperty('--x',x+'px');st.style.setProperty('--y',y+'px');st.style.setProperty('--d',(0.25+i*0.12)+'s');
+      if(!st.classList.contains('ready'))requestAnimationFrame(()=>st.classList.add('ready'))})}
+  const show=()=>{const m=document.querySelector('main.project:not([hidden])');if(m&&m.querySelector('.stk'))setTimeout(()=>place(m),60)};
+  addEventListener('hashchange',show);addEventListener('resize',()=>{const m=document.querySelector('main.project:not([hidden])');if(m)place(m)});
+  addEventListener('load',show);show();
+  document.querySelectorAll('.stk').forEach(st=>{let sx,sy,ox,oy,moved=false,id=null;
+    st.addEventListener('pointerdown',e=>{e.preventDefault();id=e.pointerId;st.setPointerCapture(id);moved=false;
+      sx=e.clientX;sy=e.clientY;ox=parseFloat(st.style.getPropertyValue('--x'))||0;oy=parseFloat(st.style.getPropertyValue('--y'))||0;
+      st.style.zIndex=++z;st.classList.add('drag')});
+    st.addEventListener('pointermove',e=>{if(e.pointerId!==id)return;const dx=e.clientX-sx,dy=e.clientY-sy;if(Math.abs(dx)+Math.abs(dy)>3)moved=true;
+      const m=st.closest('main');const W=m.clientWidth,H=m.scrollHeight,w=st.offsetWidth,h=st.offsetHeight;
+      const x=Math.max(-w*.3,Math.min(W-w*.7,ox+dx)),y=Math.max(0,Math.min(H-h,oy+dy));
+      st.style.setProperty('--x',x+'px');st.style.setProperty('--y',y+'px')});
+    const end=e=>{if(e.pointerId!==id)return;id=null;st.classList.remove('drag');
+      if(moved){const m=st.closest('main');const r=(Math.random()*16-8).toFixed(1);st.style.setProperty('--rot',r+'deg');
+        saved[st.dataset.id]={x:(parseFloat(st.style.getPropertyValue('--x'))||0)/m.clientWidth,y:parseFloat(st.style.getPropertyValue('--y'))||0};save()}
+      else{st.classList.remove('spin');void st.offsetWidth;st.classList.add('spin')}};
+    st.addEventListener('pointerup',end);st.addEventListener('pointercancel',end);
+    st.addEventListener('animationend',ev=>{if(ev.animationName==='stkSpin')st.classList.remove('spin')});
+  });
+})();
+</script>
+<script>
+(()=>{const reel=document.querySelector('.reel'),track=reel&&reel.querySelector('.reel-track');if(!track)return;
+  const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const BASE=reduce?0:-38; // px/s, verso sinistra
+  let x=0,v=BASE,half=0,last=performance.now(),drag=null,moved=0;
+  track.querySelectorAll('img').forEach(i=>i.draggable=false);
+  const measure=()=>{const w=track.scrollWidth;if(w>200)half=w/2+10};measure();addEventListener('resize',measure);addEventListener('load',measure);addEventListener('hashchange',()=>setTimeout(measure,50));setInterval(measure,1500);
+  const wrap=()=>{if(half>200){while(x<=-half)x+=half;while(x>0)x-=half}};
+  function tick(t){const dt=Math.min(.05,(t-last)/1000);last=t;
+    if(!drag){v+= (BASE-v)*Math.min(1,dt*1.1);x+=v*dt;wrap();track.style.transform=`translate3d(${x}px,0,0)`}
+    requestAnimationFrame(tick)}
+  requestAnimationFrame(tick);
+  reel.addEventListener('pointerdown',e=>{if(e.button!==0)return;drag={id:e.pointerId,x0:e.clientX,xs:x,lx:e.clientX,lt:performance.now(),vel:0};moved=0});
+  addEventListener('pointermove',e=>{if(!drag||e.pointerId!==drag.id)return;const dx=e.clientX-drag.x0;moved=Math.max(moved,Math.abs(dx));
+    if(moved>5&&!reel.classList.contains('dragging')){reel.classList.add('dragging');try{reel.setPointerCapture(e.pointerId)}catch(_){}}
+    const now=performance.now();drag.vel=drag.vel*0.4+0.6*(e.clientX-drag.lx)*2/Math.max(1,(now-drag.lt))*1000;drag.lx=e.clientX;drag.lt=now;
+    x=drag.xs+dx*2;wrap();track.style.transform=`translate3d(${x}px,0,0)`});
+  const end=e=>{if(!drag||e.pointerId!==drag.id)return;if(moved>5)v=Math.max(-6000,Math.min(6000,drag.vel*1.3));drag=null;
+    setTimeout(()=>reel.classList.remove('dragging'),0)};
+  addEventListener('pointerup',end);addEventListener('pointercancel',end);
+  reel.addEventListener('click',e=>{if(moved>5){e.preventDefault();e.stopPropagation()}},true);
+  reel.addEventListener('wheel',e=>{const d=Math.abs(e.deltaX)>Math.abs(e.deltaY)?e.deltaX:(e.shiftKey?e.deltaY:0);if(!d)return;e.preventDefault();x-=d;wrap();v=BASE},{passive:false});
+})();
+</script>
+<script>
+document.addEventListener('click',e=>{const a=e.target.closest('a[data-filter]');if(!a)return;const f=a.dataset.filter;
+  setTimeout(()=>{const b=document.querySelector('.filter[data-f="'+f+'"]');if(b)b.click()},40)});
+</script>
+<script>
+(()=>{const caps=document.querySelectorAll('.capcluster .cap');let z=10;
+  caps.forEach(c=>{let id=null,sx,sy,ox,oy,moved=0;
+    c.addEventListener('pointerdown',e=>{e.preventDefault();id=e.pointerId;c.setPointerCapture(id);sx=e.clientX;sy=e.clientY;
+      ox=parseFloat(c.style.getPropertyValue('--dx'))||0;oy=parseFloat(c.style.getPropertyValue('--dy'))||0;moved=0;c.style.zIndex=++z;c.classList.add('drag')});
+    c.addEventListener('pointermove',e=>{if(e.pointerId!==id)return;const dx=e.clientX-sx,dy=e.clientY-sy;moved=Math.max(moved,Math.abs(dx)+Math.abs(dy));
+      const m=c.closest('main').getBoundingClientRect(),r=c.getBoundingClientRect();
+      let nx=ox+dx,ny=oy+dy;
+      c.style.setProperty('--dx',nx+'px');c.style.setProperty('--dy',ny+'px');
+      const r2=c.getBoundingClientRect();
+      if(r2.left<m.left)nx+=m.left-r2.left; if(r2.right>m.right)nx-=r2.right-m.right; if(r2.top<m.top)ny+=m.top-r2.top;
+      c.style.setProperty('--dx',nx+'px');c.style.setProperty('--dy',ny+'px')});
+    const end=e=>{if(e.pointerId!==id)return;id=null;c.classList.remove('drag');
+      if(moved>4)c.style.setProperty('--rot',(Math.random()*50-25).toFixed(1)+'deg');
+      else{c.classList.remove('spin');void c.offsetWidth;c.classList.add('spin')}};
+    c.addEventListener('pointerup',end);c.addEventListener('pointercancel',end);
+    c.addEventListener('animationend',()=>c.classList.remove('spin'));
+  });
+})();
+</script>
